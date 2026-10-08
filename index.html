@@ -27,7 +27,7 @@
 
 
         /* =====================================================
-           COLOURS
+           COLOUR SYSTEM
         ===================================================== */
 
         :root {
@@ -57,9 +57,11 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
 
@@ -90,19 +92,25 @@
 
 
         ::selection {
+
             background: var(--text-1);
+
             color: #5F2528;
         }
 
 
         a {
+
             color: inherit;
+
             text-decoration: none;
+
             cursor: none;
         }
 
 
         button {
+
             cursor: none;
         }
 
@@ -251,6 +259,7 @@
 
 
         .nav-links a:hover {
+
             opacity: 1;
         }
 
@@ -309,17 +318,30 @@
         }
 
 
-        .hero-line {
+        /* =====================================================
+           ORGANIC MARK BELOW NAME
+        ===================================================== */
 
-            width: 1px;
+        .hero-mark {
 
-            height: 58px;
+            width: 24px;
 
-            background:
-                rgba(244, 239, 234, 0.65);
+            height: 85px;
 
             margin:
                 45px auto 40px;
+
+            opacity: 0.9;
+        }
+
+
+        .hero-mark svg {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
         }
 
 
@@ -490,6 +512,7 @@
 
 
         .large-text em {
+
             font-style: italic;
         }
 
@@ -539,6 +562,7 @@
 
 
         .about-content p {
+
             margin-bottom: 28px;
         }
 
@@ -595,6 +619,7 @@
 
 
         .experience:hover {
+
             padding-left: 15px;
         }
 
@@ -863,6 +888,7 @@
 
 
         .education-title em {
+
             font-style: italic;
         }
 
@@ -894,6 +920,7 @@
 
 
         .education-row span:first-child {
+
             color: var(--muted);
         }
 
@@ -1064,71 +1091,234 @@
            CONTACT
         ===================================================== */
 
-        .contact {
+        .contact-section {
 
-            min-height: 90vh;
+            padding:
+                150px 8% 80px;
 
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
+            border-top:
+                1px solid
+                var(--line-soft);
         }
 
 
-        .contact .section-heading {
+        .contact-intro {
+
+            text-align: center;
+
+            margin-bottom: 80px;
+        }
+
+
+        .contact-intro h2 {
+
+            font-size:
+                clamp(65px, 8vw, 110px);
+
+            font-weight: 400;
+
+            line-height: 0.9;
+
+            margin-bottom: 45px;
+        }
+
+
+        .contact-intro p {
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: var(--text-2);
+        }
+
+
+        /* CONTACT FORM */
+
+        .contact-form {
 
             width: 100%;
 
-            text-align: left;
+            max-width: 840px;
+
+            margin: 0 auto;
         }
 
 
-        .contact h2 {
+        .form-group {
 
-            font-size:
-                clamp(80px, 13vw, 175px);
-
-            line-height: 0.82;
-
-            font-weight: 400;
+            margin-bottom: 32px;
         }
 
 
-        .contact h2 em {
+        .form-group label {
 
             display: block;
 
-            font-style: italic;
+            margin-bottom: 11px;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            color: var(--text-2);
         }
 
 
-        .contact-description {
+        .form-group input,
+        .form-group textarea {
 
-            max-width: 570px;
+            width: 100%;
+
+            border:
+                1px solid
+                rgba(244, 239, 234, 0.28);
+
+            background:
+                rgba(255, 255, 255, 0.015);
+
+            color: var(--text-1);
+
+            font-family:
+                "Okojo Pro",
+                Georgia,
+                serif;
+
+            font-size: 18px;
+
+            padding:
+                22px 20px;
+
+            outline: none;
+
+            border-radius: 0;
+
+            transition:
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        .form-group input {
+
+            height: 67px;
+        }
+
+
+        .form-group textarea {
+
+            min-height: 225px;
+
+            resize: vertical;
+        }
+
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+
+            color:
+                rgba(244, 239, 234, 0.38);
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+
+            border-color:
+                rgba(244, 239, 234, 0.72);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+        }
+
+
+        /* SEND BUTTON */
+
+        .send-button {
+
+            margin-top: 12px;
+
+            padding:
+                20px 48px;
+
+            min-width: 245px;
+
+            border:
+                1px solid
+                rgba(244, 239, 234, 0.5);
+
+            background: transparent;
+
+            color:
+                var(--text-1);
+
+            font-family:
+                "Okojo Pro",
+                Georgia,
+                serif;
+
+            font-size: 11px;
+
+            font-weight: 400;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease;
+        }
+
+
+        .send-button:hover {
+
+            background:
+                var(--text-1);
+
+            color:
+                #5F2528;
+        }
+
+
+        /* DIRECT EMAIL */
+
+        .direct-email {
+
+            max-width: 840px;
 
             margin:
-                50px auto 35px;
+                85px auto 0;
 
-            color: var(--muted);
+            padding-top: 40px;
+
+            border-top:
+                1px solid
+                rgba(244, 239, 234, 0.13);
+
+            text-align: center;
 
             font-size: 16px;
+
+            color:
+                var(--muted);
         }
 
 
-        .contact-links {
+        .direct-email a {
 
-            display: flex;
+            color:
+                var(--text-1);
 
-            gap: 12px;
+            text-decoration:
+                underline;
 
-            flex-wrap: wrap;
-
-            justify-content: center;
+            text-underline-offset:
+                4px;
         }
 
 
@@ -1192,17 +1382,20 @@
         @media (max-width: 800px) {
 
             body {
+
                 cursor: auto;
             }
 
 
             .custom-cursor {
+
                 display: none;
             }
 
 
             a,
             button {
+
                 cursor: pointer;
             }
 
@@ -1215,6 +1408,7 @@
 
 
             .nav-links {
+
                 display: none;
             }
 
@@ -1234,11 +1428,6 @@
             }
 
 
-            .hero-description {
-                font-size: 15px;
-            }
-
-
             .hero-top {
 
                 font-size: 9px;
@@ -1247,13 +1436,30 @@
             }
 
 
+            .hero-description {
+
+                font-size: 15px;
+            }
+
+
+            .hero-mark {
+
+                height: 75px;
+
+                margin:
+                    38px auto 35px;
+            }
+
+
             section {
+
                 padding:
                     90px 25px;
             }
 
 
             .large-text {
+
                 font-size: 46px;
             }
 
@@ -1267,6 +1473,7 @@
 
 
             .about-title {
+
                 font-size: 68px;
             }
 
@@ -1281,16 +1488,19 @@
 
 
             .experience-date {
+
                 display: none;
             }
 
 
             .experience h3 {
+
                 font-size: 31px;
             }
 
 
             .work-grid {
+
                 grid-template-columns: 1fr;
             }
 
@@ -1304,11 +1514,13 @@
 
 
             .work-card h3 {
+
                 font-size: 36px;
             }
 
 
             .capabilities {
+
                 grid-template-columns: 1fr;
             }
 
@@ -1322,6 +1534,7 @@
 
 
             .education-title {
+
                 font-size: 68px;
             }
 
@@ -1336,11 +1549,13 @@
 
 
             .certification-grid {
+
                 grid-template-columns: 1fr;
             }
 
 
             .certification {
+
                 margin-right: 0;
             }
 
@@ -1353,13 +1568,43 @@
             }
 
 
-            .contact {
-                min-height: 75vh;
+            .contact-section {
+
+                padding:
+                    100px 25px 60px;
             }
 
 
-            .contact h2 {
-                font-size: 82px;
+            .contact-intro h2 {
+
+                font-size: 68px;
+            }
+
+
+            .contact-intro p {
+
+                font-size: 15px;
+            }
+
+
+            .form-group input,
+            .form-group textarea {
+
+                font-size: 16px;
+            }
+
+
+            .send-button {
+
+                width: 100%;
+            }
+
+
+            .direct-email {
+
+                font-size: 14px;
+
+                line-height: 1.8;
             }
 
 
@@ -1429,9 +1674,10 @@
 
     <!-- =====================================================
          HERO
-    ===================================================== -->
+    ====================================================== -->
 
     <header class="hero">
+
 
         <div class="hero-top">
             WELCOME TO THE SITE OF
@@ -1443,7 +1689,32 @@
         </h1>
 
 
-        <div class="hero-line"></div>
+        <!-- ORGANIC SHAPE -->
+
+        <div class="hero-mark">
+
+            <svg
+                viewBox="0 0 24 85"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+
+                <path
+                    d="
+                        M12.4 0
+                        C12.1 12 12.8 23 12.3 34
+                        C11.9 45 12.5 57 12.1 67
+                        C11.8 74 11.5 80 11.7 85
+                    "
+                    fill="none"
+                    stroke="#F4EFEA"
+                    stroke-width="1.15"
+                    stroke-linecap="round"
+                    opacity="0.78"
+                />
+
+            </svg>
+
+        </div>
 
 
         <p class="hero-description">
@@ -1458,25 +1729,33 @@
 
         <div class="hero-buttons">
 
+
             <a
                 href="#experience"
                 class="hero-button">
+
                 EXPERIENCE
+
             </a>
 
 
             <a
                 href="#work"
                 class="hero-button">
+
                 SELECTED WORK
+
             </a>
 
 
             <a
                 href="#contact"
                 class="hero-button">
+
                 CONTACT
+
             </a>
+
 
         </div>
 
@@ -1484,6 +1763,7 @@
         <div class="hero-scroll">
             SCROLL
         </div>
+
 
     </header>
 
@@ -1494,12 +1774,14 @@
 
     <section id="about">
 
+
         <div class="section-heading">
             01 / ABOUT
         </div>
 
 
         <div class="about-grid reveal">
+
 
             <div class="about-title">
 
@@ -1513,6 +1795,7 @@
 
 
             <div class="about-content">
+
 
                 <p>
 
@@ -1550,9 +1833,12 @@
 
                 </div>
 
+
             </div>
 
+
         </div>
+
 
     </section>
 
@@ -1562,6 +1848,7 @@
     ====================================================== -->
 
     <section id="experience">
+
 
         <div class="section-heading">
             02 / EXPERIENCE
@@ -1585,6 +1872,7 @@
 
             <div class="experience reveal">
 
+
                 <div class="experience-number">
                     01
                 </div>
@@ -1595,6 +1883,7 @@
                     <h3>
                         Investment Banking Trainee
                     </h3>
+
 
                     <div class="company">
                         JM Financial · Industrials Coverage
@@ -1643,10 +1932,12 @@
                     JUL 2026
                 </div>
 
+
             </div>
 
 
             <div class="experience reveal">
+
 
                 <div class="experience-number">
                     02
@@ -1658,6 +1949,7 @@
                     <h3>
                         M&A Intern
                     </h3>
+
 
                     <div class="company">
                         Deloitte · Strategy, Risk & Transactions
@@ -1707,10 +1999,12 @@
 
                 </div>
 
+
             </div>
 
 
             <div class="experience reveal">
+
 
                 <div class="experience-number">
                     03
@@ -1722,6 +2016,7 @@
                     <h3>
                         Global Treasury Operations Intern
                     </h3>
+
 
                     <div class="company">
                         Aditya Birla Global Trading
@@ -1767,10 +2062,12 @@
 
                 </div>
 
+
             </div>
 
 
         </div>
+
 
     </section>
 
@@ -1780,6 +2077,7 @@
     ====================================================== -->
 
     <section id="work">
+
 
         <div class="section-heading">
             03 / SELECTED WORK
@@ -1801,6 +2099,7 @@
 
 
             <div class="work-card reveal">
+
 
                 <div class="work-number">
                     01
@@ -1832,10 +2131,12 @@
 
                 </div>
 
+
             </div>
 
 
             <div class="work-card reveal">
+
 
                 <div class="work-number">
                     02
@@ -1866,10 +2167,12 @@
 
                 </div>
 
+
             </div>
 
 
             <div class="work-card reveal">
+
 
                 <div class="work-number">
                     03
@@ -1900,10 +2203,12 @@
 
                 </div>
 
+
             </div>
 
 
             <div class="work-card reveal">
+
 
                 <div class="work-number">
                     04
@@ -1933,10 +2238,12 @@
 
                 </div>
 
+
             </div>
 
 
         </div>
+
 
     </section>
 
@@ -1946,6 +2253,7 @@
     ====================================================== -->
 
     <section id="skills">
+
 
         <div class="section-heading">
             04 / CAPABILITIES
@@ -2082,6 +2390,7 @@
 
         </div>
 
+
     </section>
 
 
@@ -2090,6 +2399,7 @@
     ====================================================== -->
 
     <section>
+
 
         <div class="section-heading">
             05 / EDUCATION
@@ -2197,7 +2507,9 @@
 
             </div>
 
+
         </div>
+
 
     </section>
 
@@ -2207,6 +2519,7 @@
     ====================================================== -->
 
     <section>
+
 
         <div class="section-heading">
             06 / ACHIEVEMENTS
@@ -2287,6 +2600,7 @@
 
         </div>
 
+
     </section>
 
 
@@ -2295,6 +2609,7 @@
     ====================================================== -->
 
     <section>
+
 
         <div class="section-heading">
             07 / CERTIFICATIONS
@@ -2372,6 +2687,7 @@
 
         </div>
 
+
     </section>
 
 
@@ -2380,6 +2696,7 @@
     ====================================================== -->
 
     <section>
+
 
         <div class="section-heading">
             08 / BEYOND FINANCE
@@ -2447,6 +2764,7 @@
 
         </div>
 
+
     </section>
 
 
@@ -2456,7 +2774,7 @@
 
     <section
         id="contact"
-        class="contact">
+        class="contact-section">
 
 
         <div class="section-heading">
@@ -2464,47 +2782,131 @@
         </div>
 
 
-        <h2 class="reveal">
+        <div class="contact-intro">
 
-            Let's
-
-            <em>
-                connect.
-            </em>
-
-        </h2>
+            <h2>
+                Contact
+            </h2>
 
 
-        <p class="contact-description reveal">
+            <p>
 
-            Interested in investment banking,
-            finance, research, strategy or
-            exchanging ideas?
+                Have a question, a collaboration in mind,
+                or just want to say hello? Send a message below.
 
-        </p>
+            </p>
+
+        </div>
 
 
-        <div class="contact-links reveal">
+        <form
+            class="contact-form"
+            id="contactForm">
 
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    NAME
+                </label>
+
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your full name"
+                    required>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    EMAIL
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required>
+
+            </div>
+
+
+            <!-- SUBJECT -->
+
+            <div class="form-group">
+
+                <label for="subject">
+                    SUBJECT
+                </label>
+
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="What is this regarding?"
+                    required>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+                <label for="message">
+                    MESSAGE
+                </label>
+
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message here..."
+                    required></textarea>
+
+            </div>
+
+
+            <!-- SEND -->
+
+            <button
+                type="submit"
+                class="send-button">
+
+                SEND MESSAGE
+
+            </button>
+
+
+        </form>
+
+
+        <!-- DIRECT EMAIL -->
+
+        <div class="direct-email">
+
+            Prefer email directly?
+
+            Reach out at
 
             <a
-                href="mailto:anandaayush734@gmail.com"
-                class="hero-button">
+                href="mailto:anandaayush734@gmail.com">
 
-                EMAIL
-
-            </a>
-
-
-            <a
-                href="https://www.linkedin.com/in/ayushfinance100/"
-                target="_blank"
-                class="hero-button">
-
-                LINKEDIN ↗
+                anandaayush734@gmail.com
 
             </a>
-
 
         </div>
 
@@ -2522,6 +2924,7 @@
             © 2026 Ayush Anand
         </span>
 
+
         <span>
             Finance · Strategy · Curiosity
         </span>
@@ -2535,12 +2938,14 @@
 
     <script>
 
+
         /* =====================================================
            CUSTOM CURSOR
         ===================================================== */
 
         const cursor =
             document.querySelector(".custom-cursor");
+
 
         let mouseX = 0;
         let mouseY = 0;
@@ -2588,12 +2993,12 @@
 
 
         /* =====================================================
-           CURSOR HOVER EFFECT
+           CURSOR HOVER
         ===================================================== */
 
         const hoverElements =
             document.querySelectorAll(
-                "a, .work-card, .capability"
+                "a, button, .work-card, .capability, input, textarea"
             );
 
 
@@ -2680,6 +3085,80 @@
 
             }
         );
+
+
+        /* =====================================================
+           CONTACT FORM
+           OPENS VISITOR'S EMAIL APP
+        ===================================================== */
+
+        const contactForm =
+            document.getElementById(
+                "contactForm"
+            );
+
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "name"
+                    ).value;
+
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    ).value;
+
+
+                const subject =
+                    document.getElementById(
+                        "subject"
+                    ).value;
+
+
+                const message =
+                    document.getElementById(
+                        "message"
+                    ).value;
+
+
+                const emailBody =
+
+                    `Name: ${name}
+
+Email: ${email}
+
+Message:
+
+${message}`;
+
+
+                const mailtoLink =
+
+                    `mailto:anandaayush734@gmail.com` +
+
+                    `?subject=${encodeURIComponent(
+                        subject
+                    )}` +
+
+                    `&body=${encodeURIComponent(
+                        emailBody
+                    )}`;
+
+
+                window.location.href =
+                    mailtoLink;
+
+            }
+        );
+
 
     </script>
 
