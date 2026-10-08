@@ -1,1814 +1,1148 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ayush Anand — Investment Banking & Finance</title>
+<title>Ayush Anand — Investment Banking & Finance</title>
 
-    <meta name="description"
-        content="Ayush Anand — Investment Banking, Finance, Valuation, Research and Strategy.">
+<meta name="description"
+content="Ayush Anand — Investment Banking, Finance, Valuation, Research and Strategy.">
 
-    <style>
+<style>
 
-        /* =====================================================
-           OKOJO PRO
-        ===================================================== */
+/* =========================================================
+   FONT
+   ========================================================= */
 
-        @font-face {
-            font-family: "Okojo Pro";
-            src: url("OkojoPro-Regular.woff2") format("woff2");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
+@font-face {
+    font-family: "Okojo Pro";
+    src: url("OkojoPro-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 
-        /* =====================================================
-           COLOURS
-        ===================================================== */
+/* =========================================================
+   ROOT
+   ========================================================= */
 
-        :root {
+:root {
 
-            --bg-1: #5F2528;
-            --bg-2: #61272A;
+    --bg-1: #5F2528;
+    --bg-2: #61272A;
 
-            --text-1: #F3EEE9;
-            --text-2: #F4EFEB;
-            --text-3: #F4EFEA;
+    --text-1: #F3EEE9;
+    --text-2: #F4EFEB;
+    --text-3: #F4EFEA;
 
-            --line: rgba(244, 239, 234, 0.25);
-            --line-soft: rgba(244, 239, 234, 0.13);
+    --muted: rgba(244,239,234,.72);
+    --faint: rgba(244,239,234,.48);
 
-            --muted: rgba(244, 239, 234, 0.72);
-            --faint: rgba(244, 239, 234, 0.48);
+    --line: rgba(244,239,234,.25);
+    --line-soft: rgba(244,239,234,.13);
 
-        }
+    --max-width: 1380px;
+}
 
 
-        /* =====================================================
-           RESET
-        ===================================================== */
+/* =========================================================
+   RESET
+   ========================================================= */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
 
+    background:
+        linear-gradient(
+            135deg,
+            var(--bg-1) 0%,
+            var(--bg-2) 100%
+        );
 
-        body {
+    color: var(--text-1);
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #5F2528 0%,
-                    #61272A 100%
-                );
+    font-family:
+        "Okojo Pro",
+        Arial,
+        Helvetica,
+        sans-serif;
 
-            background-attachment: fixed;
+    min-height: 100vh;
 
-            color: var(--text-1);
+    cursor: none;
+}
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-            font-weight: 400;
+button,
+input,
+textarea {
+    font: inherit;
+}
 
-            line-height: 1.6;
 
-            overflow-x: hidden;
+/* =========================================================
+   CUSTOM CURSOR
+   ========================================================= */
 
-            cursor: none;
+.custom-cursor {
 
-        }
+    position: fixed;
 
+    top: 0;
+    left: 0;
 
-        ::selection {
+    width: 30px;
+    height: 30px;
 
-            background: var(--text-1);
+    border: 1px solid rgba(244,239,234,.78);
 
-            color: #5F2528;
+    border-radius: 50%;
 
-        }
+    background: transparent;
 
+    pointer-events: none;
 
-        a {
+    z-index: 999999;
 
-            color: inherit;
+    transform:
+        translate3d(-50%, -50%, 0);
 
-            text-decoration: none;
+    will-change: transform;
 
-            cursor: none;
+    transition:
+        width .25s ease,
+        height .25s ease,
+        border-color .25s ease;
+}
 
-        }
+.custom-cursor::after {
 
+    content: "";
 
-        button {
-            cursor: none;
-        }
+    position: absolute;
 
+    width: 5px;
+    height: 5px;
 
-        /* =====================================================
-           CUSTOM CURSOR
-        ===================================================== */
+    border-radius: 50%;
 
-        .custom-cursor {
+    background: #F3EEE9;
 
-            position: fixed;
+    top: 50%;
+    left: 50%;
 
-            top: 0;
-            left: 0;
+    transform:
+        translate(-50%, -50%);
+}
 
-            width: 30px;
-            height: 30px;
+.custom-cursor.hover {
 
-            border:
-                1px solid
-                rgba(244, 239, 234, 0.78);
+    width: 46px;
+    height: 46px;
 
-            border-radius: 50%;
+    border-color: rgba(244,239,234,.95);
+}
 
-            background: transparent;
 
-            pointer-events: none;
+/* =========================================================
+   PAGE
+   ========================================================= */
 
-            z-index: 999999;
+.page {
+    width: 100%;
+    overflow: hidden;
+}
 
-            transform:
-                translate3d(-50%, -50%, 0);
+.container {
 
-            will-change: transform;
+    width: min(
+        calc(100% - 80px),
+        var(--max-width)
+    );
 
-            transition:
-                width 0.25s ease,
-                height 0.25s ease,
-                border-color 0.25s ease;
+    margin: 0 auto;
+}
 
-        }
 
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
-        .custom-cursor::after {
+nav {
 
-            content: "";
+    width: min(
+        calc(100% - 80px),
+        var(--max-width)
+    );
 
-            position: absolute;
+    margin: 0 auto;
 
-            width: 5px;
-            height: 5px;
+    padding: 30px 0;
 
-            border-radius: 50%;
+    display: flex;
 
-            background:
-                var(--text-1);
+    justify-content: space-between;
+    align-items: center;
 
-            top: 50%;
-            left: 50%;
+    border-bottom: 1px solid var(--line-soft);
+}
 
-            transform:
-                translate(-50%, -50%);
+.logo {
 
-        }
+    font-size: 15px;
 
+    letter-spacing: .04em;
+}
 
-        .custom-cursor.hover {
+.nav-links {
 
-            width: 48px;
-            height: 48px;
+    display: flex;
 
-            border-color:
-                rgba(244, 239, 234, 0.95);
+    gap: 32px;
 
-        }
+    font-size: 13px;
 
+    color: var(--muted);
+}
 
-        /* =====================================================
-           NAVIGATION
-        ===================================================== */
+.nav-links a {
 
-        nav {
+    transition:
+        color .25s ease;
+}
 
-            position: fixed;
+.nav-links a:hover {
+    color: var(--text-1);
+}
 
-            top: 0;
-            left: 0;
 
-            width: 100%;
+/* =========================================================
+   HERO
+   ========================================================= */
 
-            z-index: 1000;
+.hero {
 
-            padding:
-                25px 5%;
+    min-height: 88vh;
 
-            display: flex;
+    display: flex;
 
-            justify-content: space-between;
+    align-items: center;
 
-            align-items: center;
+    justify-content: center;
 
-            border-bottom:
-                1px solid
-                var(--line-soft);
+    text-align: center;
 
-            background:
-                rgba(95, 37, 40, 0.72);
+    padding: 90px 0 120px;
+}
 
-            backdrop-filter:
-                blur(14px);
+.hero-content {
+    width: 100%;
+}
 
-            -webkit-backdrop-filter:
-                blur(14px);
+.eyebrow {
 
-        }
+    font-size: 13px;
 
+    letter-spacing: .16em;
 
-        .logo {
+    text-transform: uppercase;
 
-            font-size: 13px;
+    color: var(--muted);
 
-            letter-spacing: 3px;
+    margin-bottom: 35px;
+}
 
-            text-transform: uppercase;
+.hero h1 {
 
-        }
+    font-size: clamp(
+        70px,
+        12vw,
+        185px
+    );
 
+    line-height: .82;
 
-        .nav-links {
+    font-weight: 400;
 
-            display: flex;
+    letter-spacing: -.06em;
 
-            gap: 32px;
+    color: var(--text-1);
+}
 
-        }
+.hero-subtitle {
 
+    margin-top: 40px;
 
-        .nav-links a {
+    font-size: 16px;
 
-            font-size: 11px;
+    color: var(--muted);
 
-            letter-spacing: 2.5px;
+    line-height: 1.6;
+}
 
-            text-transform: uppercase;
 
-            color:
-                var(--text-2);
+/* =========================================================
+   ORGANIC MARK
+   ========================================================= */
 
-            opacity: 0.76;
+.hero-mark {
 
-            transition:
-                opacity 0.3s ease;
+    width: 22px;
+    height: 72px;
 
-        }
+    margin: 28px auto 28px;
+}
 
+.hero-mark svg {
 
-        .nav-links a:hover {
-            opacity: 1;
-        }
+    width: 100%;
+    height: 100%;
 
+    display: block;
+}
 
-        /* =====================================================
-           HERO
-        ===================================================== */
 
-        .hero {
+/* =========================================================
+   RESUME BUTTON
+   ========================================================= */
 
-            min-height: 100vh;
+.resume-button {
 
-            padding:
-                150px 6% 80px;
+    display: inline-flex;
 
-            display: flex;
+    align-items: center;
+    justify-content: center;
 
-            flex-direction: column;
+    margin-top: 42px;
 
-            align-items: center;
+    padding: 15px 27px;
 
-            justify-content: center;
+    border: 1px solid var(--line);
 
-            text-align: center;
+    font-size: 12px;
 
-            position: relative;
+    letter-spacing: .12em;
 
-        }
+    color: var(--text-1);
 
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
 
-        .hero-top {
+.resume-button:hover {
 
-            font-size: 11px;
+    background: var(--text-1);
 
-            letter-spacing: 5px;
+    color: var(--bg-1);
 
-            text-transform: uppercase;
+    transform: translateY(-3px);
+}
 
-            color:
-                var(--muted);
 
-            margin-bottom: 40px;
+/* =========================================================
+   GENERAL SECTION
+   ========================================================= */
 
-        }
+section {
 
+    padding: 130px 0;
 
-        .hero h1 {
+    border-top: 1px solid var(--line-soft);
+}
 
-            font-size:
-                clamp(75px, 11vw, 165px);
+.section-label {
 
-            font-weight: 400;
+    font-size: 12px;
 
-            line-height: 0.9;
+    letter-spacing: .15em;
 
-            letter-spacing: -3px;
+    text-transform: uppercase;
 
-            color:
-                var(--text-1);
+    color: var(--muted);
 
-        }
+    margin-bottom: 50px;
+}
 
+.section-title {
 
-        /* =====================================================
-           ORGANIC MARK
-           BELOW AYUSH ANAND
-        ===================================================== */
+    font-size: clamp(
+        52px,
+        8vw,
+        120px
+    );
 
-        .hero-mark {
+    line-height: .9;
 
-            width: 22px;
+    font-weight: 400;
 
-            height: 72px;
+    letter-spacing: -.045em;
 
-            margin:
-                25px auto 25px;
+    max-width: 1000px;
+}
 
-            position: relative;
+.section-description {
 
-        }
+    max-width: 650px;
 
+    margin-top: 45px;
 
-        .hero-mark svg {
+    font-size: 18px;
 
-            width: 100%;
+    line-height: 1.65;
 
-            height: 100%;
+    color: var(--muted);
+}
 
-            display: block;
 
-        }
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
+.about-grid {
 
-        .hero-description {
+    display: grid;
 
-            max-width: 680px;
+    grid-template-columns:
+        1fr 1fr;
 
-            font-size: 17px;
+    gap: 100px;
 
-            line-height: 1.8;
+    margin-top: 80px;
+}
 
-            color:
-                var(--text-2);
+.about-text {
 
-            opacity: 0.9;
+    font-size: 22px;
 
-        }
+    line-height: 1.55;
+}
 
+.about-text p + p {
+    margin-top: 30px;
+}
 
-        .hero-buttons {
+.about-side {
 
-            margin-top: 48px;
+    border-top: 1px solid var(--line);
 
-            display: flex;
+    padding-top: 20px;
+}
 
-            justify-content: center;
+.about-side-item {
 
-            gap: 12px;
+    padding: 20px 0;
 
-            flex-wrap: wrap;
+    border-bottom: 1px solid var(--line-soft);
 
-        }
+    display: flex;
 
+    justify-content: space-between;
 
-        .hero-button {
+    gap: 30px;
 
-            border:
-                1px solid
-                var(--line);
+    font-size: 14px;
+}
 
-            padding:
-                16px 28px;
+.about-side-item span:last-child {
 
-            min-width: 150px;
+    color: var(--muted);
 
-            font-size: 10px;
+    text-align: right;
+}
 
-            letter-spacing: 3px;
 
-            text-transform: uppercase;
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
 
-            color:
-                var(--text-1);
+.experience-list {
+    margin-top: 80px;
+}
 
-            transition:
-                background 0.35s ease,
-                color 0.35s ease,
-                border 0.35s ease;
+.experience-item {
 
-        }
+    display: grid;
 
+    grid-template-columns:
+        100px 1fr;
 
-        .hero-button:hover {
+    gap: 40px;
 
-            background:
-                var(--text-1);
+    padding: 45px 0;
 
-            color:
-                #5F2528;
+    border-top: 1px solid var(--line-soft);
+}
 
-            border-color:
-                var(--text-1);
+.experience-number {
 
-        }
+    font-size: 14px;
 
+    color: var(--faint);
+}
 
-        .hero-scroll {
+.experience-company {
 
-            position: absolute;
+    font-size: 34px;
 
-            bottom: 30px;
+    line-height: 1.1;
 
-            left: 50%;
+    margin-bottom: 10px;
+}
 
-            transform:
-                translateX(-50%);
+.experience-role {
 
-            font-size: 9px;
+    font-size: 15px;
 
-            letter-spacing: 4px;
+    color: var(--muted);
 
-            text-transform: uppercase;
+    margin-bottom: 25px;
+}
 
-            color:
-                var(--faint);
+.experience-description {
 
-        }
+    max-width: 760px;
 
+    font-size: 16px;
 
-        .hero-scroll::after {
+    line-height: 1.7;
 
-            content: "";
+    color: var(--muted);
+}
 
-            display: block;
 
-            width: 5px;
-            height: 5px;
+/* =========================================================
+   PROJECTS
+   ========================================================= */
 
-            margin:
-                12px auto 0;
+.projects {
+    margin-top: 80px;
+}
 
-            border-radius: 50%;
+.project {
 
-            background:
-                var(--text-1);
+    display: grid;
 
-        }
+    grid-template-columns:
+        80px 1fr auto;
 
+    align-items: start;
 
-        /* =====================================================
-           GENERAL SECTIONS
-        ===================================================== */
+    gap: 30px;
 
-        section {
+    padding: 35px 0;
 
-            padding:
-                145px 8%;
+    border-top: 1px solid var(--line-soft);
 
-            border-top:
-                1px solid
-                var(--line-soft);
+    transition:
+        padding-left .3s ease;
+}
 
-        }
+.project:hover {
+    padding-left: 12px;
+}
 
+.project-number {
 
-        .section-heading {
+    color: var(--faint);
 
-            display: flex;
+    font-size: 14px;
+}
 
-            align-items: center;
+.project-name {
 
-            gap: 25px;
+    font-size: 30px;
 
-            margin-bottom: 70px;
+    margin-bottom: 10px;
+}
 
-            font-size: 10px;
+.project-description {
 
-            letter-spacing: 5px;
+    max-width: 700px;
 
-            text-transform: uppercase;
+    font-size: 15px;
 
-            color:
-                var(--muted);
+    line-height: 1.6;
 
-        }
+    color: var(--muted);
+}
 
+.project-arrow {
 
-        .section-heading::after {
+    font-size: 25px;
 
-            content: "";
+    color: var(--muted);
+}
 
-            height: 1px;
 
-            flex: 1;
+/* =========================================================
+   CAPABILITIES
+   ========================================================= */
 
-            background:
-                var(--line-soft);
+.capabilities-grid {
 
-        }
+    margin-top: 80px;
 
+    display: grid;
 
-        .large-text {
+    grid-template-columns:
+        repeat(2, 1fr);
 
-            font-size:
-                clamp(45px, 6vw, 85px);
+    gap: 1px;
 
-            font-weight: 400;
+    background: var(--line-soft);
+}
 
-            line-height: 1.02;
+.capability {
 
-            max-width: 1050px;
+    background: var(--bg-1);
 
-            margin-bottom: 80px;
+    padding: 45px;
 
-        }
+    min-height: 230px;
+}
 
+.capability-number {
 
-        .large-text em {
-            font-style: italic;
-        }
+    color: var(--faint);
 
+    font-size: 13px;
 
-        /* =====================================================
-           ABOUT
-        ===================================================== */
+    margin-bottom: 45px;
+}
 
-        .about-grid {
+.capability h3 {
 
-            display: grid;
+    font-size: 28px;
 
-            grid-template-columns:
-                0.8fr 1.2fr;
+    font-weight: 400;
 
-            gap: 100px;
+    margin-bottom: 18px;
+}
 
-        }
+.capability p {
 
+    font-size: 15px;
 
-        .about-title {
+    line-height: 1.6;
 
-            font-size:
-                clamp(60px, 8vw, 115px);
+    color: var(--muted);
+}
 
-            line-height: 0.88;
 
-        }
+/* =========================================================
+   EDUCATION
+   ========================================================= */
 
+.education-item {
 
-        .about-title em {
+    margin-top: 80px;
 
-            display: block;
+    padding: 45px 0;
 
-            font-style: italic;
+    border-top: 1px solid var(--line-soft);
 
-        }
+    border-bottom: 1px solid var(--line-soft);
+}
 
+.education-title {
 
-        .about-content {
+    font-size: 34px;
 
-            max-width: 650px;
+    margin-bottom: 15px;
+}
 
-            font-size: 17px;
+.education-details {
 
-            line-height: 1.9;
+    color: var(--muted);
 
-            color:
-                var(--muted);
+    font-size: 16px;
 
-        }
+    line-height: 1.7;
+}
 
 
-        .about-content p {
+/* =========================================================
+   ACHIEVEMENTS
+   ========================================================= */
 
-            margin-bottom: 28px;
+.achievement-list {
+    margin-top: 80px;
+}
 
-        }
+.achievement {
 
+    display: flex;
 
-        .about-quote {
+    justify-content: space-between;
 
-            margin-top: 50px;
+    gap: 40px;
 
-            padding-top: 30px;
+    padding: 30px 0;
 
-            border-top:
-                1px solid
-                var(--line);
+    border-top: 1px solid var(--line-soft);
 
-            font-size: 28px;
+    font-size: 18px;
+}
 
-            line-height: 1.25;
+.achievement span {
 
-            color:
-                var(--text-1);
+    color: var(--faint);
 
-        }
+    font-size: 14px;
+}
 
 
-        /* =====================================================
-           EXPERIENCE
-        ===================================================== */
+/* =========================================================
+   CERTIFICATIONS
+   ========================================================= */
 
-        .experience-list {
+.certifications {
 
-            border-top:
-                1px solid
-                var(--line);
+    margin-top: 80px;
 
-        }
+    display: grid;
 
+    grid-template-columns:
+        repeat(2, 1fr);
 
-        .experience {
+    gap: 0;
+}
 
-            display: grid;
+.certification {
 
-            grid-template-columns:
-                80px 1fr 150px;
+    padding: 25px 0;
 
-            gap: 40px;
+    border-top: 1px solid var(--line-soft);
 
-            padding:
-                50px 0;
+    font-size: 16px;
 
-            border-bottom:
-                1px solid
-                var(--line);
+    color: var(--muted);
+}
 
-            transition:
-                padding-left 0.35s ease;
+.certification strong {
 
-        }
+    color: var(--text-1);
 
+    font-weight: 400;
+}
 
-        .experience:hover {
 
-            padding-left: 15px;
+/* =========================================================
+   VOLUNTEERING
+   ========================================================= */
 
-        }
+.volunteer-list {
 
+    margin-top: 80px;
+}
 
-        .experience-number {
+.volunteer-item {
 
-            font-size: 30px;
+    padding: 35px 0;
 
-            color:
-                var(--faint);
+    border-top: 1px solid var(--line-soft);
+}
 
-        }
+.volunteer-title {
 
+    font-size: 27px;
 
-        .experience h3 {
+    margin-bottom: 15px;
+}
 
-            font-size: 39px;
+.volunteer-description {
 
-            line-height: 1;
+    max-width: 800px;
 
-            font-weight: 400;
+    font-size: 15px;
 
-            margin-bottom: 8px;
+    line-height: 1.7;
 
-        }
+    color: var(--muted);
+}
 
 
-        .company {
+/* =========================================================
+   CONTACT
+   ========================================================= */
 
-            font-size: 11px;
+.contact-section {
 
-            letter-spacing: 2px;
+    text-align: center;
 
-            text-transform: uppercase;
+    padding-bottom: 150px;
+}
 
-            color:
-                var(--muted);
+.contact-title {
 
-            margin-bottom: 25px;
+    font-size: clamp(
+        65px,
+        12vw,
+        175px
+    );
 
-        }
+    line-height: .85;
 
+    font-weight: 400;
 
-        .experience-description {
+    letter-spacing: -.06em;
+}
 
-            max-width: 750px;
+.contact-mark {
 
-            color:
-                var(--muted);
+    width: 22px;
+    height: 72px;
 
-            font-size: 15px;
+    margin: 28px auto 50px;
+}
 
-            line-height: 1.75;
+.contact-mark svg {
 
-        }
+    width: 100%;
+    height: 100%;
 
+    display: block;
+}
 
-        .experience-description li {
+.contact-subtitle {
 
-            margin:
-                0 0 9px 18px;
+    max-width: 550px;
 
-        }
+    margin: 0 auto 60px;
 
+    color: var(--muted);
 
-        .experience-date {
+    font-size: 16px;
 
-            text-align: right;
+    line-height: 1.6;
+}
 
-            font-size: 10px;
 
-            letter-spacing: 2px;
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
 
-            text-transform: uppercase;
+.contact-form {
 
-            color:
-                var(--faint);
+    max-width: 700px;
 
-        }
+    margin: 0 auto;
 
+    text-align: left;
+}
 
-        /* =====================================================
-           SELECTED WORK
-        ===================================================== */
+.form-row {
 
-        .work-grid {
+    display: grid;
 
-            display: grid;
+    grid-template-columns:
+        1fr 1fr;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+    gap: 25px;
+}
 
-            border-top:
-                1px solid
-                var(--line);
+.form-group {
+    margin-bottom: 25px;
+}
 
-            border-left:
-                1px solid
-                var(--line);
+.form-group label {
 
-        }
+    display: block;
 
+    margin-bottom: 10px;
 
-        .work-card {
+    font-size: 12px;
 
-            min-height: 420px;
+    letter-spacing: .1em;
 
-            padding: 50px;
+    text-transform: uppercase;
 
-            border-right:
-                1px solid
-                var(--line);
+    color: var(--muted);
+}
 
-            border-bottom:
-                1px solid
-                var(--line);
+.form-group input,
+.form-group textarea {
 
-            display: flex;
+    width: 100%;
 
-            flex-direction: column;
+    border: none;
 
-            justify-content: space-between;
+    border-bottom: 1px solid var(--line);
 
-            transition:
-                background 0.4s ease;
+    background: transparent;
 
-        }
+    color: var(--text-1);
 
+    padding: 14px 0;
 
-        .work-card:hover {
+    outline: none;
 
-            background:
-                rgba(244, 239, 234, 0.045);
+    border-radius: 0;
+}
 
-        }
+.form-group input:focus,
+.form-group textarea:focus {
 
+    border-bottom-color:
+        var(--text-1);
+}
 
-        .work-number {
+.form-group textarea {
 
-            font-size: 28px;
+    min-height: 150px;
 
-            color:
-                var(--faint);
+    resize: vertical;
+}
 
-        }
+.form-group input::placeholder,
+.form-group textarea::placeholder {
 
+    color:
+        rgba(244,239,234,.4);
+}
 
-        .work-card h3 {
+.send-button {
 
-            font-size: 43px;
+    margin-top: 20px;
 
-            line-height: 0.98;
+    padding: 16px 28px;
 
-            font-weight: 400;
+    background: transparent;
 
-            margin-bottom: 20px;
+    border: 1px solid var(--line);
 
-        }
+    color: var(--text-1);
 
+    cursor: none;
 
-        .work-card p {
+    letter-spacing: .12em;
 
-            max-width: 530px;
+    font-size: 12px;
 
-            color:
-                var(--muted);
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
 
-            font-size: 15px;
+.send-button:hover {
 
-            line-height: 1.75;
+    background: var(--text-1);
 
-        }
+    color: var(--bg-1);
+}
 
+.form-note {
 
-        .work-tag {
+    margin-top: 20px;
 
-            margin-top: 28px;
+    font-size: 12px;
 
-            font-size: 9px;
+    color: var(--faint);
+}
 
-            letter-spacing: 3px;
 
-            text-transform: uppercase;
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-            color:
-                var(--faint);
+footer {
 
-        }
+    border-top: 1px solid var(--line-soft);
 
+    padding: 35px 0;
 
-        /* =====================================================
-           CAPABILITIES
-        ===================================================== */
+    color: var(--muted);
 
-        .capabilities {
+    font-size: 12px;
+}
 
-            display: grid;
+.footer-inner {
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    width: min(
+        calc(100% - 80px),
+        var(--max-width)
+    );
 
-            gap: 15px;
+    margin: 0 auto;
 
-        }
+    display: flex;
 
+    justify-content: space-between;
 
-        .capability {
+    align-items: center;
+}
 
-            min-height: 250px;
+.footer-links {
 
-            padding: 35px;
+    display: flex;
 
-            border:
-                1px solid
-                var(--line);
+    gap: 25px;
+}
 
-            transition:
-                transform 0.35s ease,
-                background 0.35s ease;
+.footer-links a:hover {
 
-        }
+    color: var(--text-1);
+}
 
 
-        .capability:hover {
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
 
-            transform:
-                translateY(-5px);
+.reveal {
 
-            background:
-                rgba(244, 239, 234, 0.035);
+    opacity: 0;
 
-        }
+    transform: translateY(30px);
 
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
 
-        .capability-number {
+.reveal.visible {
 
-            font-size: 10px;
+    opacity: 1;
 
-            letter-spacing: 3px;
+    transform: translateY(0);
+}
 
-            color:
-                var(--faint);
 
-        }
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
+@media (max-width: 800px) {
 
-        .capability h3 {
+    body {
+        cursor: auto;
+    }
 
-            font-size: 31px;
+    .custom-cursor {
+        display: none;
+    }
 
-            font-weight: 400;
+    .container,
+    nav,
+    .footer-inner {
 
-            margin-top: 65px;
+        width: calc(100% - 40px);
+    }
 
-            margin-bottom: 12px;
+    nav {
+        padding: 22px 0;
+    }
 
-        }
+    .nav-links {
+        gap: 15px;
+        font-size: 11px;
+    }
 
+    .hero {
 
-        .capability p {
+        min-height: 80vh;
 
-            color:
-                var(--muted);
+        padding:
+            80px 0
+            100px;
+    }
 
-            font-size: 13px;
+    .hero h1 {
+        font-size: 72px;
+    }
 
-            line-height: 1.7;
+    section {
+        padding: 90px 0;
+    }
 
-        }
+    .section-title {
+        font-size: 58px;
+    }
 
+    .about-grid {
 
-        /* =====================================================
-           EDUCATION
-        ===================================================== */
+        grid-template-columns: 1fr;
 
-        .education {
+        gap: 60px;
+    }
 
-            display: grid;
+    .about-text {
+        font-size: 19px;
+    }
 
-            grid-template-columns:
-                1fr 1fr;
+    .experience-item {
 
-            gap: 100px;
+        grid-template-columns: 1fr;
 
-        }
+        gap: 15px;
+    }
 
+    .experience-company {
+        font-size: 27px;
+    }
 
-        .education-title {
+    .project {
 
-            font-size:
-                clamp(60px, 8vw, 110px);
+        grid-template-columns:
+            45px 1fr auto;
 
-            line-height: 0.88;
+        gap: 15px;
+    }
 
-        }
+    .project-name {
+        font-size: 24px;
+    }
 
+    .capabilities-grid {
 
-        .education-title em {
-            font-style: italic;
-        }
+        grid-template-columns: 1fr;
+    }
 
+    .certifications {
 
-        .education-list {
+        grid-template-columns: 1fr;
+    }
 
-            border-top:
-                1px solid
-                var(--line);
+    .form-row {
 
-        }
+        grid-template-columns: 1fr;
 
+        gap: 0;
+    }
 
-        .education-row {
+    .contact-title {
+        font-size: 75px;
+    }
 
-            display: flex;
+    .footer-inner {
 
-            justify-content: space-between;
+        flex-direction: column;
 
-            gap: 30px;
+        gap: 20px;
 
-            padding: 25px 0;
+        align-items: flex-start;
+    }
+}
 
-            border-bottom:
-                1px solid
-                var(--line);
-
-            font-size: 14px;
-
-        }
-
-
-        .education-row span:first-child {
-            color: var(--muted);
-        }
-
-
-        .education-row span:last-child {
-
-            text-align: right;
-
-            color:
-                var(--text-1);
-
-        }
-
-
-        /* =====================================================
-           ACHIEVEMENTS
-        ===================================================== */
-
-        .achievement-list {
-
-            border-top:
-                1px solid
-                var(--line);
-
-        }
-
-
-        .achievement {
-
-            display: grid;
-
-            grid-template-columns:
-                80px 1fr;
-
-            gap: 35px;
-
-            padding:
-                38px 0;
-
-            border-bottom:
-                1px solid
-                var(--line);
-
-        }
-
-
-        .achievement-number {
-
-            font-size: 30px;
-
-            color:
-                var(--faint);
-
-        }
-
-
-        .achievement h3 {
-
-            font-size: 31px;
-
-            font-weight: 400;
-
-            margin-bottom: 7px;
-
-        }
-
-
-        .achievement p {
-
-            color:
-                var(--muted);
-
-            font-size: 14px;
-
-        }
-
-
-        /* =====================================================
-           CERTIFICATIONS
-        ===================================================== */
-
-        .certification-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            border-top:
-                1px solid
-                var(--line);
-
-        }
-
-
-        .certification {
-
-            padding:
-                30px 0;
-
-            margin-right: 50px;
-
-            border-bottom:
-                1px solid
-                var(--line);
-
-        }
-
-
-        .certification span {
-
-            font-size: 9px;
-
-            letter-spacing: 3px;
-
-            color:
-                var(--faint);
-
-        }
-
-
-        .certification h3 {
-
-            font-size: 27px;
-
-            font-weight: 400;
-
-            margin-top: 7px;
-
-        }
-
-
-        /* =====================================================
-           BEYOND FINANCE
-        ===================================================== */
-
-        .volunteer-list {
-
-            border-top:
-                1px solid
-                var(--line);
-
-        }
-
-
-        .volunteer {
-
-            display: grid;
-
-            grid-template-columns:
-                250px 1fr;
-
-            gap: 60px;
-
-            padding:
-                42px 0;
-
-            border-bottom:
-                1px solid
-                var(--line);
-
-        }
-
-
-        .volunteer h3 {
-
-            font-size: 31px;
-
-            font-weight: 400;
-
-        }
-
-
-        .volunteer p {
-
-            max-width: 720px;
-
-            color:
-                var(--muted);
-
-            font-size: 15px;
-
-        }
-
-
-        /* =====================================================
-           CONTACT
-        ===================================================== */
-
-        .contact-section {
-
-            padding:
-                150px 8% 80px;
-
-            border-top:
-                1px solid
-                var(--line-soft);
-
-        }
-
-
-        .contact-intro {
-
-            text-align: center;
-
-            margin-bottom: 80px;
-
-        }
-
-
-        .contact-intro h2 {
-
-            font-size:
-                clamp(65px, 8vw, 110px);
-
-            font-weight: 400;
-
-            line-height: 0.9;
-
-            margin-bottom: 0;
-
-        }
-
-
-        /* =====================================================
-           ORGANIC CONTACT MARK
-        ===================================================== */
-
-        .contact-mark {
-
-            width: 22px;
-
-            height: 72px;
-
-            margin:
-                25px auto 38px;
-
-        }
-
-
-        .contact-mark svg {
-
-            width: 100%;
-
-            height: 100%;
-
-            display: block;
-
-        }
-
-
-        .contact-intro p {
-
-            max-width: 650px;
-
-            margin: 0 auto;
-
-            font-size: 17px;
-
-            line-height: 1.8;
-
-            color:
-                var(--text-2);
-
-        }
-
-
-        /* =====================================================
-           CONTACT FORM
-        ===================================================== */
-
-        .contact-form {
-
-            width: 100%;
-
-            max-width: 840px;
-
-            margin: 0 auto;
-
-        }
-
-
-        .form-group {
-
-            margin-bottom: 32px;
-
-        }
-
-
-        .form-group label {
-
-            display: block;
-
-            margin-bottom: 11px;
-
-            font-size: 10px;
-
-            letter-spacing: 4px;
-
-            color:
-                var(--text-2);
-
-        }
-
-
-        .form-group input,
-        .form-group textarea {
-
-            width: 100%;
-
-            border:
-                1px solid
-                rgba(244, 239, 234, 0.28);
-
-            background:
-                rgba(255, 255, 255, 0.015);
-
-            color:
-                var(--text-1);
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
-            font-size: 18px;
-
-            padding:
-                22px 20px;
-
-            outline: none;
-
-            border-radius: 0;
-
-            transition:
-                border-color 0.3s ease,
-                background 0.3s ease;
-
-        }
-
-
-        .form-group input {
-
-            height: 67px;
-
-        }
-
-
-        .form-group textarea {
-
-            min-height: 225px;
-
-            resize: vertical;
-
-        }
-
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-
-            color:
-                rgba(244, 239, 234, 0.38);
-
-        }
-
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-
-            border-color:
-                rgba(244, 239, 234, 0.72);
-
-            background:
-                rgba(255, 255, 255, 0.025);
-
-        }
-
-
-        /* =====================================================
-           SEND BUTTON
-        ===================================================== */
-
-        .send-button {
-
-            margin-top: 12px;
-
-            padding:
-                20px 48px;
-
-            min-width: 245px;
-
-            border:
-                1px solid
-                rgba(244, 239, 234, 0.5);
-
-            background:
-                transparent;
-
-            color:
-                var(--text-1);
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
-            font-size: 11px;
-
-            font-weight: 400;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            transition:
-                background 0.35s ease,
-                color 0.35s ease;
-
-        }
-
-
-        .send-button:hover {
-
-            background:
-                var(--text-1);
-
-            color:
-                #5F2528;
-
-        }
-
-
-        /* =====================================================
-           DIRECT EMAIL
-        ===================================================== */
-
-        .direct-email {
-
-            max-width: 840px;
-
-            margin:
-                85px auto 0;
-
-            padding-top: 40px;
-
-            border-top:
-                1px solid
-                rgba(244, 239, 234, 0.13);
-
-            text-align: center;
-
-            font-size: 16px;
-
-            color:
-                var(--muted);
-
-        }
-
-
-        .direct-email a {
-
-            color:
-                var(--text-1);
-
-            text-decoration:
-                underline;
-
-            text-underline-offset:
-                4px;
-
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-
-            padding:
-                28px 8%;
-
-            border-top:
-                1px solid
-                var(--line-soft);
-
-            display: flex;
-
-            justify-content: space-between;
-
-            font-size: 9px;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            color:
-                var(--faint);
-
-        }
-
-
-        /* =====================================================
-           SCROLL REVEAL
-        ===================================================== */
-
-        .reveal {
-
-            opacity: 0;
-
-            transform:
-                translateY(25px);
-
-            transition:
-                opacity 0.9s ease,
-                transform 0.9s ease;
-
-        }
-
-
-        .reveal.visible {
-
-            opacity: 1;
-
-            transform:
-                translateY(0);
-
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media (max-width: 800px) {
-
-            body {
-                cursor: auto;
-            }
-
-
-            .custom-cursor {
-                display: none;
-            }
-
-
-            a,
-            button {
-                cursor: pointer;
-            }
-
-
-            nav {
-
-                padding:
-                    20px 25px;
-
-            }
-
-
-            .nav-links {
-                display: none;
-            }
-
-
-            .hero {
-
-                padding:
-                    130px 25px 90px;
-
-            }
-
-
-            .hero h1 {
-
-                font-size: 70px;
-
-                letter-spacing: -2px;
-
-            }
-
-
-            .hero-top {
-
-                font-size: 9px;
-
-                letter-spacing: 4px;
-
-            }
-
-
-            .hero-description {
-
-                font-size: 15px;
-
-            }
-
-
-            .hero-mark {
-
-                height: 65px;
-
-                margin:
-                    22px auto 30px;
-
-            }
-
-
-            section {
-
-                padding:
-                    90px 25px;
-
-            }
-
-
-            .large-text {
-
-                font-size: 46px;
-
-            }
-
-
-            .about-grid {
-
-                grid-template-columns: 1fr;
-
-                gap: 50px;
-
-            }
-
-
-            .about-title {
-
-                font-size: 68px;
-
-            }
-
-
-            .experience {
-
-                grid-template-columns:
-                    45px 1fr;
-
-                gap: 18px;
-
-            }
-
-
-            .experience-date {
-
-                display: none;
-
-            }
-
-
-            .experience h3 {
-
-                font-size: 31px;
-
-            }
-
-
-            .work-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .work-card {
-
-                min-height: 350px;
-
-                padding: 35px;
-
-            }
-
-
-            .work-card h3 {
-
-                font-size: 36px;
-
-            }
-
-
-            .capabilities {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .education {
-
-                grid-template-columns: 1fr;
-
-                gap: 55px;
-
-            }
-
-
-            .education-title {
-
-                font-size: 68px;
-
-            }
-
-
-            .achievement {
-
-                grid-template-columns:
-                    45px 1fr;
-
-                gap: 18px;
-
-            }
-
-
-            .certification-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .certification {
-
-                margin-right: 0;
-
-            }
-
-
-            .volunteer {
-
-                grid-template-columns: 1fr;
-
-                gap: 15px;
-
-            }
-
-
-            .contact-section {
-
-                padding:
-                    100px 25px 60px;
-
-            }
-
-
-            .contact-intro h2 {
-
-                font-size: 68px;
-
-            }
-
-
-            .contact-mark {
-
-                height: 65px;
-
-                margin:
-                    22px auto 32px;
-
-            }
-
-
-            .contact-intro p {
-
-                font-size: 15px;
-
-            }
-
-
-            .form-group input,
-            .form-group textarea {
-
-                font-size: 16px;
-
-            }
-
-
-            .send-button {
-
-                width: 100%;
-
-            }
-
-
-            .direct-email {
-
-                font-size: 14px;
-
-                line-height: 1.8;
-
-            }
-
-
-            footer {
-
-                padding: 25px;
-
-                flex-direction: column;
-
-                gap: 10px;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -1816,83 +1150,76 @@
 <body>
 
 
-    <!-- =====================================================
-         MOVING CURSOR
-    ====================================================== -->
+<!-- =======================================================
+     CUSTOM CURSOR
+     ======================================================= -->
 
-    <div class="custom-cursor"></div>
+<div class="custom-cursor"></div>
 
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
+<div class="page">
 
-    <nav>
 
-        <div class="logo">
-            AYUSH ANAND
+<!-- =======================================================
+     NAVIGATION
+     ======================================================= -->
+
+<nav>
+
+    <a href="#top" class="logo">
+        AA
+    </a>
+
+    <div class="nav-links">
+
+        <a href="#about">ABOUT</a>
+
+        <a href="#experience">EXPERIENCE</a>
+
+        <a href="#work">WORK</a>
+
+        <a href="#contact">CONTACT</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
+<header class="hero" id="top">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            INVESTMENT BANKING · FINANCE · STRATEGY
         </div>
-
-
-        <div class="nav-links">
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#experience">
-                Experience
-            </a>
-
-            <a href="#work">
-                Work
-            </a>
-
-            <a href="#skills">
-                Capabilities
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <header class="hero">
-
-
-        <div class="hero-top">
-            WELCOME TO THE SITE OF
-        </div>
-
 
         <h1>
-            Ayush Anand
+            Ayush<br>
+            Anand
         </h1>
 
 
-        <!-- ORGANIC SHAPE UNDER NAME -->
+        <!-- Organic vertical shape -->
 
         <div class="hero-mark">
 
             <svg
                 viewBox="0 0 24 85"
                 xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
+                aria-hidden="true"
+            >
 
                 <path
                     d="
-                        M12.4 0
-                        C12.1 12 12.8 23 12.3 34
-                        C11.9 45 12.5 57 12.1 67
-                        C11.8 74 11.5 80 11.7 85
+                    M12.4 0
+                    C12.1 12 12.8 23 12.3 34
+                    C11.9 45 12.5 57 12.1 67
+                    C11.8 74 11.5 80 11.7 85
                     "
                     fill="none"
                     stroke="#F4EFEA"
@@ -1906,1484 +1233,1164 @@
         </div>
 
 
-        <p class="hero-description">
+        <p class="hero-subtitle">
 
-            Investment banking, finance and strategy.
-            I am interested in understanding businesses,
-            the numbers behind them, and the decisions
-            that create value.
+            Investment Banking Trainee focused on
+            valuation, financial analysis,
+            transaction research and strategy.
 
         </p>
 
 
-        <div class="hero-buttons">
+        <!-- =================================================
+             RESUME BUTTON
+             ================================================= -->
 
+        <a
+            href="Ayush_Anand_Resume_Analyst(7).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resume-button"
+        >
 
-            <a
-                href="#experience"
-                class="hero-button">
+            DOWNLOAD RESUME
 
-                EXPERIENCE
+        </a>
 
-            </a>
+    </div>
 
+</header>
 
-            <a
-                href="#work"
-                class="hero-button">
 
-                SELECTED WORK
 
-            </a>
+<!-- =======================================================
+     ABOUT
+     ======================================================= -->
 
+<section id="about">
 
-            <a
-                href="#contact"
-                class="hero-button">
+<div class="container reveal">
 
-                CONTACT
+    <div class="section-label">
+        01 — ABOUT
+    </div>
 
-            </a>
+    <h2 class="section-title">
+        Finance with a
+        transaction mindset.
+    </h2>
 
 
-        </div>
+    <div class="about-grid">
 
-
-        <div class="hero-scroll">
-            SCROLL
-        </div>
-
-
-    </header>
-
-
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
-    <section id="about">
-
-
-        <div class="section-heading">
-            01 / ABOUT
-        </div>
-
-
-        <div class="about-grid reveal">
-
-
-            <div class="about-title">
-
-                Finance,
-
-                <em>
-                    with curiosity.
-                </em>
-
-            </div>
-
-
-            <div class="about-content">
-
-
-                <p>
-
-                    I am an Investment Banking Trainee with
-                    experience across financial analysis,
-                    valuation, financial modelling, due diligence
-                    and company research.
-
-                </p>
-
-
-                <p>
-
-                    My experience includes investment banking,
-                    M&A research, transaction analysis and
-                    global treasury operations.
-
-                </p>
-
-
-                <p>
-
-                    I enjoy understanding businesses beyond
-                    their financial statements — how they
-                    compete, grow, allocate capital and create
-                    long-term value.
-
-                </p>
-
-
-                <div class="about-quote">
-
-                    “The numbers tell the story.
-                    The business explains why.”
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         EXPERIENCE
-    ====================================================== -->
-
-    <section id="experience">
-
-
-        <div class="section-heading">
-            02 / EXPERIENCE
-        </div>
-
-
-        <div class="large-text reveal">
-
-            Experience across
-
-            <em>
-                investment banking,
-                transactions & finance.
-            </em>
-
-        </div>
-
-
-        <div class="experience-list">
-
-
-            <div class="experience reveal">
-
-
-                <div class="experience-number">
-                    01
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Investment Banking Trainee
-                    </h3>
-
-
-                    <div class="company">
-                        JM Financial · Industrials Coverage
-                    </div>
-
-
-                    <div class="experience-description">
-
-                        <ul>
-
-                            <li>
-                                Conduct company, industry and
-                                market research to identify
-                                potential deal opportunities.
-                            </li>
-
-                            <li>
-                                Perform financial analysis and
-                                valuation using DCF, Comparable
-                                Company Analysis and Precedent
-                                Transaction Analysis.
-                            </li>
-
-                            <li>
-                                Analyse industry trends, company
-                                developments and news supporting
-                                potential M&A, ECM and DCM
-                                transactions.
-                            </li>
-
-                            <li>
-                                Develop knowledge of SEBI/ICDR
-                                regulations, capital raising
-                                methods and investment banking
-                                products.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-                <div class="experience-date">
-                    JUL 2026
-                </div>
-
-
-            </div>
-
-
-            <div class="experience reveal">
-
-
-                <div class="experience-number">
-                    02
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        M&A Intern
-                    </h3>
-
-
-                    <div class="company">
-                        Deloitte · Strategy, Risk & Transactions
-                    </div>
-
-
-                    <div class="experience-description">
-
-                        <ul>
-
-                            <li>
-                                Analysed company financial and
-                                industry data supporting valuation
-                                and transaction analysis.
-                            </li>
-
-                            <li>
-                                Prepared analytical notes,
-                                pitch books and financial summaries.
-                            </li>
-
-                            <li>
-                                Conducted detailed company
-                                research using Private Circle.
-                            </li>
-
-                            <li>
-                                Transformed large datasets into
-                                structured insights for
-                                decision-making.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-                <div class="experience-date">
-
-                    APR 2025
-                    <br>
-                    —
-                    <br>
-                    JUN 2025
-
-                </div>
-
-
-            </div>
-
-
-            <div class="experience reveal">
-
-
-                <div class="experience-number">
-                    03
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Global Treasury Operations Intern
-                    </h3>
-
-
-                    <div class="company">
-                        Aditya Birla Global Trading
-                    </div>
-
-
-                    <div class="experience-description">
-
-                        <ul>
-
-                            <li>
-                                Verified 30+ international trade
-                                documents supporting due diligence
-                                and compliance.
-                            </li>
-
-                            <li>
-                                Matched Letters of Credit with
-                                supporting documents and managed
-                                vendor payments.
-                            </li>
-
-                            <li>
-                                Gained exposure to export-import
-                                processes across multiple countries,
-                                including RCMC, IEC and INCOTERMS.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-                <div class="experience-date">
-
-                    MAY 2024
-                    <br>
-                    —
-                    <br>
-                    JUN 2024
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         SELECTED WORK
-    ====================================================== -->
-
-    <section id="work">
-
-
-        <div class="section-heading">
-            03 / SELECTED WORK
-        </div>
-
-
-        <div class="large-text reveal">
-
-            Research, valuation
-
-            <em>
-                & analysis.
-            </em>
-
-        </div>
-
-
-        <div class="work-grid">
-
-
-            <div class="work-card reveal">
-
-                <div class="work-number">
-                    01
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Sapphire Foods
-                    </h3>
-
-
-                    <p>
-
-                        Analysed financial performance
-                        across 400+ outlets, identifying
-                        revenue drivers and operational
-                        trends. Built three-year financial
-                        projections using Excel-based
-                        financial modelling.
-
-                    </p>
-
-
-                    <div class="work-tag">
-                        EQUITY RESEARCH · MODELLING
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-number">
-                    02
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Asian Paints
-                    </h3>
-
-
-                    <p>
-
-                        Developed a financial model analysing
-                        historical financial statements and
-                        operational performance. Performed
-                        DCF valuation and comparable company
-                        analysis.
-
-                    </p>
-
-
-                    <div class="work-tag">
-                        DCF · VALUATION · COMPARABLES
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-number">
-                    03
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Aviation Industry
-                    </h3>
-
-
-                    <p>
-
-                        Analysed the impact of oil prices and
-                        tourism demand on aviation performance
-                        using more than ten years of
-                        macroeconomic data and forecasting
-                        models.
-
-                    </p>
-
-
-                    <div class="work-tag">
-                        RESEARCH · FORECASTING
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-number">
-                    04
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Transaction Analysis
-                    </h3>
-
-
-                    <p>
-
-                        Experience supporting company and
-                        industry research, valuation analysis,
-                        transaction analysis and preparation
-                        of analytical notes and pitch materials.
-
-                    </p>
-
-
-                    <div class="work-tag">
-                        M&A · RESEARCH · TRANSACTIONS
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         CAPABILITIES
-    ====================================================== -->
-
-    <section id="skills">
-
-
-        <div class="section-heading">
-            04 / CAPABILITIES
-        </div>
-
-
-        <div class="large-text reveal">
-
-            Areas I work in
-
-            <em>
-                and continue to explore.
-            </em>
-
-        </div>
-
-
-        <div class="capabilities">
-
-
-            <div class="capability reveal">
-
-                <div class="capability-number">
-                    01
-                </div>
-
-                <h3>
-                    Financial Analysis
-                </h3>
-
-                <p>
-                    Financial statement analysis,
-                    due diligence and company
-                    performance analysis.
-                </p>
-
-            </div>
-
-
-            <div class="capability reveal">
-
-                <div class="capability-number">
-                    02
-                </div>
-
-                <h3>
-                    Valuation
-                </h3>
-
-                <p>
-                    DCF, comparable companies,
-                    precedent transactions and
-                    terminal value analysis.
-                </p>
-
-            </div>
-
-
-            <div class="capability reveal">
-
-                <div class="capability-number">
-                    03
-                </div>
-
-                <h3>
-                    Financial Modelling
-                </h3>
-
-                <p>
-                    Financial projections,
-                    assumptions and Excel-based
-                    modelling.
-                </p>
-
-            </div>
-
-
-            <div class="capability reveal">
-
-                <div class="capability-number">
-                    04
-                </div>
-
-                <h3>
-                    Industry Research
-                </h3>
-
-                <p>
-                    Company, industry and market
-                    research to understand business
-                    drivers and opportunities.
-                </p>
-
-            </div>
-
-
-            <div class="capability reveal">
-
-                <div class="capability-number">
-                    05
-                </div>
-
-                <h3>
-                    Transaction Support
-                </h3>
-
-                <p>
-                    Transaction analysis, research,
-                    analytical notes and pitch
-                    materials.
-                </p>
-
-            </div>
-
-
-            <div class="capability reveal">
-
-                <div class="capability-number">
-                    06
-                </div>
-
-                <h3>
-                    Strategy
-                </h3>
-
-                <p>
-                    Understanding markets,
-                    competition, growth and
-                    capital allocation.
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         EDUCATION
-    ====================================================== -->
-
-    <section>
-
-
-        <div class="section-heading">
-            05 / EDUCATION
-        </div>
-
-
-        <div class="education reveal">
-
-
-            <div class="education-title">
-
-                A foundation
-
-                <br>
-
-                in
-
-                <em>
-                    finance.
-                </em>
-
-            </div>
-
-
-            <div class="education-list">
-
-
-                <div class="education-row">
-
-                    <span>
-                        Degree
-                    </span>
-
-                    <span>
-                        BBA
-                    </span>
-
-                </div>
-
-
-                <div class="education-row">
-
-                    <span>
-                        Specialisation
-                    </span>
-
-                    <span>
-                        Finance & International Business
-                    </span>
-
-                </div>
-
-
-                <div class="education-row">
-
-                    <span>
-                        University
-                    </span>
-
-                    <span>
-                        CHRIST University
-                    </span>
-
-                </div>
-
-
-                <div class="education-row">
-
-                    <span>
-                        Location
-                    </span>
-
-                    <span>
-                        Bengaluru
-                    </span>
-
-                </div>
-
-
-                <div class="education-row">
-
-                    <span>
-                        Period
-                    </span>
-
-                    <span>
-                        2023 — 2026
-                    </span>
-
-                </div>
-
-
-                <div class="education-row">
-
-                    <span>
-                        Score
-                    </span>
-
-                    <span>
-                        9.2 / 10
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         ACHIEVEMENTS
-    ====================================================== -->
-
-    <section>
-
-
-        <div class="section-heading">
-            06 / ACHIEVEMENTS
-        </div>
-
-
-        <div class="achievement-list">
-
-
-            <div class="achievement reveal">
-
-                <div class="achievement-number">
-                    01
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Best Research Paper Award
-                    </h3>
-
-                    <p>
-                        International Conference on
-                        Deep-Tech & Policy.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="achievement reveal">
-
-                <div class="achievement-number">
-                    02
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Published Research
-                    </h3>
-
-                    <p>
-                        Published research on the
-                        aviation industry.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="achievement reveal">
-
-                <div class="achievement-number">
-                    03
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Finance Fest Winner
-                    </h3>
-
-                    <p>
-                        Winner of Finance Fest
-                        “Chakravyuh” at CHRIST University.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         CERTIFICATIONS
-    ====================================================== -->
-
-    <section>
-
-
-        <div class="section-heading">
-            07 / CERTIFICATIONS
-        </div>
-
-
-        <div class="certification-grid">
-
-
-            <div class="certification reveal">
-
-                <span>01</span>
-
-                <h3>
-                    Lean Six Sigma Yellow Belt
-                </h3>
-
-            </div>
-
-
-            <div class="certification reveal">
-
-                <span>02</span>
-
-                <h3>
-                    Bloomberg Terminal Navigation
-                </h3>
-
-            </div>
-
-
-            <div class="certification reveal">
-
-                <span>03</span>
-
-                <h3>
-                    Public Speaking — IIT Hyderabad
-                </h3>
-
-            </div>
-
-
-            <div class="certification reveal">
-
-                <span>04</span>
-
-                <h3>
-                    Google Project Management
-                </h3>
-
-            </div>
-
-
-            <div class="certification reveal">
-
-                <span>05</span>
-
-                <h3>
-                    Corporate Finance Institute
-                </h3>
-
-            </div>
-
-
-            <div class="certification reveal">
-
-                <span>06</span>
-
-                <h3>
-                    J.P. Morgan Excel Skills
-                </h3>
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         BEYOND FINANCE
-    ====================================================== -->
-
-    <section>
-
-
-        <div class="section-heading">
-            08 / BEYOND FINANCE
-        </div>
-
-
-        <div class="large-text reveal">
-
-            Work that exists
-
-            <em>
-                outside the spreadsheet.
-            </em>
-
-        </div>
-
-
-        <div class="volunteer-list">
-
-
-            <div class="volunteer reveal">
-
-                <h3>
-                    Millennium Campus Network
-                </h3>
-
-                <p>
-                    Selected as a Millennium Fellow to
-                    contribute to leadership-led social
-                    impact and change.
-                </p>
-
-            </div>
-
-
-            <div class="volunteer reveal">
-
-                <h3>
-                    WWF India
-                </h3>
-
-                <p>
-                    Conducted biodiversity documentation
-                    through systematic field observations
-                    and species identification.
-                </p>
-
-            </div>
-
-
-            <div class="volunteer reveal">
-
-                <h3>
-                    She as a Virago
-                </h3>
-
-                <p>
-                    Conducted menstrual health and hygiene
-                    awareness sessions for young girls
-                    through interactive discussions.
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
-
-    <section
-        id="contact"
-        class="contact-section">
-
-
-        <div class="section-heading">
-            09 / CONTACT
-        </div>
-
-
-        <div class="contact-intro">
-
-
-            <h2>
-                Contact
-            </h2>
-
-
-            <!-- SAME ORGANIC SHAPE -->
-
-            <div class="contact-mark">
-
-                <svg
-                    viewBox="0 0 24 85"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true">
-
-                    <path
-                        d="
-                            M12.4 0
-                            C12.1 12 12.8 23 12.3 34
-                            C11.9 45 12.5 57 12.1 67
-                            C11.8 74 11.5 80 11.7 85
-                        "
-                        fill="none"
-                        stroke="#F4EFEA"
-                        stroke-width="1.15"
-                        stroke-linecap="round"
-                        opacity="0.78"
-                    />
-
-                </svg>
-
-            </div>
-
+        <div class="about-text">
 
             <p>
-
-                Have a question, a collaboration in mind,
-                or just want to say hello? Send a message below.
-
+                I am an Investment Banking Trainee
+                with experience across financial
+                analysis, valuation, financial modelling,
+                due diligence and company research.
             </p>
 
+            <p>
+                My experience spans investment banking,
+                consulting and treasury operations,
+                giving me exposure to both transaction
+                analysis and corporate finance.
+            </p>
 
         </div>
 
 
-        <!-- =================================================
-             CONTACT FORM
-        ================================================== -->
+        <div class="about-side">
 
-        <form
-            class="contact-form"
-            id="contactForm">
+            <div class="about-side-item">
+
+                <span>Current</span>
+
+                <span>
+                    Investment Banking
+                </span>
+
+            </div>
 
 
-            <!-- NAME -->
+            <div class="about-side-item">
+
+                <span>Focus</span>
+
+                <span>
+                    Valuation & Transactions
+                </span>
+
+            </div>
+
+
+            <div class="about-side-item">
+
+                <span>Location</span>
+
+                <span>
+                    Bengaluru, India
+                </span>
+
+            </div>
+
+
+            <div class="about-side-item">
+
+                <span>Education</span>
+
+                <span>
+                    BBA — Finance & International Business
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     EXPERIENCE
+     ======================================================= -->
+
+<section id="experience">
+
+<div class="container reveal">
+
+    <div class="section-label">
+        02 — EXPERIENCE
+    </div>
+
+    <h2 class="section-title">
+        Selected
+        experience.
+    </h2>
+
+
+    <div class="experience-list">
+
+
+        <!-- JM FINANCIAL -->
+
+        <div class="experience-item">
+
+            <div class="experience-number">
+                01
+            </div>
+
+            <div>
+
+                <div class="experience-company">
+                    JM Financial
+                </div>
+
+                <div class="experience-role">
+                    Investment Banking Trainee —
+                    Industrials Coverage
+                </div>
+
+                <div class="experience-description">
+
+                    Conduct company, industry and
+                    market research to identify potential
+                    deal opportunities and support senior
+                    bankers.
+
+                    <br><br>
+
+                    Perform financial analysis and valuation
+                    using DCF, Comparable Company Analysis
+                    and Precedent Transaction Analysis.
+
+                    <br><br>
+
+                    Analyse industry trends, company
+                    developments and news supporting
+                    potential M&A, ECM and DCM transactions.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DELOITTE -->
+
+        <div class="experience-item">
+
+            <div class="experience-number">
+                02
+            </div>
+
+            <div>
+
+                <div class="experience-company">
+                    Deloitte
+                </div>
+
+                <div class="experience-role">
+                    Strategy, Risk & Transactions —
+                    M&A Intern
+                </div>
+
+                <div class="experience-description">
+
+                    Analysed company financial and industry
+                    data to support valuation and transaction
+                    analysis.
+
+                    <br><br>
+
+                    Prepared analytical notes, pitch books
+                    and financial summaries for consulting
+                    teams.
+
+                    <br><br>
+
+                    Worked with research tools including
+                    Private Circle and transformed large
+                    datasets into structured insights.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ADITYA BIRLA -->
+
+        <div class="experience-item">
+
+            <div class="experience-number">
+                03
+            </div>
+
+            <div>
+
+                <div class="experience-company">
+                    Aditya Birla
+                </div>
+
+                <div class="experience-role">
+                    Global Treasury Operations Intern
+                </div>
+
+                <div class="experience-description">
+
+                    Verified international trade documents
+                    and supported due diligence and
+                    compliance in cross-border transactions.
+
+                    <br><br>
+
+                    Matched Letters of Credit with supporting
+                    documents and managed vendor payments.
+
+                    <br><br>
+
+                    Gained exposure to export-import processes,
+                    including RCMC, IEC and INCOTERMS.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     SELECTED WORK
+     ======================================================= -->
+
+<section id="work">
+
+<div class="container reveal">
+
+    <div class="section-label">
+        03 — SELECTED WORK
+    </div>
+
+    <h2 class="section-title">
+        Research,
+        valuation &
+        analysis.
+    </h2>
+
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <div>
+
+                <div class="project-name">
+                    Equity Research — Sapphire Foods
+                </div>
+
+                <div class="project-description">
+
+                    Analysed financial performance across
+                    400+ outlets, identifying revenue drivers
+                    and operational trends.
+
+                    Built three-year financial projections
+                    using Excel-based financial modelling.
+
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </div>
+
+
+
+        <div class="project">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <div>
+
+                <div class="project-name">
+                    Valuation Model — Asian Paints
+                </div>
+
+                <div class="project-description">
+
+                    Developed a financial model analysing
+                    historical financial statements and
+                    operational performance.
+
+                    Performed DCF valuation, terminal value
+                    calculation and comparable company
+                    analysis using P/E and EV/EBITDA.
+
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </div>
+
+
+
+        <div class="project">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <div>
+
+                <div class="project-name">
+                    Aviation Industry Research
+                </div>
+
+                <div class="project-description">
+
+                    Analysed the impact of oil price
+                    fluctuations and tourism demand on
+                    aviation industry performance.
+
+                    Used more than ten years of
+                    macroeconomic data and applied
+                    multiple regression and ARIMA
+                    forecasting models.
+
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CAPABILITIES
+     ======================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="section-label">
+        04 — CAPABILITIES
+    </div>
+
+    <h2 class="section-title">
+        What I work with.
+    </h2>
+
+
+    <div class="capabilities-grid">
+
+
+        <div class="capability">
+
+            <div class="capability-number">
+                01
+            </div>
+
+            <h3>
+                Financial Analysis
+            </h3>
+
+            <p>
+                Financial statement analysis,
+                due diligence, data validation
+                and company research.
+            </p>
+
+        </div>
+
+
+        <div class="capability">
+
+            <div class="capability-number">
+                02
+            </div>
+
+            <h3>
+                Valuation
+            </h3>
+
+            <p>
+                DCF valuation, comparable company
+                analysis, precedent transactions
+                and transaction analysis.
+            </p>
+
+        </div>
+
+
+        <div class="capability">
+
+            <div class="capability-number">
+                03
+            </div>
+
+            <h3>
+                Financial Modelling
+            </h3>
+
+            <p>
+                Financial modelling, forecasting,
+                assumptions analysis and
+                Excel-based analysis.
+            </p>
+
+        </div>
+
+
+        <div class="capability">
+
+            <div class="capability-number">
+                04
+            </div>
+
+            <h3>
+                Research & Strategy
+            </h3>
+
+            <p>
+                Industry research, market analysis,
+                company research and transaction
+                opportunity assessment.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     EDUCATION
+     ======================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="section-label">
+        05 — EDUCATION
+    </div>
+
+    <h2 class="section-title">
+        Academic
+        foundation.
+    </h2>
+
+
+    <div class="education-item">
+
+        <div class="education-title">
+
+            Bachelor of Business Administration
+
+        </div>
+
+        <div class="education-details">
+
+            Finance and International Business
+
+            <br>
+
+            CHRIST (Deemed to be University),
+            Bengaluru
+
+            <br>
+
+            2023 — 2026
+
+            <br>
+
+            Academic Score: 9.2 / 10
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     ACHIEVEMENTS
+     ======================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="section-label">
+        06 — ACHIEVEMENTS
+    </div>
+
+    <h2 class="section-title">
+        Milestones.
+    </h2>
+
+
+    <div class="achievement-list">
+
+
+        <div class="achievement">
+
+            <div>
+                Best Research Paper Award —
+                International Conference on
+                Deep-Tech & Policy
+            </div>
+
+            <span>
+                AWARD
+            </span>
+
+        </div>
+
+
+        <div class="achievement">
+
+            <div>
+                Published Research Paper —
+                IJNRD Journal
+            </div>
+
+            <span>
+                RESEARCH
+            </span>
+
+        </div>
+
+
+        <div class="achievement">
+
+            <div>
+                Winner — Finance Fest
+                "Chakravyuh"
+            </div>
+
+            <span>
+                CHRIST UNIVERSITY
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CERTIFICATIONS
+     ======================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="section-label">
+        07 — CERTIFICATIONS
+    </div>
+
+    <h2 class="section-title">
+        Continuous
+        learning.
+    </h2>
+
+
+    <div class="certifications">
+
+
+        <div class="certification">
+            <strong>Lean Six Sigma Yellow Belt</strong>
+            — MSME
+        </div>
+
+
+        <div class="certification">
+            <strong>Bloomberg Terminal Navigation</strong>
+        </div>
+
+
+        <div class="certification">
+            <strong>Public Speaking</strong>
+            — IIT Hyderabad / SWAYAM
+        </div>
+
+
+        <div class="certification">
+            <strong>Google Foundations of
+            Project Management</strong>
+        </div>
+
+
+        <div class="certification">
+            <strong>Corporate Finance Institute</strong>
+            — CFI
+        </div>
+
+
+        <div class="certification">
+            <strong>Excel Skills</strong>
+            — J.P. Morgan Chase & Co.
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     VOLUNTEERING
+     ======================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="section-label">
+        08 — VOLUNTEERING
+    </div>
+
+    <h2 class="section-title">
+        Beyond finance.
+    </h2>
+
+
+    <div class="volunteer-list">
+
+
+        <div class="volunteer-item">
+
+            <div class="volunteer-title">
+                Millennium Campus Network
+            </div>
+
+            <div class="volunteer-description">
+
+                Selected among 5,000+ candidates as
+                a Millennium Fellow to drive
+                leadership-led social impact and change.
+
+            </div>
+
+        </div>
+
+
+        <div class="volunteer-item">
+
+            <div class="volunteer-title">
+                WWF India
+            </div>
+
+            <div class="volunteer-description">
+
+                Conducted biodiversity documentation
+                at Asita Park by recording 70+ field
+                observations and identifying 40+
+                species through systematic ecological
+                observation.
+
+            </div>
+
+        </div>
+
+
+        <div class="volunteer-item">
+
+            <div class="volunteer-title">
+                She as a Virago
+            </div>
+
+            <div class="volunteer-description">
+
+                Conducted menstrual health and hygiene
+                awareness sessions for 50+ girl children,
+                focusing on periods, sanitation and
+                personal well-being.
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CONTACT
+     ======================================================= -->
+
+<section
+    id="contact"
+    class="contact-section"
+>
+
+<div class="container reveal">
+
+    <div class="section-label">
+        09 — CONTACT
+    </div>
+
+
+    <h2 class="contact-title">
+        Let's talk.
+    </h2>
+
+
+    <!-- Organic contact mark -->
+
+    <div class="contact-mark">
+
+        <svg
+            viewBox="0 0 24 85"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+        >
+
+            <path
+                d="
+                M12.4 0
+                C12.1 12 12.8 23 12.3 34
+                C11.9 45 12.5 57 12.1 67
+                C11.8 74 11.5 80 11.7 85
+                "
+                fill="none"
+                stroke="#F4EFEA"
+                stroke-width="1.15"
+                stroke-linecap="round"
+                opacity="0.78"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <p class="contact-subtitle">
+
+        For investment banking opportunities,
+        research, collaborations or professional
+        conversations, send me a message below.
+
+    </p>
+
+
+
+    <!-- =================================================
+         WEB3FORMS CONTACT FORM
+         ================================================= -->
+
+    <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="contact-form"
+    >
+
+        <!-- REPLACE THIS -->
+        <input
+            type="hidden"
+            name="access_key"
+            value="YOUR_ACCESS_KEY"
+        >
+
+        <input
+            type="hidden"
+            name="subject"
+            value="New message from Ayush Anand Portfolio"
+        >
+
+        <input
+            type="hidden"
+            name="from_name"
+            value="Ayush Anand Portfolio"
+        >
+
+
+        <div class="form-row">
+
 
             <div class="form-group">
 
-                <label for="name">
-                    NAME
+                <label>
+                    Name
                 </label>
-
 
                 <input
                     type="text"
-                    id="name"
                     name="name"
-                    placeholder="Your full name"
-                    required>
+                    placeholder="Your name"
+                    required
+                >
 
             </div>
 
 
-            <!-- EMAIL -->
-
             <div class="form-group">
 
-                <label for="email">
-                    EMAIL
+                <label>
+                    Email
                 </label>
-
 
                 <input
                     type="email"
-                    id="email"
                     name="email"
-                    placeholder="you@example.com"
-                    required>
+                    placeholder="Your email"
+                    required
+                >
 
             </div>
 
-
-            <!-- SUBJECT -->
-
-            <div class="form-group">
-
-                <label for="subject">
-                    SUBJECT
-                </label>
-
-
-                <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="What is this regarding?"
-                    required>
-
-            </div>
-
-
-            <!-- MESSAGE -->
-
-            <div class="form-group">
-
-                <label for="message">
-                    MESSAGE
-                </label>
-
-
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Write your message here..."
-                    required></textarea>
-
-            </div>
-
-
-            <!-- SEND BUTTON -->
-
-            <button
-                type="submit"
-                class="send-button">
-
-                SEND MESSAGE
-
-            </button>
-
-
-        </form>
-
-
-        <!-- DIRECT EMAIL -->
-
-        <div class="direct-email">
-
-            Prefer email directly?
-
-            Reach out at
-
-            <a
-                href="mailto:anandaayush734@gmail.com">
-
-                anandaayush734@gmail.com
-
-            </a>
 
         </div>
 
 
-    </section>
+        <div class="form-group">
+
+            <label>
+                Subject
+            </label>
+
+            <input
+                type="text"
+                name="message_subject"
+                placeholder="What would you like to discuss?"
+                required
+            >
+
+        </div>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+        <div class="form-group">
 
-    <footer>
+            <label>
+                Message
+            </label>
 
-        <span>
-            © 2026 Ayush Anand
-        </span>
+            <textarea
+                name="message"
+                placeholder="Write your message..."
+                required
+            ></textarea>
 
-
-        <span>
-            Finance · Strategy · Curiosity
-        </span>
-
-    </footer>
+        </div>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <script>
-
-
-        /* =====================================================
-           MOVING CURSOR
-        ===================================================== */
-
-        const cursor =
-            document.querySelector(
-                ".custom-cursor"
-            );
+        <button
+            type="submit"
+            class="send-button"
+        >
+            SEND MESSAGE
+        </button>
 
 
-        let mouseX = 0;
-        let mouseY = 0;
+        <div class="form-note">
 
-        let cursorX = 0;
-        let cursorY = 0;
+            Your message will be sent directly through
+            the website.
+
+        </div>
+
+    </form>
+
+</div>
+
+</section>
 
 
-        document.addEventListener(
-            "mousemove",
-            function (event) {
 
-                mouseX = event.clientX;
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
 
-                mouseY = event.clientY;
+<footer>
+
+<div class="footer-inner">
+
+    <div>
+        © 2026 Ayush Anand
+    </div>
+
+
+    <div class="footer-links">
+
+        <a
+            href="https://www.linkedin.com/in/ayushfinance100/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            LINKEDIN
+        </a>
+
+        <a
+            href="mailto:anandaayush734@gmail.com"
+        >
+            EMAIL
+        </a>
+
+    </div>
+
+</div>
+
+</footer>
+
+
+</div>
+
+
+
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
+
+<script>
+
+/* =========================================================
+   CUSTOM CURSOR
+   ========================================================= */
+
+const cursor =
+    document.querySelector(".custom-cursor");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let cursorX = 0;
+let cursorY = 0;
+
+
+document.addEventListener(
+    "mousemove",
+    function(e) {
+
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+    }
+);
+
+
+function animateCursor() {
+
+    cursorX +=
+        (mouseX - cursorX) * 0.18;
+
+    cursorY +=
+        (mouseY - cursorY) * 0.18;
+
+
+    cursor.style.transform =
+        `translate3d(
+            ${cursorX}px,
+            ${cursorY}px,
+            0
+        ) translate(-50%, -50%)`;
+
+
+    requestAnimationFrame(
+        animateCursor
+    );
+}
+
+
+animateCursor();
+
+
+
+/* =========================================================
+   CURSOR HOVER
+   ========================================================= */
+
+const hoverElements =
+    document.querySelectorAll(
+        "a, button, input, textarea"
+    );
+
+
+hoverElements.forEach(
+    function(element) {
+
+        element.addEventListener(
+            "mouseenter",
+            function() {
+
+                cursor.classList.add(
+                    "hover"
+                );
 
             }
         );
 
 
-        function animateCursor() {
+        element.addEventListener(
+            "mouseleave",
+            function() {
 
-            cursorX +=
-                (mouseX - cursorX) * 0.18;
-
-            cursorY +=
-                (mouseY - cursorY) * 0.18;
-
-
-            cursor.style.transform =
-                `translate3d(
-                    ${cursorX}px,
-                    ${cursorY}px,
-                    0
-                ) translate(-50%, -50%)`;
-
-
-            requestAnimationFrame(
-                animateCursor
-            );
-
-        }
-
-
-        animateCursor();
-
-
-        /* =====================================================
-           CURSOR HOVER
-        ===================================================== */
-
-        const hoverElements =
-            document.querySelectorAll(
-                "a, button, .work-card, .capability, input, textarea"
-            );
-
-
-        hoverElements.forEach(
-            function (element) {
-
-                element.addEventListener(
-                    "mouseenter",
-                    function () {
-
-                        cursor.classList.add(
-                            "hover"
-                        );
-
-                    }
-                );
-
-
-                element.addEventListener(
-                    "mouseleave",
-                    function () {
-
-                        cursor.classList.remove(
-                            "hover"
-                        );
-
-                    }
+                cursor.classList.remove(
+                    "hover"
                 );
 
             }
         );
 
-
-        /* =====================================================
-           SCROLL REVEAL
-        ===================================================== */
-
-        const revealElements =
-            document.querySelectorAll(
-                ".reveal"
-            );
+    }
+);
 
 
-        const observer =
-            new IntersectionObserver(
 
-                function (entries) {
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
 
-                    entries.forEach(
-                        function (entry) {
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
 
-                            if (
-                                entry.isIntersecting
-                            ) {
 
-                                entry.target.classList.add(
-                                    "visible"
-                                );
+const observer =
+    new IntersectionObserver(
+        function(entries) {
 
-                                observer.unobserve(
-                                    entry.target
-                                );
+            entries.forEach(
+                function(entry) {
 
-                            }
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                        }
-                    );
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-                },
+                    }
 
-                {
-                    threshold: 0.12
                 }
-
             );
 
-
-        revealElements.forEach(
-            function (element) {
-
-                observer.observe(
-                    element
-                );
-
-            }
-        );
+        },
+        {
+            threshold: 0.12
+        }
+    );
 
 
-        /* =====================================================
-           CONTACT FORM
-        ===================================================== */
+revealElements.forEach(
+    function(element) {
 
-        const contactForm =
-            document.getElementById(
-                "contactForm"
-            );
+        observer.observe(element);
 
+    }
+);
 
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                const name =
-                    document.getElementById(
-                        "name"
-                    ).value;
-
-
-                const email =
-                    document.getElementById(
-                        "email"
-                    ).value;
-
-
-                const subject =
-                    document.getElementById(
-                        "subject"
-                    ).value;
-
-
-                const message =
-                    document.getElementById(
-                        "message"
-                    ).value;
-
-
-                const emailBody =
-
-                    `Name: ${name}
-
-Email: ${email}
-
-Message:
-
-${message}`;
-
-
-                const mailtoLink =
-
-                    `mailto:anandaayush734@gmail.com` +
-
-                    `?subject=${encodeURIComponent(
-                        subject
-                    )}` +
-
-                    `&body=${encodeURIComponent(
-                        emailBody
-                    )}`;
-
-
-                window.location.href =
-                    mailtoLink;
-
-            }
-        );
-
-
-    </script>
+</script>
 
 
 </body>
-
 </html>
