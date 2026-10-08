@@ -7,14 +7,9 @@
 
 <title>Ayush Anand — Investment Banking & Finance</title>
 
-<meta name="description"
-content="Ayush Anand — Investment Banking, Finance, Valuation, Research and Strategy.">
+<meta name="description" content="Ayush Anand — Investment Banking, Finance, Valuation, Research and Strategy.">
 
 <style>
-
-/* =========================================================
-   FONT
-   ========================================================= */
 
 @font-face {
     font-family: "Okojo Pro";
@@ -24,13 +19,7 @@ content="Ayush Anand — Investment Banking, Finance, Valuation, Research and St
     font-display: swap;
 }
 
-
-/* =========================================================
-   ROOT
-   ========================================================= */
-
 :root {
-
     --bg-1: #5F2528;
     --bg-2: #61272A;
 
@@ -47,11 +36,6 @@ content="Ayush Anand — Investment Banking, Finance, Valuation, Research and St
     --max-width: 1380px;
 }
 
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -63,13 +47,11 @@ html {
 }
 
 body {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--bg-1) 0%,
-            var(--bg-2) 100%
-        );
+    background: linear-gradient(
+        135deg,
+        var(--bg-1) 0%,
+        var(--bg-2) 100%
+    );
 
     color: var(--text-1);
 
@@ -96,14 +78,12 @@ textarea {
 }
 
 
-/* =========================================================
+/* =========================
    CUSTOM CURSOR
-   ========================================================= */
+   ========================= */
 
 .custom-cursor {
-
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -111,7 +91,6 @@ textarea {
     height: 30px;
 
     border: 1px solid rgba(244,239,234,.78);
-
     border-radius: 50%;
 
     background: transparent;
@@ -132,7 +111,6 @@ textarea {
 }
 
 .custom-cursor::after {
-
     content: "";
 
     position: absolute;
@@ -152,17 +130,14 @@ textarea {
 }
 
 .custom-cursor.hover {
-
     width: 46px;
     height: 46px;
-
-    border-color: rgba(244,239,234,.95);
 }
 
 
-/* =========================================================
-   PAGE
-   ========================================================= */
+/* =========================
+   GENERAL
+   ========================= */
 
 .page {
     width: 100%;
@@ -170,7 +145,6 @@ textarea {
 }
 
 .container {
-
     width: min(
         calc(100% - 80px),
         var(--max-width)
@@ -180,12 +154,11 @@ textarea {
 }
 
 
-/* =========================================================
+/* =========================
    NAVIGATION
-   ========================================================= */
+   ========================= */
 
 nav {
-
     width: min(
         calc(100% - 80px),
         var(--max-width)
@@ -204,16 +177,12 @@ nav {
 }
 
 .logo {
-
     font-size: 15px;
-
     letter-spacing: .04em;
 }
 
 .nav-links {
-
     display: flex;
-
     gap: 32px;
 
     font-size: 13px;
@@ -221,29 +190,21 @@ nav {
     color: var(--muted);
 }
 
-.nav-links a {
-
-    transition:
-        color .25s ease;
-}
-
 .nav-links a:hover {
     color: var(--text-1);
 }
 
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* =========================
+   MAIN INTRO
+   ========================= */
 
 .hero {
-
     min-height: 88vh;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -256,7 +217,6 @@ nav {
 }
 
 .eyebrow {
-
     font-size: 13px;
 
     letter-spacing: .16em;
@@ -269,7 +229,6 @@ nav {
 }
 
 .hero h1 {
-
     font-size: clamp(
         70px,
         12vw,
@@ -281,12 +240,9 @@ nav {
     font-weight: 400;
 
     letter-spacing: -.06em;
-
-    color: var(--text-1);
 }
 
 .hero-subtitle {
-
     margin-top: 40px;
 
     font-size: 16px;
@@ -297,49 +253,42 @@ nav {
 }
 
 
-/* =========================================================
-   ORGANIC MARK
-   ========================================================= */
+/* =========================
+   ORGANIC SHAPE
+   ========================= */
 
 .hero-mark {
-
     width: 22px;
     height: 72px;
 
-    margin: 28px auto 28px;
+    margin: 28px auto;
 }
 
 .hero-mark svg {
-
     width: 100%;
     height: 100%;
-
     display: block;
 }
 
 
-/* =========================================================
-   RESUME BUTTON
-   ========================================================= */
+/* =========================
+   DOWNLOAD RESUME BUTTON
+   ========================= */
 
 .resume-button {
+    display: inline-block;
 
-    display: inline-flex;
+    margin-top: 40px;
 
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 42px;
-
-    padding: 15px 27px;
+    padding: 15px 28px;
 
     border: 1px solid var(--line);
+
+    color: var(--text-1);
 
     font-size: 12px;
 
     letter-spacing: .12em;
-
-    color: var(--text-1);
 
     transition:
         background .3s ease,
@@ -348,7 +297,6 @@ nav {
 }
 
 .resume-button:hover {
-
     background: var(--text-1);
 
     color: var(--bg-1);
@@ -357,19 +305,17 @@ nav {
 }
 
 
-/* =========================================================
-   GENERAL SECTION
-   ========================================================= */
+/* =========================
+   SECTIONS
+   ========================= */
 
 section {
-
     padding: 130px 0;
 
     border-top: 1px solid var(--line-soft);
 }
 
 .section-label {
-
     font-size: 12px;
 
     letter-spacing: .15em;
@@ -382,7 +328,6 @@ section {
 }
 
 .section-title {
-
     font-size: clamp(
         52px,
         8vw,
@@ -399,7 +344,6 @@ section {
 }
 
 .section-description {
-
     max-width: 650px;
 
     margin-top: 45px;
@@ -412,12 +356,11 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    ABOUT
-   ========================================================= */
+   ========================= */
 
 .about-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -429,7 +372,6 @@ section {
 }
 
 .about-text {
-
     font-size: 22px;
 
     line-height: 1.55;
@@ -440,14 +382,12 @@ section {
 }
 
 .about-side {
-
     border-top: 1px solid var(--line);
 
     padding-top: 20px;
 }
 
 .about-side-item {
-
     padding: 20px 0;
 
     border-bottom: 1px solid var(--line-soft);
@@ -462,23 +402,21 @@ section {
 }
 
 .about-side-item span:last-child {
-
     color: var(--muted);
 
     text-align: right;
 }
 
 
-/* =========================================================
+/* =========================
    EXPERIENCE
-   ========================================================= */
+   ========================= */
 
 .experience-list {
     margin-top: 80px;
 }
 
 .experience-item {
-
     display: grid;
 
     grid-template-columns:
@@ -492,14 +430,12 @@ section {
 }
 
 .experience-number {
-
     font-size: 14px;
 
     color: var(--faint);
 }
 
 .experience-company {
-
     font-size: 34px;
 
     line-height: 1.1;
@@ -508,7 +444,6 @@ section {
 }
 
 .experience-role {
-
     font-size: 15px;
 
     color: var(--muted);
@@ -517,7 +452,6 @@ section {
 }
 
 .experience-description {
-
     max-width: 760px;
 
     font-size: 16px;
@@ -528,16 +462,15 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    PROJECTS
-   ========================================================= */
+   ========================= */
 
 .projects {
     margin-top: 80px;
 }
 
 .project {
-
     display: grid;
 
     grid-template-columns:
@@ -560,21 +493,17 @@ section {
 }
 
 .project-number {
-
     color: var(--faint);
-
     font-size: 14px;
 }
 
 .project-name {
-
     font-size: 30px;
 
     margin-bottom: 10px;
 }
 
 .project-description {
-
     max-width: 700px;
 
     font-size: 15px;
@@ -585,19 +514,17 @@ section {
 }
 
 .project-arrow {
-
     font-size: 25px;
 
     color: var(--muted);
 }
 
 
-/* =========================================================
+/* =========================
    CAPABILITIES
-   ========================================================= */
+   ========================= */
 
 .capabilities-grid {
-
     margin-top: 80px;
 
     display: grid;
@@ -611,7 +538,6 @@ section {
 }
 
 .capability {
-
     background: var(--bg-1);
 
     padding: 45px;
@@ -620,7 +546,6 @@ section {
 }
 
 .capability-number {
-
     color: var(--faint);
 
     font-size: 13px;
@@ -629,7 +554,6 @@ section {
 }
 
 .capability h3 {
-
     font-size: 28px;
 
     font-weight: 400;
@@ -638,7 +562,6 @@ section {
 }
 
 .capability p {
-
     font-size: 15px;
 
     line-height: 1.6;
@@ -647,12 +570,11 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    EDUCATION
-   ========================================================= */
+   ========================= */
 
 .education-item {
-
     margin-top: 80px;
 
     padding: 45px 0;
@@ -663,14 +585,12 @@ section {
 }
 
 .education-title {
-
     font-size: 34px;
 
     margin-bottom: 15px;
 }
 
 .education-details {
-
     color: var(--muted);
 
     font-size: 16px;
@@ -679,16 +599,15 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    ACHIEVEMENTS
-   ========================================================= */
+   ========================= */
 
 .achievement-list {
     margin-top: 80px;
 }
 
 .achievement {
-
     display: flex;
 
     justify-content: space-between;
@@ -703,31 +622,26 @@ section {
 }
 
 .achievement span {
-
     color: var(--faint);
 
     font-size: 14px;
 }
 
 
-/* =========================================================
+/* =========================
    CERTIFICATIONS
-   ========================================================= */
+   ========================= */
 
 .certifications {
-
     margin-top: 80px;
 
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
-
-    gap: 0;
 }
 
 .certification {
-
     padding: 25px 0;
 
     border-top: 1px solid var(--line-soft);
@@ -738,38 +652,33 @@ section {
 }
 
 .certification strong {
-
     color: var(--text-1);
 
     font-weight: 400;
 }
 
 
-/* =========================================================
+/* =========================
    VOLUNTEERING
-   ========================================================= */
+   ========================= */
 
 .volunteer-list {
-
     margin-top: 80px;
 }
 
 .volunteer-item {
-
     padding: 35px 0;
 
     border-top: 1px solid var(--line-soft);
 }
 
 .volunteer-title {
-
     font-size: 27px;
 
     margin-bottom: 15px;
 }
 
 .volunteer-description {
-
     max-width: 800px;
 
     font-size: 15px;
@@ -780,19 +689,17 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    CONTACT
-   ========================================================= */
+   ========================= */
 
 .contact-section {
-
     text-align: center;
 
     padding-bottom: 150px;
 }
 
 .contact-title {
-
     font-size: clamp(
         65px,
         12vw,
@@ -807,7 +714,6 @@ section {
 }
 
 .contact-mark {
-
     width: 22px;
     height: 72px;
 
@@ -815,7 +721,6 @@ section {
 }
 
 .contact-mark svg {
-
     width: 100%;
     height: 100%;
 
@@ -823,7 +728,6 @@ section {
 }
 
 .contact-subtitle {
-
     max-width: 550px;
 
     margin: 0 auto 60px;
@@ -836,12 +740,11 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    CONTACT FORM
-   ========================================================= */
+   ========================= */
 
 .contact-form {
-
     max-width: 700px;
 
     margin: 0 auto;
@@ -850,7 +753,6 @@ section {
 }
 
 .form-row {
-
     display: grid;
 
     grid-template-columns:
@@ -864,7 +766,6 @@ section {
 }
 
 .form-group label {
-
     display: block;
 
     margin-bottom: 10px;
@@ -880,7 +781,6 @@ section {
 
 .form-group input,
 .form-group textarea {
-
     width: 100%;
 
     border: none;
@@ -900,13 +800,11 @@ section {
 
 .form-group input:focus,
 .form-group textarea:focus {
-
     border-bottom-color:
         var(--text-1);
 }
 
 .form-group textarea {
-
     min-height: 150px;
 
     resize: vertical;
@@ -914,13 +812,11 @@ section {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-
     color:
         rgba(244,239,234,.4);
 }
 
 .send-button {
-
     margin-top: 20px;
 
     padding: 16px 28px;
@@ -943,14 +839,12 @@ section {
 }
 
 .send-button:hover {
-
     background: var(--text-1);
 
     color: var(--bg-1);
 }
 
 .form-note {
-
     margin-top: 20px;
 
     font-size: 12px;
@@ -959,12 +853,11 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-   ========================================================= */
+   ========================= */
 
 footer {
-
     border-top: 1px solid var(--line-soft);
 
     padding: 35px 0;
@@ -975,7 +868,6 @@ footer {
 }
 
 .footer-inner {
-
     width: min(
         calc(100% - 80px),
         var(--max-width)
@@ -991,24 +883,21 @@ footer {
 }
 
 .footer-links {
-
     display: flex;
 
     gap: 25px;
 }
 
 .footer-links a:hover {
-
     color: var(--text-1);
 }
 
 
-/* =========================================================
-   REVEAL ANIMATION
-   ========================================================= */
+/* =========================
+   REVEAL
+   ========================= */
 
 .reveal {
-
     opacity: 0;
 
     transform: translateY(30px);
@@ -1019,16 +908,15 @@ footer {
 }
 
 .reveal.visible {
-
     opacity: 1;
 
     transform: translateY(0);
 }
 
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 800px) {
 
@@ -1043,7 +931,6 @@ footer {
     .container,
     nav,
     .footer-inner {
-
         width: calc(100% - 40px);
     }
 
@@ -1057,7 +944,6 @@ footer {
     }
 
     .hero {
-
         min-height: 80vh;
 
         padding:
@@ -1078,7 +964,6 @@ footer {
     }
 
     .about-grid {
-
         grid-template-columns: 1fr;
 
         gap: 60px;
@@ -1089,7 +974,6 @@ footer {
     }
 
     .experience-item {
-
         grid-template-columns: 1fr;
 
         gap: 15px;
@@ -1100,7 +984,6 @@ footer {
     }
 
     .project {
-
         grid-template-columns:
             45px 1fr auto;
 
@@ -1112,17 +995,14 @@ footer {
     }
 
     .capabilities-grid {
-
         grid-template-columns: 1fr;
     }
 
     .certifications {
-
         grid-template-columns: 1fr;
     }
 
     .form-row {
-
         grid-template-columns: 1fr;
 
         gap: 0;
@@ -1133,7 +1013,6 @@ footer {
     }
 
     .footer-inner {
-
         flex-direction: column;
 
         gap: 20px;
@@ -1150,9 +1029,7 @@ footer {
 <body>
 
 
-<!-- =======================================================
-     CUSTOM CURSOR
-     ======================================================= -->
+<!-- CUSTOM CURSOR -->
 
 <div class="custom-cursor"></div>
 
@@ -1187,7 +1064,7 @@ footer {
 
 
 <!-- =======================================================
-     HERO
+     INTRO
      ======================================================= -->
 
 <header class="hero" id="top">
@@ -1204,7 +1081,7 @@ footer {
         </h1>
 
 
-        <!-- Organic vertical shape -->
+        <!-- ORGANIC SHAPE -->
 
         <div class="hero-mark">
 
@@ -1243,7 +1120,8 @@ footer {
 
 
         <!-- =================================================
-             RESUME BUTTON
+             DOWNLOAD RESUME
+             THIS OPENS YOUR PDF
              ================================================= -->
 
         <a
@@ -1252,9 +1130,7 @@ footer {
             rel="noopener noreferrer"
             class="resume-button"
         >
-
             DOWNLOAD RESUME
-
         </a>
 
     </div>
@@ -1378,8 +1254,6 @@ footer {
     <div class="experience-list">
 
 
-        <!-- JM FINANCIAL -->
-
         <div class="experience-item">
 
             <div class="experience-number">
@@ -1423,9 +1297,6 @@ footer {
         </div>
 
 
-
-        <!-- DELOITTE -->
-
         <div class="experience-item">
 
             <div class="experience-number">
@@ -1467,9 +1338,6 @@ footer {
 
         </div>
 
-
-
-        <!-- ADITYA BIRLA -->
 
         <div class="experience-item">
 
@@ -1572,7 +1440,6 @@ footer {
         </div>
 
 
-
         <div class="project">
 
             <div class="project-number">
@@ -1604,7 +1471,6 @@ footer {
             </div>
 
         </div>
-
 
 
         <div class="project">
@@ -1774,9 +1640,7 @@ footer {
     <div class="education-item">
 
         <div class="education-title">
-
             Bachelor of Business Administration
-
         </div>
 
         <div class="education-details">
@@ -2044,8 +1908,6 @@ footer {
     </h2>
 
 
-    <!-- Organic contact mark -->
-
     <div class="contact-mark">
 
         <svg
@@ -2082,10 +1944,7 @@ footer {
     </p>
 
 
-
-    <!-- =================================================
-         WEB3FORMS CONTACT FORM
-         ================================================= -->
+    <!-- WEB3FORMS -->
 
     <form
         action="https://api.web3forms.com/submit"
@@ -2093,7 +1952,6 @@ footer {
         class="contact-form"
     >
 
-        <!-- REPLACE THIS -->
         <input
             type="hidden"
             name="access_key"
@@ -2115,12 +1973,9 @@ footer {
 
         <div class="form-row">
 
-
             <div class="form-group">
 
-                <label>
-                    Name
-                </label>
+                <label>Name</label>
 
                 <input
                     type="text"
@@ -2134,9 +1989,7 @@ footer {
 
             <div class="form-group">
 
-                <label>
-                    Email
-                </label>
+                <label>Email</label>
 
                 <input
                     type="email"
@@ -2147,15 +2000,12 @@ footer {
 
             </div>
 
-
         </div>
 
 
         <div class="form-group">
 
-            <label>
-                Subject
-            </label>
+            <label>Subject</label>
 
             <input
                 type="text"
@@ -2169,9 +2019,7 @@ footer {
 
         <div class="form-group">
 
-            <label>
-                Message
-            </label>
+            <label>Message</label>
 
             <textarea
                 name="message"
@@ -2228,9 +2076,7 @@ footer {
             LINKEDIN
         </a>
 
-        <a
-            href="mailto:anandaayush734@gmail.com"
-        >
+        <a href="mailto:anandaayush734@gmail.com">
             EMAIL
         </a>
 
@@ -2245,15 +2091,11 @@ footer {
 
 
 
-<!-- =======================================================
-     JAVASCRIPT
-     ======================================================= -->
-
 <script>
 
-/* =========================================================
+/* =========================
    CUSTOM CURSOR
-   ========================================================= */
+   ========================= */
 
 const cursor =
     document.querySelector(".custom-cursor");
@@ -2302,10 +2144,9 @@ function animateCursor() {
 animateCursor();
 
 
-
-/* =========================================================
+/* =========================
    CURSOR HOVER
-   ========================================================= */
+   ========================= */
 
 const hoverElements =
     document.querySelectorAll(
@@ -2343,10 +2184,9 @@ hoverElements.forEach(
 );
 
 
-
-/* =========================================================
+/* =========================
    SCROLL REVEAL
-   ========================================================= */
+   ========================= */
 
 const revealElements =
     document.querySelectorAll(
