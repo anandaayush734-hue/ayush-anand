@@ -7,6 +7,7 @@
   <title>Ayush Anand | Investment Banking</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,12 +20,27 @@
 
     body {
       background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.035), transparent 28%),
-        radial-gradient(circle at 80% 70%, rgba(0,0,0,0.08), transparent 30%),
+        radial-gradient(
+          circle at 20% 10%,
+          rgba(255,255,255,0.035),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 80% 70%,
+          rgba(0,0,0,0.08),
+          transparent 30%
+        ),
         #5F2528;
+
       color: #F3EEE9;
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       cursor: none;
+
       line-height: 1.5;
     }
 
@@ -38,12 +54,14 @@
       display: block;
     }
 
-    /* =========================
+
+    /* =====================================================
        CUSTOM IMAGE CURSOR
-       ========================= */
+       ===================================================== */
 
     .custom-image-cursor {
       position: fixed;
+
       left: 0;
       top: 0;
 
@@ -57,7 +75,8 @@
 
       z-index: 999999;
 
-      transform: translate3d(-50%, -50%, 0);
+      transform:
+        translate3d(-50%, -50%, 0);
 
       will-change: transform;
 
@@ -67,9 +86,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        GLOBAL
-       ========================= */
+       ===================================================== */
 
     .page {
       width: 100%;
@@ -77,86 +96,125 @@
     }
 
     .container {
-      width: min(1240px, calc(100% - 80px));
+      width: min(
+        1240px,
+        calc(100% - 80px)
+      );
+
       margin: 0 auto;
     }
 
     .eyebrow {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size: 11px;
+
       letter-spacing: 0.18em;
+
       text-transform: uppercase;
+
       opacity: 0.72;
     }
 
     .section {
       padding: 150px 0;
-      border-top: 1px solid rgba(244,239,234,0.18);
+
+      border-top:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .section-title {
-      font-size: clamp(42px, 6vw, 88px);
+      font-size:
+        clamp(42px, 6vw, 88px);
+
       line-height: 0.95;
+
       font-weight: 400;
+
       letter-spacing: -0.045em;
+
       margin-bottom: 70px;
     }
 
-    .muted {
-      opacity: 0.68;
-    }
 
-
-    /* =========================
+    /* =====================================================
        NAVIGATION
-       ========================= */
+       ===================================================== */
 
     nav {
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
 
       padding: 28px 0;
 
       z-index: 1000;
 
-      background: linear-gradient(
-        to bottom,
-        rgba(95,37,40,0.96),
-        rgba(95,37,40,0)
-      );
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(95,37,40,0.96),
+          rgba(95,37,40,0)
+        );
     }
 
     .nav-inner {
-      width: min(1240px, calc(100% - 80px));
+      width: min(
+        1240px,
+        calc(100% - 80px)
+      );
+
       margin: auto;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
     }
 
     .logo {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size: 13px;
+
       letter-spacing: 0.08em;
+
       font-weight: 600;
     }
 
     .nav-links {
       display: flex;
+
       gap: 32px;
 
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size: 11px;
+
       letter-spacing: 0.12em;
+
       text-transform: uppercase;
     }
 
     .nav-links a {
       opacity: 0.72;
-      transition: opacity 0.25s ease;
+
+      transition:
+        opacity 0.25s ease;
     }
 
     .nav-links a:hover {
@@ -164,20 +222,124 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        HERO
-       ========================= */
+       ===================================================== */
 
     .hero {
       min-height: 100vh;
 
       display: flex;
+
       align-items: center;
 
-      padding: 150px 0 100px;
+      padding:
+        150px 0 100px;
 
       position: relative;
+
+      overflow: hidden;
     }
+
+
+    /* VIDEO BEHIND NAME */
+
+    .hero-video-wrap {
+      position: absolute;
+
+      z-index: 0;
+
+      width: 700px;
+      height: 430px;
+
+      left: 42%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      pointer-events: none;
+
+      overflow: hidden;
+
+      opacity: 0.48;
+
+      border-radius: 2px;
+
+      filter:
+        brightness(0.85)
+        contrast(1.05)
+        saturate(0.8);
+
+      box-shadow:
+        0 0 100px
+        rgba(255,240,225,0.12),
+        0 0 180px
+        rgba(255,220,200,0.06);
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+
+    /* soft light over video */
+
+    .hero-video-light {
+      position: absolute;
+
+      z-index: 1;
+
+      width: 850px;
+      height: 500px;
+
+      left: 42%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          ellipse,
+          rgba(255,242,226,0.16)
+          0%,
+          rgba(255,230,215,0.07)
+          28%,
+          rgba(95,37,40,0)
+          70%
+        );
+
+      mix-blend-mode:
+        screen;
+    }
+
+
+    /* dark overlay */
+
+    .hero-video-overlay {
+      position: absolute;
+
+      z-index: 2;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(95,37,40,0.35),
+          rgba(95,37,40,0.05),
+          rgba(95,37,40,0.28)
+        );
+    }
+
 
     .hero-grid {
       display: grid;
@@ -189,6 +351,10 @@
       gap: 80px;
 
       align-items: end;
+
+      position: relative;
+
+      z-index: 5;
     }
 
     .hero-eyebrow {
@@ -196,7 +362,9 @@
     }
 
     .hero-title {
-      font-size: clamp(78px, 13vw, 190px);
+      font-size:
+        clamp(78px, 13vw, 190px);
+
       line-height: 0.78;
 
       font-weight: 400;
@@ -204,10 +372,28 @@
       letter-spacing: -0.065em;
 
       max-width: 950px;
+
+      position: relative;
+
+      z-index: 6;
     }
 
     .hero-title span {
       display: block;
+
+      position: relative;
+    }
+
+
+    /* specifically places video emphasis around Anand */
+
+    .hero-title .name-last {
+      position: relative;
+
+      z-index: 6;
+
+      text-shadow:
+        0 0 30px rgba(95,37,40,0.22);
     }
 
     .hero-description {
@@ -215,9 +401,13 @@
 
       margin-top: 55px;
 
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 15px;
+
       line-height: 1.65;
 
       opacity: 0.8;
@@ -225,9 +415,16 @@
 
     .hero-side {
       display: flex;
+
       flex-direction: column;
+
       align-items: flex-start;
+
       gap: 35px;
+
+      position: relative;
+
+      z-index: 7;
     }
 
     .hero-mark {
@@ -244,15 +441,23 @@
       display: inline-flex;
 
       align-items: center;
+
       justify-content: center;
 
-      padding: 15px 22px;
+      padding:
+        15px 22px;
 
-      border: 1px solid rgba(244,239,234,0.5);
+      border:
+        1px solid
+        rgba(244,239,234,0.5);
 
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 11px;
+
       letter-spacing: 0.13em;
 
       text-transform: uppercase;
@@ -264,16 +469,19 @@
 
     .resume-button:hover {
       background: #F3EEE9;
+
       color: #5F2528;
     }
 
     .profile-photo {
       width: 100%;
+
       max-width: 330px;
 
       margin-top: 30px;
 
-      filter: grayscale(100%);
+      filter:
+        grayscale(100%);
 
       opacity: 0.92;
     }
@@ -284,9 +492,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        ABOUT
-       ========================= */
+       ===================================================== */
 
     .about-grid {
       display: grid;
@@ -301,7 +509,8 @@
     .about-text {
       max-width: 800px;
 
-      font-size: clamp(28px, 4vw, 52px);
+      font-size:
+        clamp(28px, 4vw, 52px);
 
       line-height: 1.08;
 
@@ -313,7 +522,10 @@
 
       max-width: 580px;
 
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 14px;
 
@@ -323,12 +535,14 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        EXPERIENCE
-       ========================= */
+       ===================================================== */
 
     .experience-list {
-      border-top: 1px solid rgba(244,239,234,0.18);
+      border-top:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .experience-item {
@@ -343,12 +557,17 @@
 
       padding: 35px 0;
 
-      border-bottom: 1px solid rgba(244,239,234,0.18);
+      border-bottom:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .experience-date,
     .experience-location {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 11px;
 
@@ -368,7 +587,10 @@
     }
 
     .experience-role {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 13px;
 
@@ -376,14 +598,15 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        WORK
-       ========================= */
+       ===================================================== */
 
     .work-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:
+        repeat(2, 1fr);
 
       gap: 2px;
     }
@@ -393,10 +616,14 @@
 
       padding: 40px;
 
-      border: 1px solid rgba(244,239,234,0.18);
+      border:
+        1px solid
+        rgba(244,239,234,0.18);
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
 
       transition:
@@ -405,12 +632,18 @@
     }
 
     .work-card:hover {
-      background: rgba(244,239,234,0.055);
-      transform: translateY(-4px);
+      background:
+        rgba(244,239,234,0.055);
+
+      transform:
+        translateY(-4px);
     }
 
     .work-number {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 11px;
 
@@ -432,7 +665,10 @@
     .work-description {
       max-width: 520px;
 
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 13px;
 
@@ -442,9 +678,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        CAPABILITIES
-       ========================= */
+       ===================================================== */
 
     .capabilities-grid {
       display: grid;
@@ -454,8 +690,13 @@
 
       gap: 1px;
 
-      border-left: 1px solid rgba(244,239,234,0.18);
-      border-top: 1px solid rgba(244,239,234,0.18);
+      border-left:
+        1px solid
+        rgba(244,239,234,0.18);
+
+      border-top:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .capability {
@@ -463,12 +704,20 @@
 
       min-height: 180px;
 
-      border-right: 1px solid rgba(244,239,234,0.18);
-      border-bottom: 1px solid rgba(244,239,234,0.18);
+      border-right:
+        1px solid
+        rgba(244,239,234,0.18);
+
+      border-bottom:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .capability-number {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 10px;
 
@@ -486,9 +735,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        EDUCATION
-       ========================= */
+       ===================================================== */
 
     .education-row {
       display: grid;
@@ -502,7 +751,9 @@
 
       padding: 35px 0;
 
-      border-top: 1px solid rgba(244,239,234,0.18);
+      border-top:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .education-school {
@@ -512,7 +763,10 @@
     }
 
     .education-degree {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 13px;
 
@@ -520,9 +774,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        ACHIEVEMENTS
-       ========================= */
+       ===================================================== */
 
     .achievement-list {
       max-width: 900px;
@@ -537,7 +791,9 @@
 
       padding: 30px 0;
 
-      border-top: 1px solid rgba(244,239,234,0.18);
+      border-top:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .achievement-title {
@@ -547,7 +803,10 @@
     }
 
     .achievement-year {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 11px;
 
@@ -557,28 +816,42 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        CERTIFICATIONS
-       ========================= */
+       ===================================================== */
 
     .certification-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:
+        repeat(2, 1fr);
 
       gap: 1px;
 
-      border-top: 1px solid rgba(244,239,234,0.18);
-      border-left: 1px solid rgba(244,239,234,0.18);
+      border-top:
+        1px solid
+        rgba(244,239,234,0.18);
+
+      border-left:
+        1px solid
+        rgba(244,239,234,0.18);
     }
 
     .certification {
       padding: 28px;
 
-      border-right: 1px solid rgba(244,239,234,0.18);
-      border-bottom: 1px solid rgba(244,239,234,0.18);
+      border-right:
+        1px solid
+        rgba(244,239,234,0.18);
 
-      font-family: Arial, Helvetica, sans-serif;
+      border-bottom:
+        1px solid
+        rgba(244,239,234,0.18);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 13px;
 
@@ -586,9 +859,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        CONTACT
-       ========================= */
+       ===================================================== */
 
     .contact {
       min-height: 85vh;
@@ -611,7 +884,8 @@
     }
 
     .contact-title {
-      font-size: clamp(70px, 12vw, 175px);
+      font-size:
+        clamp(70px, 12vw, 175px);
 
       line-height: 0.8;
 
@@ -629,19 +903,25 @@
     }
 
     .contact-link {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 13px;
 
       letter-spacing: 0.05em;
 
-      border-bottom: 1px solid rgba(244,239,234,0.35);
+      border-bottom:
+        1px solid
+        rgba(244,239,234,0.35);
 
       padding-bottom: 8px;
 
       width: fit-content;
 
-      transition: opacity 0.25s ease;
+      transition:
+        opacity 0.25s ease;
     }
 
     .contact-link:hover {
@@ -661,16 +941,21 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        FOOTER
-       ========================= */
+       ===================================================== */
 
     footer {
       padding: 30px 0;
 
-      border-top: 1px solid rgba(244,239,234,0.18);
+      border-top:
+        1px solid
+        rgba(244,239,234,0.18);
 
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size: 10px;
 
@@ -688,13 +973,15 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        SCROLL REVEAL
-       ========================= */
+       ===================================================== */
 
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
+
+      transform:
+        translateY(30px);
 
       transition:
         opacity 0.9s ease,
@@ -703,13 +990,15 @@
 
     .reveal.visible {
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
     }
 
 
-    /* =========================
+    /* =====================================================
        MOBILE
-       ========================= */
+       ===================================================== */
 
     @media (max-width: 800px) {
 
@@ -723,7 +1012,8 @@
 
       .container,
       .nav-inner {
-        width: calc(100% - 40px);
+        width:
+          calc(100% - 40px);
       }
 
       nav {
@@ -732,6 +1022,7 @@
 
       .nav-links {
         gap: 15px;
+
         font-size: 9px;
       }
 
@@ -741,11 +1032,13 @@
 
       .hero-grid {
         grid-template-columns: 1fr;
+
         gap: 60px;
       }
 
       .hero-title {
-        font-size: clamp(70px, 20vw, 130px);
+        font-size:
+          clamp(70px, 20vw, 130px);
       }
 
       .hero-description {
@@ -760,17 +1053,41 @@
         max-width: 260px;
       }
 
+      /*
+        Mobile video positioning
+      */
+
+      .hero-video-wrap {
+        width: 470px;
+        height: 330px;
+
+        left: 48%;
+        top: 43%;
+
+        opacity: 0.38;
+      }
+
+      .hero-video-light {
+        width: 550px;
+        height: 400px;
+
+        left: 48%;
+        top: 43%;
+      }
+
       .section {
         padding: 100px 0;
       }
 
       .about-grid {
         grid-template-columns: 1fr;
+
         gap: 40px;
       }
 
       .experience-item {
         grid-template-columns: 1fr;
+
         gap: 12px;
       }
 
@@ -792,6 +1109,7 @@
 
       .education-row {
         grid-template-columns: 1fr;
+
         gap: 12px;
       }
 
@@ -801,6 +1119,7 @@
 
       .achievement {
         flex-direction: column;
+
         gap: 10px;
       }
 
@@ -810,17 +1129,21 @@
 
       .contact-grid {
         grid-template-columns: 1fr;
+
         gap: 70px;
       }
 
       .contact-title {
-        font-size: clamp(75px, 22vw, 130px);
+        font-size:
+          clamp(75px, 22vw, 130px);
       }
 
       .footer-inner {
         flex-direction: column;
+
         gap: 10px;
       }
+
     }
 
   </style>
@@ -829,9 +1152,10 @@
 
 <body>
 
-  <!-- =========================
-       CUSTOM CURSOR IMAGE
-       ========================= -->
+
+  <!-- =====================================================
+       CUSTOM PANDA CURSOR
+       ===================================================== -->
 
   <img
     class="custom-image-cursor"
@@ -844,16 +1168,21 @@
   <div class="page">
 
 
-    <!-- =========================
+    <!-- =====================================================
          NAVIGATION
-         ========================= -->
+         ===================================================== -->
 
     <nav>
+
       <div class="nav-inner">
 
-        <a href="#top" class="logo">
+        <a
+          href="#top"
+          class="logo"
+        >
           AA
         </a>
+
 
         <div class="nav-links">
 
@@ -876,20 +1205,55 @@
         </div>
 
       </div>
+
     </nav>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          HERO
-         ========================= -->
+         ===================================================== -->
 
     <main id="top">
 
       <section class="hero">
 
+
+        <!-- VIDEO BEHIND AYUSH ANAND -->
+
+        <div class="hero-video-wrap">
+
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+
+            <source
+              src="https://raw.githubusercontent.com/anandaayush734-hue/ayush-anand/main/WhatsApp%20Video%202026-07-26%20at%2010.53.55%20PM.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+
+          <div class="hero-video-overlay"></div>
+
+        </div>
+
+
+        <!-- SOFT LIGHT EFFECT -->
+
+        <div class="hero-video-light"></div>
+
+
+
         <div class="container">
 
           <div class="hero-grid">
+
 
             <div>
 
@@ -897,21 +1261,35 @@
                 Investment Banking · Finance · Strategy
               </div>
 
+
               <h1 class="hero-title">
-                <span>Ayush</span>
-                <span>Anand</span>
+
+                <span>
+                  Ayush
+                </span>
+
+                <span class="name-last">
+                  Anand
+                </span>
+
               </h1>
 
+
               <p class="hero-description">
-                Investment Banking professional focused on financial
-                analysis, valuation, transaction research and strategic
-                thinking across industrial and corporate sectors.
+
+                Investment Banking professional focused on
+                financial analysis, valuation, transaction
+                research and strategic thinking across
+                industrial and corporate sectors.
+
               </p>
 
             </div>
 
 
+
             <div class="hero-side">
+
 
               <div class="hero-mark">
 
@@ -940,6 +1318,7 @@
               </div>
 
 
+
               <a
                 class="resume-button"
                 href="Ayush_Anand_Resume_Analyst.pdf"
@@ -948,6 +1327,7 @@
               >
                 Download Resume
               </a>
+
 
 
               <div class="profile-photo">
@@ -968,9 +1348,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            ABOUT
-           ========================= -->
+           ===================================================== -->
 
       <section
         class="section reveal"
@@ -984,6 +1365,7 @@
             <div class="eyebrow">
               01 · About
             </div>
+
 
             <div>
 
@@ -1015,9 +1397,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            EXPERIENCE
-           ========================= -->
+           ===================================================== -->
 
       <section
         class="section reveal"
@@ -1029,6 +1412,7 @@
           <div class="eyebrow">
             02 · Experience
           </div>
+
 
           <h2 class="section-title">
             Experience
@@ -1044,6 +1428,7 @@
                 Jul 2026 — Present
               </div>
 
+
               <div>
 
                 <div class="experience-company">
@@ -1056,6 +1441,7 @@
 
               </div>
 
+
               <div class="experience-location">
                 India
               </div>
@@ -1063,11 +1449,13 @@
             </div>
 
 
+
             <div class="experience-item">
 
               <div class="experience-date">
                 Apr — Jun 2025
               </div>
+
 
               <div>
 
@@ -1081,6 +1469,7 @@
 
               </div>
 
+
               <div class="experience-location">
                 Gurugram
               </div>
@@ -1088,11 +1477,13 @@
             </div>
 
 
+
             <div class="experience-item">
 
               <div class="experience-date">
                 May — Jun 2024
               </div>
+
 
               <div>
 
@@ -1105,6 +1496,7 @@
                 </div>
 
               </div>
+
 
               <div class="experience-location">
                 Delhi
@@ -1120,9 +1512,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            SELECTED WORK
-           ========================= -->
+           ===================================================== -->
 
       <section
         class="section reveal"
@@ -1134,6 +1527,7 @@
           <div class="eyebrow">
             03 · Selected Work
           </div>
+
 
           <h2 class="section-title">
             Selected Work
@@ -1166,6 +1560,7 @@
             </div>
 
 
+
             <div class="work-card">
 
               <div class="work-number">
@@ -1189,6 +1584,7 @@
             </div>
 
 
+
             <div class="work-card">
 
               <div class="work-number">
@@ -1210,6 +1606,7 @@
               </div>
 
             </div>
+
 
 
             <div class="work-card">
@@ -1242,9 +1639,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            CAPABILITIES
-           ========================= -->
+           ===================================================== -->
 
       <section class="section reveal">
 
@@ -1253,6 +1651,7 @@
           <div class="eyebrow">
             04 · Capabilities
           </div>
+
 
           <h2 class="section-title">
             Capabilities
@@ -1347,9 +1746,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            EDUCATION
-           ========================= -->
+           ===================================================== -->
 
       <section class="section reveal">
 
@@ -1358,6 +1758,7 @@
           <div class="eyebrow">
             05 · Education
           </div>
+
 
           <h2 class="section-title">
             Education
@@ -1369,6 +1770,7 @@
             <div class="experience-date">
               2023 — 2026
             </div>
+
 
             <div>
 
@@ -1382,6 +1784,7 @@
 
             </div>
 
+
             <div class="experience-location">
               9.2 / 10
             </div>
@@ -1393,9 +1796,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            ACHIEVEMENTS
-           ========================= -->
+           ===================================================== -->
 
       <section class="section reveal">
 
@@ -1404,6 +1808,7 @@
           <div class="eyebrow">
             06 · Achievements
           </div>
+
 
           <h2 class="section-title">
             Achievements
@@ -1459,9 +1864,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            CERTIFICATIONS
-           ========================= -->
+           ===================================================== -->
 
       <section class="section reveal">
 
@@ -1470,6 +1876,7 @@
           <div class="eyebrow">
             07 · Certifications
           </div>
+
 
           <h2 class="section-title">
             Certifications
@@ -1509,9 +1916,10 @@
       </section>
 
 
-      <!-- =========================
+
+      <!-- =====================================================
            CONTACT
-           ========================= -->
+           ===================================================== -->
 
       <section
         class="section contact reveal"
@@ -1560,6 +1968,7 @@
             </div>
 
 
+
             <div class="contact-links">
 
               <a
@@ -1597,12 +2006,14 @@
 
       </section>
 
+
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          FOOTER
-         ========================= -->
+         ===================================================== -->
 
     <footer>
 
@@ -1624,21 +2035,27 @@
 
     </footer>
 
+
   </div>
 
 
-  <!-- =========================
+
+  <!-- =====================================================
        JAVASCRIPT
-       ========================= -->
+       ===================================================== -->
 
   <script>
 
-    /* =========================
-       CUSTOM IMAGE CURSOR
-       ========================= */
+
+    /* =====================================================
+       CUSTOM PANDA CURSOR
+       ===================================================== */
 
     const customCursor =
-      document.querySelector(".custom-image-cursor");
+      document.querySelector(
+        ".custom-image-cursor"
+      );
+
 
     let mouseX = 0;
     let mouseY = 0;
@@ -1652,6 +2069,7 @@
       function(event) {
 
         mouseX = event.clientX;
+
         mouseY = event.clientY;
 
       }
@@ -1668,8 +2086,11 @@
 
 
       customCursor.style.transform =
-        `translate3d(${cursorX}px, ${cursorY}px, 0)
-         translate(-50%, -50%)`;
+        `translate3d(
+          ${cursorX}px,
+          ${cursorY}px,
+          0
+        ) translate(-50%, -50%)`;
 
 
       requestAnimationFrame(
@@ -1682,7 +2103,10 @@
     animateCursor();
 
 
-    /* Enlarge cursor when hovering links */
+
+    /* =====================================================
+       CURSOR HOVER EFFECT
+       ===================================================== */
 
     document
       .querySelectorAll("a")
@@ -1692,8 +2116,11 @@
           "mouseenter",
           function() {
 
-            customCursor.style.width = "72px";
-            customCursor.style.height = "72px";
+            customCursor.style.width =
+              "72px";
+
+            customCursor.style.height =
+              "72px";
 
           }
         );
@@ -1703,8 +2130,11 @@
           "mouseleave",
           function() {
 
-            customCursor.style.width = "55px";
-            customCursor.style.height = "55px";
+            customCursor.style.width =
+              "55px";
+
+            customCursor.style.height =
+              "55px";
 
           }
         );
@@ -1712,12 +2142,15 @@
       });
 
 
-    /* =========================
+
+    /* =====================================================
        SCROLL REVEAL
-       ========================= */
+       ===================================================== */
 
     const revealElements =
-      document.querySelectorAll(".reveal");
+      document.querySelectorAll(
+        ".reveal"
+      );
 
 
     const revealObserver =
@@ -1727,7 +2160,9 @@
           entries.forEach(
             function(entry) {
 
-              if (entry.isIntersecting) {
+              if (
+                entry.isIntersecting
+              ) {
 
                 entry.target.classList.add(
                   "visible"
@@ -1748,12 +2183,16 @@
     revealElements.forEach(
       function(element) {
 
-        revealObserver.observe(element);
+        revealObserver.observe(
+          element
+        );
 
       }
     );
 
+
   </script>
+
 
 </body>
 </html>
