@@ -27,7 +27,7 @@
 
 
         /* =====================================================
-           COLOUR SYSTEM
+           COLOURS
         ===================================================== */
 
         :root {
@@ -44,6 +44,7 @@
 
             --muted: rgba(244, 239, 234, 0.72);
             --faint: rgba(244, 239, 234, 0.48);
+
         }
 
 
@@ -88,6 +89,7 @@
             overflow-x: hidden;
 
             cursor: none;
+
         }
 
 
@@ -96,6 +98,7 @@
             background: var(--text-1);
 
             color: #5F2528;
+
         }
 
 
@@ -106,11 +109,11 @@
             text-decoration: none;
 
             cursor: none;
+
         }
 
 
         button {
-
             cursor: none;
         }
 
@@ -150,6 +153,7 @@
                 width 0.25s ease,
                 height 0.25s ease,
                 border-color 0.25s ease;
+
         }
 
 
@@ -164,13 +168,15 @@
 
             border-radius: 50%;
 
-            background: var(--text-1);
+            background:
+                var(--text-1);
 
             top: 50%;
             left: 50%;
 
             transform:
                 translate(-50%, -50%);
+
         }
 
 
@@ -181,6 +187,7 @@
 
             border-color:
                 rgba(244, 239, 234, 0.95);
+
         }
 
 
@@ -220,6 +227,7 @@
 
             -webkit-backdrop-filter:
                 blur(14px);
+
         }
 
 
@@ -230,6 +238,7 @@
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
         }
 
 
@@ -238,6 +247,7 @@
             display: flex;
 
             gap: 32px;
+
         }
 
 
@@ -249,17 +259,18 @@
 
             text-transform: uppercase;
 
-            color: var(--text-2);
+            color:
+                var(--text-2);
 
             opacity: 0.76;
 
             transition:
                 opacity 0.3s ease;
+
         }
 
 
         .nav-links a:hover {
-
             opacity: 1;
         }
 
@@ -286,6 +297,7 @@
             text-align: center;
 
             position: relative;
+
         }
 
 
@@ -297,9 +309,11 @@
 
             text-transform: uppercase;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             margin-bottom: 40px;
+
         }
 
 
@@ -314,24 +328,28 @@
 
             letter-spacing: -3px;
 
-            color: var(--text-1);
+            color:
+                var(--text-1);
+
         }
 
 
         /* =====================================================
-           ORGANIC MARK BELOW NAME
+           ORGANIC MARK
+           BELOW AYUSH ANAND
         ===================================================== */
 
         .hero-mark {
 
-            width: 24px;
+            width: 22px;
 
-            height: 85px;
+            height: 72px;
 
             margin:
-                45px auto 40px;
+                25px auto 25px;
 
-            opacity: 0.9;
+            position: relative;
+
         }
 
 
@@ -342,6 +360,7 @@
             height: 100%;
 
             display: block;
+
         }
 
 
@@ -353,9 +372,11 @@
 
             line-height: 1.8;
 
-            color: var(--text-2);
+            color:
+                var(--text-2);
 
             opacity: 0.9;
+
         }
 
 
@@ -370,6 +391,7 @@
             gap: 12px;
 
             flex-wrap: wrap;
+
         }
 
 
@@ -390,22 +412,28 @@
 
             text-transform: uppercase;
 
-            color: var(--text-1);
+            color:
+                var(--text-1);
 
             transition:
                 background 0.35s ease,
                 color 0.35s ease,
                 border 0.35s ease;
+
         }
 
 
         .hero-button:hover {
 
-            background: var(--text-1);
+            background:
+                var(--text-1);
 
-            color: #5F2528;
+            color:
+                #5F2528;
 
-            border-color: var(--text-1);
+            border-color:
+                var(--text-1);
+
         }
 
 
@@ -426,7 +454,9 @@
 
             text-transform: uppercase;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -444,12 +474,14 @@
 
             border-radius: 50%;
 
-            background: var(--text-1);
+            background:
+                var(--text-1);
+
         }
 
 
         /* =====================================================
-           SECTIONS
+           GENERAL SECTIONS
         ===================================================== */
 
         section {
@@ -460,6 +492,7 @@
             border-top:
                 1px solid
                 var(--line-soft);
+
         }
 
 
@@ -479,7 +512,9 @@
 
             text-transform: uppercase;
 
-            color: var(--muted);
+            color:
+                var(--muted);
+
         }
 
 
@@ -493,6 +528,7 @@
 
             background:
                 var(--line-soft);
+
         }
 
 
@@ -508,11 +544,11 @@
             max-width: 1050px;
 
             margin-bottom: 80px;
+
         }
 
 
         .large-text em {
-
             font-style: italic;
         }
 
@@ -529,6 +565,7 @@
                 0.8fr 1.2fr;
 
             gap: 100px;
+
         }
 
 
@@ -538,6 +575,7 @@
                 clamp(60px, 8vw, 115px);
 
             line-height: 0.88;
+
         }
 
 
@@ -546,6 +584,7 @@
             display: block;
 
             font-style: italic;
+
         }
 
 
@@ -557,13 +596,16 @@
 
             line-height: 1.9;
 
-            color: var(--muted);
+            color:
+                var(--muted);
+
         }
 
 
         .about-content p {
 
             margin-bottom: 28px;
+
         }
 
 
@@ -581,7 +623,9 @@
 
             line-height: 1.25;
 
-            color: var(--text-1);
+            color:
+                var(--text-1);
+
         }
 
 
@@ -594,6 +638,7 @@
             border-top:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -615,12 +660,14 @@
 
             transition:
                 padding-left 0.35s ease;
+
         }
 
 
         .experience:hover {
 
             padding-left: 15px;
+
         }
 
 
@@ -628,7 +675,9 @@
 
             font-size: 30px;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -641,6 +690,7 @@
             font-weight: 400;
 
             margin-bottom: 8px;
+
         }
 
 
@@ -652,9 +702,11 @@
 
             text-transform: uppercase;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             margin-bottom: 25px;
+
         }
 
 
@@ -662,11 +714,13 @@
 
             max-width: 750px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 15px;
 
             line-height: 1.75;
+
         }
 
 
@@ -674,6 +728,7 @@
 
             margin:
                 0 0 9px 18px;
+
         }
 
 
@@ -687,7 +742,9 @@
 
             text-transform: uppercase;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -709,6 +766,7 @@
             border-left:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -734,6 +792,7 @@
 
             transition:
                 background 0.4s ease;
+
         }
 
 
@@ -741,6 +800,7 @@
 
             background:
                 rgba(244, 239, 234, 0.045);
+
         }
 
 
@@ -748,7 +808,9 @@
 
             font-size: 28px;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -761,6 +823,7 @@
             font-weight: 400;
 
             margin-bottom: 20px;
+
         }
 
 
@@ -768,11 +831,13 @@
 
             max-width: 530px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 15px;
 
             line-height: 1.75;
+
         }
 
 
@@ -786,7 +851,9 @@
 
             text-transform: uppercase;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -802,6 +869,7 @@
                 repeat(3, 1fr);
 
             gap: 15px;
+
         }
 
 
@@ -818,6 +886,7 @@
             transition:
                 transform 0.35s ease,
                 background 0.35s ease;
+
         }
 
 
@@ -828,6 +897,7 @@
 
             background:
                 rgba(244, 239, 234, 0.035);
+
         }
 
 
@@ -837,7 +907,9 @@
 
             letter-spacing: 3px;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -850,16 +922,19 @@
             margin-top: 65px;
 
             margin-bottom: 12px;
+
         }
 
 
         .capability p {
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 13px;
 
             line-height: 1.7;
+
         }
 
 
@@ -875,6 +950,7 @@
                 1fr 1fr;
 
             gap: 100px;
+
         }
 
 
@@ -884,11 +960,11 @@
                 clamp(60px, 8vw, 110px);
 
             line-height: 0.88;
+
         }
 
 
         .education-title em {
-
             font-style: italic;
         }
 
@@ -898,6 +974,7 @@
             border-top:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -916,11 +993,11 @@
                 var(--line);
 
             font-size: 14px;
+
         }
 
 
         .education-row span:first-child {
-
             color: var(--muted);
         }
 
@@ -929,7 +1006,9 @@
 
             text-align: right;
 
-            color: var(--text-1);
+            color:
+                var(--text-1);
+
         }
 
 
@@ -942,6 +1021,7 @@
             border-top:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -960,6 +1040,7 @@
             border-bottom:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -967,7 +1048,9 @@
 
             font-size: 30px;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -978,14 +1061,17 @@
             font-weight: 400;
 
             margin-bottom: 7px;
+
         }
 
 
         .achievement p {
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 14px;
+
         }
 
 
@@ -1003,6 +1089,7 @@
             border-top:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -1016,6 +1103,7 @@
             border-bottom:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -1025,7 +1113,9 @@
 
             letter-spacing: 3px;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -1036,6 +1126,7 @@
             font-weight: 400;
 
             margin-top: 7px;
+
         }
 
 
@@ -1048,6 +1139,7 @@
             border-top:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -1066,6 +1158,7 @@
             border-bottom:
                 1px solid
                 var(--line);
+
         }
 
 
@@ -1074,6 +1167,7 @@
             font-size: 31px;
 
             font-weight: 400;
+
         }
 
 
@@ -1081,9 +1175,11 @@
 
             max-width: 720px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 15px;
+
         }
 
 
@@ -1099,6 +1195,7 @@
             border-top:
                 1px solid
                 var(--line-soft);
+
         }
 
 
@@ -1107,6 +1204,7 @@
             text-align: center;
 
             margin-bottom: 80px;
+
         }
 
 
@@ -1119,7 +1217,35 @@
 
             line-height: 0.9;
 
-            margin-bottom: 45px;
+            margin-bottom: 0;
+
+        }
+
+
+        /* =====================================================
+           ORGANIC CONTACT MARK
+        ===================================================== */
+
+        .contact-mark {
+
+            width: 22px;
+
+            height: 72px;
+
+            margin:
+                25px auto 38px;
+
+        }
+
+
+        .contact-mark svg {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
         }
 
 
@@ -1133,11 +1259,15 @@
 
             line-height: 1.8;
 
-            color: var(--text-2);
+            color:
+                var(--text-2);
+
         }
 
 
-        /* CONTACT FORM */
+        /* =====================================================
+           CONTACT FORM
+        ===================================================== */
 
         .contact-form {
 
@@ -1146,12 +1276,14 @@
             max-width: 840px;
 
             margin: 0 auto;
+
         }
 
 
         .form-group {
 
             margin-bottom: 32px;
+
         }
 
 
@@ -1165,7 +1297,9 @@
 
             letter-spacing: 4px;
 
-            color: var(--text-2);
+            color:
+                var(--text-2);
+
         }
 
 
@@ -1181,7 +1315,8 @@
             background:
                 rgba(255, 255, 255, 0.015);
 
-            color: var(--text-1);
+            color:
+                var(--text-1);
 
             font-family:
                 "Okojo Pro",
@@ -1200,12 +1335,14 @@
             transition:
                 border-color 0.3s ease,
                 background 0.3s ease;
+
         }
 
 
         .form-group input {
 
             height: 67px;
+
         }
 
 
@@ -1214,6 +1351,7 @@
             min-height: 225px;
 
             resize: vertical;
+
         }
 
 
@@ -1222,6 +1360,7 @@
 
             color:
                 rgba(244, 239, 234, 0.38);
+
         }
 
 
@@ -1233,10 +1372,13 @@
 
             background:
                 rgba(255, 255, 255, 0.025);
+
         }
 
 
-        /* SEND BUTTON */
+        /* =====================================================
+           SEND BUTTON
+        ===================================================== */
 
         .send-button {
 
@@ -1251,7 +1393,8 @@
                 1px solid
                 rgba(244, 239, 234, 0.5);
 
-            background: transparent;
+            background:
+                transparent;
 
             color:
                 var(--text-1);
@@ -1272,6 +1415,7 @@
             transition:
                 background 0.35s ease,
                 color 0.35s ease;
+
         }
 
 
@@ -1282,10 +1426,13 @@
 
             color:
                 #5F2528;
+
         }
 
 
-        /* DIRECT EMAIL */
+        /* =====================================================
+           DIRECT EMAIL
+        ===================================================== */
 
         .direct-email {
 
@@ -1306,6 +1453,7 @@
 
             color:
                 var(--muted);
+
         }
 
 
@@ -1319,6 +1467,7 @@
 
             text-underline-offset:
                 4px;
+
         }
 
 
@@ -1345,7 +1494,9 @@
 
             text-transform: uppercase;
 
-            color: var(--faint);
+            color:
+                var(--faint);
+
         }
 
 
@@ -1363,6 +1514,7 @@
             transition:
                 opacity 0.9s ease,
                 transform 0.9s ease;
+
         }
 
 
@@ -1372,6 +1524,7 @@
 
             transform:
                 translateY(0);
+
         }
 
 
@@ -1382,20 +1535,17 @@
         @media (max-width: 800px) {
 
             body {
-
                 cursor: auto;
             }
 
 
             .custom-cursor {
-
                 display: none;
             }
 
 
             a,
             button {
-
                 cursor: pointer;
             }
 
@@ -1404,11 +1554,11 @@
 
                 padding:
                     20px 25px;
+
             }
 
 
             .nav-links {
-
                 display: none;
             }
 
@@ -1417,6 +1567,7 @@
 
                 padding:
                     130px 25px 90px;
+
             }
 
 
@@ -1425,6 +1576,7 @@
                 font-size: 70px;
 
                 letter-spacing: -2px;
+
             }
 
 
@@ -1433,21 +1585,24 @@
                 font-size: 9px;
 
                 letter-spacing: 4px;
+
             }
 
 
             .hero-description {
 
                 font-size: 15px;
+
             }
 
 
             .hero-mark {
 
-                height: 75px;
+                height: 65px;
 
                 margin:
-                    38px auto 35px;
+                    22px auto 30px;
+
             }
 
 
@@ -1455,12 +1610,14 @@
 
                 padding:
                     90px 25px;
+
             }
 
 
             .large-text {
 
                 font-size: 46px;
+
             }
 
 
@@ -1469,12 +1626,14 @@
                 grid-template-columns: 1fr;
 
                 gap: 50px;
+
             }
 
 
             .about-title {
 
                 font-size: 68px;
+
             }
 
 
@@ -1484,24 +1643,28 @@
                     45px 1fr;
 
                 gap: 18px;
+
             }
 
 
             .experience-date {
 
                 display: none;
+
             }
 
 
             .experience h3 {
 
                 font-size: 31px;
+
             }
 
 
             .work-grid {
 
                 grid-template-columns: 1fr;
+
             }
 
 
@@ -1510,18 +1673,21 @@
                 min-height: 350px;
 
                 padding: 35px;
+
             }
 
 
             .work-card h3 {
 
                 font-size: 36px;
+
             }
 
 
             .capabilities {
 
                 grid-template-columns: 1fr;
+
             }
 
 
@@ -1530,12 +1696,14 @@
                 grid-template-columns: 1fr;
 
                 gap: 55px;
+
             }
 
 
             .education-title {
 
                 font-size: 68px;
+
             }
 
 
@@ -1545,18 +1713,21 @@
                     45px 1fr;
 
                 gap: 18px;
+
             }
 
 
             .certification-grid {
 
                 grid-template-columns: 1fr;
+
             }
 
 
             .certification {
 
                 margin-right: 0;
+
             }
 
 
@@ -1565,6 +1736,7 @@
                 grid-template-columns: 1fr;
 
                 gap: 15px;
+
             }
 
 
@@ -1572,18 +1744,31 @@
 
                 padding:
                     100px 25px 60px;
+
             }
 
 
             .contact-intro h2 {
 
                 font-size: 68px;
+
+            }
+
+
+            .contact-mark {
+
+                height: 65px;
+
+                margin:
+                    22px auto 32px;
+
             }
 
 
             .contact-intro p {
 
                 font-size: 15px;
+
             }
 
 
@@ -1591,12 +1776,14 @@
             .form-group textarea {
 
                 font-size: 16px;
+
             }
 
 
             .send-button {
 
                 width: 100%;
+
             }
 
 
@@ -1605,6 +1792,7 @@
                 font-size: 14px;
 
                 line-height: 1.8;
+
             }
 
 
@@ -1615,6 +1803,7 @@
                 flex-direction: column;
 
                 gap: 10px;
+
             }
 
         }
@@ -1628,7 +1817,7 @@
 
 
     <!-- =====================================================
-         CUSTOM CURSOR
+         MOVING CURSOR
     ====================================================== -->
 
     <div class="custom-cursor"></div>
@@ -1689,7 +1878,7 @@
         </h1>
 
 
-        <!-- ORGANIC SHAPE -->
+        <!-- ORGANIC SHAPE UNDER NAME -->
 
         <div class="hero-mark">
 
@@ -2100,7 +2289,6 @@
 
             <div class="work-card reveal">
 
-
                 <div class="work-number">
                     01
                 </div>
@@ -2137,7 +2325,6 @@
 
             <div class="work-card reveal">
 
-
                 <div class="work-number">
                     02
                 </div>
@@ -2173,7 +2360,6 @@
 
             <div class="work-card reveal">
 
-
                 <div class="work-number">
                     03
                 </div>
@@ -2208,7 +2394,6 @@
 
 
             <div class="work-card reveal">
-
 
                 <div class="work-number">
                     04
@@ -2784,9 +2969,38 @@
 
         <div class="contact-intro">
 
+
             <h2>
                 Contact
             </h2>
+
+
+            <!-- SAME ORGANIC SHAPE -->
+
+            <div class="contact-mark">
+
+                <svg
+                    viewBox="0 0 24 85"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+
+                    <path
+                        d="
+                            M12.4 0
+                            C12.1 12 12.8 23 12.3 34
+                            C11.9 45 12.5 57 12.1 67
+                            C11.8 74 11.5 80 11.7 85
+                        "
+                        fill="none"
+                        stroke="#F4EFEA"
+                        stroke-width="1.15"
+                        stroke-linecap="round"
+                        opacity="0.78"
+                    />
+
+                </svg>
+
+            </div>
 
 
             <p>
@@ -2796,8 +3010,13 @@
 
             </p>
 
+
         </div>
 
+
+        <!-- =================================================
+             CONTACT FORM
+        ================================================== -->
 
         <form
             class="contact-form"
@@ -2879,7 +3098,7 @@
             </div>
 
 
-            <!-- SEND -->
+            <!-- SEND BUTTON -->
 
             <button
                 type="submit"
@@ -2940,11 +3159,13 @@
 
 
         /* =====================================================
-           CUSTOM CURSOR
+           MOVING CURSOR
         ===================================================== */
 
         const cursor =
-            document.querySelector(".custom-cursor");
+            document.querySelector(
+                ".custom-cursor"
+            );
 
 
         let mouseX = 0;
@@ -2959,6 +3180,7 @@
             function (event) {
 
                 mouseX = event.clientX;
+
                 mouseY = event.clientY;
 
             }
@@ -3089,7 +3311,6 @@
 
         /* =====================================================
            CONTACT FORM
-           OPENS VISITOR'S EMAIL APP
         ===================================================== */
 
         const contactForm =
