@@ -1,1688 +1,2358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Ayush Anand — Investment Banking & Finance</title>
-
-  <meta
-    name="description"
-    content="Ayush Anand — Investment Banking, Finance, Valuation and Strategy."
-  >
-
-  <style>
-    :root {
-      --bg: #5F2528;
-      --bg-dark: #542124;
-      --text: #F3EEE9;
-      --muted: rgba(243, 238, 233, 0.70);
-      --line: rgba(243, 238, 233, 0.24);
-      --soft-line: rgba(243, 238, 233, 0.13);
-      --max-width: 1320px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background:
-        radial-gradient(
-          circle at 20% 10%,
-          rgba(255,255,255,0.035),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 80% 80%,
-          rgba(0,0,0,0.08),
-          transparent 35%
-        ),
-        var(--bg);
-
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* =========================
-       CUSTOM CURSOR
-    ========================= */
-
-    .custom-cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 30px;
-      height: 30px;
-      border: 1px solid rgba(244,239,234,.78);
-      border-radius: 50%;
-      background: transparent;
-      pointer-events: none;
-      z-index: 999999;
-      transform: translate3d(-50%, -50%, 0);
-      will-change: transform;
-      transition:
-        width .25s ease,
-        height .25s ease,
-        border-color .25s ease;
-    }
-
-    .custom-cursor::after {
-      content: "";
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #F3EEE9;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    nav {
-      width: min(calc(100% - 56px), var(--max-width));
-      margin: 0 auto;
-      padding: 22px 0;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      border-bottom: 1px solid var(--soft-line);
-    }
-
-    .nav-name {
-      font-size: 22px;
-      letter-spacing: -.03em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 48px;
-      font-size: 16px;
-    }
-
-    .nav-links a {
-      opacity: .72;
-      transition: opacity .25s ease;
-    }
-
-    .nav-links a:hover {
-      opacity: 1;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: calc(100vh - 75px);
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-content {
-      width: min(calc(100% - 56px), var(--max-width));
-      margin: 0 auto;
-
-      display: grid;
-      grid-template-columns: 1.18fr .82fr;
-      align-items: center;
-      gap: 80px;
-    }
 
-    .eyebrow {
-      font-size: 15px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 55px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
+<title>Ayush Anand — Investment Banking</title>
 
-      font-size: clamp(90px, 12vw, 175px);
+<meta
+  name="description"
+  content="Ayush Anand — Investment Banking, Finance, Valuation and Strategy."
+>
 
-      line-height: .80;
-      letter-spacing: -.065em;
-    }
+<style>
 
-    .hero-mark {
-      width: 24px;
-      height: 85px;
-      margin: 48px 0 40px;
-    }
+/* =========================================================
+   VARIABLES
+========================================================= */
 
-    .hero-mark svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+:root {
 
-    .hero-subtitle {
-      max-width: 520px;
+  --burgundy: #5F2528;
+  --burgundy-dark: #4E1D20;
 
-      font-size: 17px;
-      line-height: 1.7;
+  --cream: #F4EFEA;
+  --cream-soft: rgba(244,239,234,.72);
+  --cream-faint: rgba(244,239,234,.45);
 
-      color: var(--muted);
-    }
+  --border: rgba(244,239,234,.20);
+  --border-soft: rgba(244,239,234,.11);
 
-    .resume-button {
-      display: inline-block;
+  --max-width: 1380px;
 
-      margin-top: 38px;
+}
 
-      padding: 15px 23px;
 
-      border: 1px solid var(--line);
+/* =========================================================
+   RESET
+========================================================= */
 
-      font-size: 11px;
-      letter-spacing: .13em;
-      text-transform: uppercase;
+* {
 
-      transition:
-        background .25s ease,
-        color .25s ease;
-    }
+  margin: 0;
+  padding: 0;
 
-    .resume-button:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
+  box-sizing: border-box;
 
-    /* =========================
-       HERO PHOTO
-    ========================= */
+}
 
-    .hero-photo {
-      width: 100%;
-      max-width: 430px;
-      justify-self: end;
 
-      overflow: hidden;
-    }
+html {
 
-    .hero-photo img {
-      display: block;
+  scroll-behavior: smooth;
 
-      width: 100%;
-      height: 540px;
+}
 
-      object-fit: cover;
-      object-position: center top;
 
-      filter: grayscale(5%);
-    }
+body {
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
+  background:
 
-    section {
-      width: min(calc(100% - 56px), var(--max-width));
-      margin: 0 auto;
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255,255,255,.035),
+      transparent 28%
+    ),
 
-      padding: 150px 0;
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(0,0,0,.08),
+      transparent 35%
+    ),
 
-      border-top: 1px solid var(--soft-line);
-    }
+    var(--burgundy);
 
-    .section-label {
-      font-size: 11px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
+  color: var(--cream);
 
-      color: var(--muted);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-      margin-bottom: 70px;
-    }
+  overflow-x: hidden;
 
-    .section-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
+  cursor: none;
 
-      font-size: clamp(55px, 7vw, 100px);
+}
 
-      line-height: .92;
-      letter-spacing: -.05em;
 
-      margin-bottom: 75px;
-    }
+a {
 
-    /* =========================
-       ABOUT
-    ========================= */
+  color: inherit;
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
-    }
+  text-decoration: none;
 
-    .about-large {
-      font-family: Georgia, "Times New Roman", serif;
+}
 
-      font-size: clamp(30px, 3.1vw, 50px);
 
-      line-height: 1.12;
-      letter-spacing: -.025em;
-    }
+/* =========================================================
+   CUSTOM IMAGE CURSOR
+========================================================= */
 
-    .about-text {
-      color: var(--muted);
+.custom-image-cursor {
 
-      font-size: 15px;
-      line-height: 1.85;
-    }
+  position: fixed;
 
-    /* =========================
-       EXPERIENCE
-    ========================= */
+  left: 0;
+  top: 0;
 
-    .experience-item {
-      display: grid;
+  width: 55px;
+  height: 55px;
 
-      grid-template-columns: 150px 1fr 150px;
+  object-fit: contain;
 
-      gap: 40px;
+  pointer-events: none;
 
-      padding: 30px 0;
+  z-index: 999999;
 
-      border-top: 1px solid var(--soft-line);
-    }
+  user-select: none;
 
-    .experience-item:last-child {
-      border-bottom: 1px solid var(--soft-line);
-    }
+  transform:
+    translate3d(
+      -50%,
+      -50%,
+      0
+    );
 
-    .experience-number {
-      color: var(--muted);
-      font-size: 12px;
-    }
+  will-change: transform;
 
-    .experience-company {
-      font-family: Georgia, "Times New Roman", serif;
+}
 
-      font-size: 32px;
 
-      margin-bottom: 9px;
-    }
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-    .experience-role {
-      color: var(--muted);
-      font-size: 13px;
-    }
+nav {
 
-    .experience-date {
-      color: var(--muted);
-      font-size: 12px;
-      text-align: right;
-    }
+  width:
+    min(
+      calc(100% - 80px),
+      var(--max-width)
+    );
 
-    /* =========================
-       SELECTED WORK
-    ========================= */
+  margin: 0 auto;
 
-    .work-grid {
-      display: grid;
+  padding: 30px 0;
 
-      grid-template-columns: repeat(3, 1fr);
+  display: flex;
 
-      gap: 1px;
+  align-items: center;
 
-      background: var(--soft-line);
-    }
+  justify-content: space-between;
 
-    .work-card {
-      background: var(--bg);
+  border-bottom:
+    1px solid
+    var(--border-soft);
 
-      padding: 38px;
+}
 
-      min-height: 340px;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+.logo {
 
-      transition: background .3s ease;
-    }
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-    .work-card:hover {
-      background: var(--bg-dark);
-    }
+  font-size: 24px;
 
-    .work-number {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .08em;
-    }
+  letter-spacing: -.05em;
 
-    .work-title {
-      font-family: Georgia, "Times New Roman", serif;
+}
 
-      font-size: 34px;
 
-      line-height: 1.05;
-    }
+.nav-links {
 
-    .work-description {
-      margin-top: 20px;
+  display: flex;
 
-      color: var(--muted);
+  gap: 38px;
 
-      font-size: 13px;
-      line-height: 1.65;
-    }
+  font-size: 11px;
 
-    /* =========================
-       CAPABILITIES
-    ========================= */
+  letter-spacing: .13em;
 
-    .capability-list {
-      border-top: 1px solid var(--soft-line);
-    }
+  text-transform: uppercase;
 
-    .capability {
-      display: flex;
+}
 
-      justify-content: space-between;
-      align-items: center;
 
-      padding: 25px 0;
+.nav-links a {
 
-      border-bottom: 1px solid var(--soft-line);
-    }
+  color:
+    var(--cream-soft);
 
-    .capability-name {
-      font-family: Georgia, "Times New Roman", serif;
+  transition:
+    opacity .25s ease;
 
-      font-size: 30px;
-    }
+}
 
-    .capability-number {
-      color: var(--muted);
-      font-size: 12px;
-    }
 
-    /* =========================
-       EDUCATION
-    ========================= */
+.nav-links a:hover {
 
-    .education-grid {
-      display: grid;
+  opacity: .55;
 
-      grid-template-columns: 1fr 1fr;
+}
 
-      gap: 100px;
-    }
 
-    .education-school {
-      font-family: Georgia, "Times New Roman", serif;
+/* =========================================================
+   HERO
+========================================================= */
 
-      font-size: 42px;
+.hero {
 
-      line-height: 1.05;
+  min-height:
+    calc(100vh - 85px);
 
-      margin-bottom: 22px;
-    }
+  display: flex;
 
-    .education-details {
-      color: var(--muted);
+  align-items: center;
 
-      font-size: 14px;
+}
 
-      line-height: 1.85;
-    }
 
-    /* =========================
-       ACHIEVEMENTS
-    ========================= */
+.hero-inner {
 
-    .achievement-list {
-      border-top: 1px solid var(--soft-line);
-    }
+  width:
+    min(
+      calc(100% - 80px),
+      var(--max-width)
+    );
 
-    .achievement {
-      display: grid;
+  margin: 0 auto;
 
-      grid-template-columns: 100px 1fr;
+  display: grid;
 
-      gap: 30px;
+  grid-template-columns:
+    1.15fr
+    .85fr;
 
-      padding: 30px 0;
+  gap: 90px;
 
-      border-bottom: 1px solid var(--soft-line);
-    }
+  align-items: center;
 
-    .achievement-number {
-      color: var(--muted);
-      font-size: 12px;
-    }
+}
 
-    .achievement-title {
-      font-family: Georgia, "Times New Roman", serif;
 
-      font-size: 29px;
+.eyebrow {
 
-      line-height: 1.2;
-    }
+  margin-bottom: 45px;
 
-    /* =========================
-       CERTIFICATIONS
-    ========================= */
+  color:
+    var(--cream-soft);
 
-    .cert-grid {
-      display: grid;
+  font-size: 11px;
 
-      grid-template-columns: repeat(2, 1fr);
+  letter-spacing: .17em;
 
-      gap: 1px;
+  text-transform: uppercase;
 
-      background: var(--soft-line);
-    }
+}
 
-    .cert {
-      background: var(--bg);
 
-      padding: 30px;
+.hero-title {
 
-      min-height: 115px;
-    }
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-    .cert-title {
-      font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
 
-      font-size: 23px;
+  font-size:
+    clamp(
+      90px,
+      12vw,
+      175px
+    );
 
-      margin-bottom: 9px;
-    }
+  line-height: .80;
 
-    .cert-org {
-      color: var(--muted);
+  letter-spacing: -.075em;
 
-      font-size: 12px;
-    }
+}
 
-    /* =========================
-       CONTACT
-    ========================= */
 
-    .contact {
-      min-height: 90vh;
-    }
+.hero-mark {
 
-    .contact-title {
-      font-family: Georgia, "Times New Roman", serif;
+  width: 24px;
 
-      font-size: clamp(75px, 10vw, 155px);
+  height: 85px;
 
-      font-weight: 400;
+  margin:
+    45px 0
+    38px;
 
-      line-height: .86;
+}
 
-      letter-spacing: -.06em;
-    }
 
-    .contact-mark {
-      width: 24px;
-      height: 85px;
+.hero-mark svg {
 
-      margin: 48px 0;
-    }
+  width: 100%;
 
-    .contact-mark svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+  height: 100%;
 
-    .contact-subtitle {
-      max-width: 600px;
+}
 
-      color: var(--muted);
 
-      font-size: 16px;
+.hero-description {
 
-      line-height: 1.7;
+  max-width: 560px;
 
-      margin-bottom: 45px;
-    }
+  color:
+    var(--cream-soft);
 
-    .contact-links {
-      display: flex;
+  font-size: 17px;
 
-      flex-wrap: wrap;
+  line-height: 1.75;
 
-      gap: 12px;
-    }
+}
 
-    .contact-link {
-      padding: 14px 20px;
 
-      border: 1px solid var(--line);
+.resume-button {
 
-      font-size: 11px;
+  display: inline-flex;
 
-      letter-spacing: .1em;
+  margin-top: 38px;
 
-      text-transform: uppercase;
+  padding:
+    15px 23px;
 
-      transition:
-        background .25s ease,
-        color .25s ease;
-    }
+  border:
+    1px solid
+    var(--border);
 
-    .contact-link:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
+  font-size: 10px;
 
-    /* =========================
-       FOOTER
-    ========================= */
+  letter-spacing: .14em;
 
-    footer {
-      width: min(calc(100% - 56px), var(--max-width));
+  text-transform: uppercase;
 
-      margin: 0 auto;
+  transition:
+    background .3s ease,
+    color .3s ease;
 
-      padding: 35px 0;
+}
 
-      border-top: 1px solid var(--soft-line);
 
-      display: flex;
+.resume-button:hover {
 
-      justify-content: space-between;
+  background:
+    var(--cream);
 
-      color: var(--muted);
+  color:
+    var(--burgundy);
 
-      font-size: 11px;
+}
 
-      letter-spacing: .08em;
 
-      text-transform: uppercase;
-    }
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
 
-    /* =========================
-       REVEAL
-    ========================= */
+.hero-photo {
 
-    .reveal {
-      opacity: 0;
+  width: 100%;
 
-      transform: translateY(30px);
+  max-width: 440px;
 
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
+  justify-self: end;
 
-    .reveal.visible {
-      opacity: 1;
+  overflow: hidden;
 
-      transform: translateY(0);
-    }
+}
 
-    /* =========================
-       MOBILE
-    ========================= */
 
-    @media (max-width: 900px) {
+.hero-photo img {
 
-      body {
-        cursor: auto;
-      }
+  display: block;
 
-      .custom-cursor {
-        display: none;
-      }
+  width: 100%;
 
-      nav,
-      section,
-      footer {
-        width: min(calc(100% - 40px), var(--max-width));
-      }
+  height: 560px;
 
-      nav {
-        padding: 22px 0;
-      }
+  object-fit: cover;
 
-      .nav-links {
-        gap: 18px;
-        font-size: 11px;
-      }
+  object-position: center top;
 
-      .hero {
-        min-height: auto;
+  filter:
+    grayscale(5%);
 
-        padding: 100px 0;
-      }
+}
 
-      .hero-content {
-        width: min(calc(100% - 40px), var(--max-width));
 
-        grid-template-columns: 1fr;
+/* =========================================================
+   SECTIONS
+========================================================= */
 
-        gap: 65px;
-      }
+.section {
 
-      .hero-photo {
-        justify-self: start;
+  width:
+    min(
+      calc(100% - 80px),
+      var(--max-width)
+    );
 
-        max-width: 100%;
-      }
+  margin: 0 auto;
 
-      .hero-photo img {
-        height: auto;
+  padding:
+    150px 0;
 
-        max-height: 600px;
-      }
+  border-top:
+    1px solid
+    var(--border-soft);
 
-      section {
-        padding: 100px 0;
-      }
+}
 
-      .about-grid,
-      .education-grid {
-        grid-template-columns: 1fr;
 
-        gap: 55px;
-      }
+.section-label {
 
-      .experience-item {
-        grid-template-columns: 1fr;
+  margin-bottom: 65px;
 
-        gap: 12px;
-      }
+  color:
+    var(--cream-soft);
 
-      .experience-date {
-        text-align: left;
-      }
+  font-size: 10px;
 
-      .work-grid {
-        grid-template-columns: 1fr;
-      }
+  letter-spacing: .16em;
 
-      .cert-grid {
-        grid-template-columns: 1fr;
-      }
+  text-transform: uppercase;
 
-      .achievement {
-        grid-template-columns: 60px 1fr;
-      }
+}
 
-      footer {
-        flex-direction: column;
 
-        gap: 15px;
-      }
-    }
+.section-heading {
 
-    @media (max-width: 600px) {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-      h1 {
-        font-size: 78px;
-      }
+  font-weight: 400;
 
-      .section-title {
-        font-size: 55px;
-      }
+  font-size:
+    clamp(
+      58px,
+      7vw,
+      105px
+    );
 
-      .contact-title {
-        font-size: 72px;
-      }
+  line-height: .90;
 
-      .nav-links a:nth-child(2),
-      .nav-links a:nth-child(3) {
-        display: none;
-      }
+  letter-spacing: -.055em;
 
-      .capability-name {
-        font-size: 24px;
-      }
+}
 
-      .experience-company {
-        font-size: 28px;
-      }
 
-      .work-card {
-        min-height: 280px;
-      }
-    }
-  </style>
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 100px;
+
+}
+
+
+.about-statement {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      30px,
+      3.2vw,
+      52px
+    );
+
+  line-height: 1.12;
+
+  letter-spacing: -.03em;
+
+}
+
+
+.about-copy {
+
+  color:
+    var(--cream-soft);
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience-list {
+
+  margin-top: 80px;
+
+}
+
+
+.experience-row {
+
+  display: grid;
+
+  grid-template-columns:
+    90px
+    1fr
+    170px;
+
+  gap: 35px;
+
+  padding: 32px 0;
+
+  border-top:
+    1px solid
+    var(--border-soft);
+
+}
+
+
+.experience-row:last-child {
+
+  border-bottom:
+    1px solid
+    var(--border-soft);
+
+}
+
+
+.experience-index {
+
+  color:
+    var(--cream-faint);
+
+  font-size: 11px;
+
+}
+
+
+.experience-company {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 31px;
+
+  margin-bottom: 9px;
+
+}
+
+
+.experience-role {
+
+  color:
+    var(--cream-soft);
+
+  font-size: 13px;
+
+}
+
+
+.experience-date {
+
+  color:
+    var(--cream-faint);
+
+  font-size: 11px;
+
+  text-align: right;
+
+}
+
+
+/* =========================================================
+   SELECTED WORK
+========================================================= */
+
+.work-grid {
+
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 1px;
+
+  background:
+    var(--border-soft);
+
+}
+
+
+.work-card {
+
+  min-height: 360px;
+
+  padding: 38px;
+
+  background:
+    var(--burgundy);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition:
+    background .3s ease;
+
+}
+
+
+.work-card:hover {
+
+  background:
+    var(--burgundy-dark);
+
+}
+
+
+.work-type {
+
+  color:
+    var(--cream-faint);
+
+  font-size: 10px;
+
+  letter-spacing: .13em;
+
+}
+
+
+.work-name {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 34px;
+
+  line-height: 1.05;
+
+}
+
+
+.work-description {
+
+  margin-top: 20px;
+
+  color:
+    var(--cream-soft);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.capabilities {
+
+  margin-top: 80px;
+
+  border-top:
+    1px solid
+    var(--border-soft);
+
+}
+
+
+.capability-row {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 27px 0;
+
+  border-bottom:
+    1px solid
+    var(--border-soft);
+
+}
+
+
+.capability-name {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 31px;
+
+}
+
+
+.capability-number {
+
+  color:
+    var(--cream-faint);
+
+  font-size: 11px;
+
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-grid {
+
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 100px;
+
+}
+
+
+.education-name {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 43px;
+
+  line-height: 1.04;
+
+  letter-spacing: -.035em;
+
+  margin-bottom: 25px;
+
+}
+
+
+.education-details {
+
+  color:
+    var(--cream-soft);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievement-list {
+
+  margin-top: 80px;
+
+  border-top:
+    1px solid
+    var(--border-soft);
+
+}
+
+
+.achievement-row {
+
+  display: grid;
+
+  grid-template-columns:
+    90px
+    1fr;
+
+  gap: 30px;
+
+  padding: 32px 0;
+
+  border-bottom:
+    1px solid
+    var(--border-soft);
+
+}
+
+
+.achievement-number {
+
+  color:
+    var(--cream-faint);
+
+  font-size: 11px;
+
+}
+
+
+.achievement-title {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid {
+
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 1px;
+
+  background:
+    var(--border-soft);
+
+}
+
+
+.certification {
+
+  min-height: 130px;
+
+  padding: 30px;
+
+  background:
+    var(--burgundy);
+
+}
+
+
+.certification-title {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 23px;
+
+  margin-bottom: 10px;
+
+}
+
+
+.certification-provider {
+
+  color:
+    var(--cream-faint);
+
+  font-size: 11px;
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+  min-height: 90vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+
+.contact-title {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 400;
+
+  font-size:
+    clamp(
+      80px,
+      11vw,
+      165px
+    );
+
+  line-height: .82;
+
+  letter-spacing: -.07em;
+
+}
+
+
+.contact-mark {
+
+  width: 24px;
+
+  height: 85px;
+
+  margin:
+    45px 0
+    38px;
+
+}
+
+
+.contact-mark svg {
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+
+.contact-description {
+
+  max-width: 570px;
+
+  color:
+    var(--cream-soft);
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+}
+
+
+.contact-links {
+
+  margin-top: 38px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+}
+
+
+.contact-link {
+
+  padding:
+    14px 20px;
+
+  border:
+    1px solid
+    var(--border);
+
+  font-size: 10px;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  transition:
+    background .3s ease,
+    color .3s ease;
+
+}
+
+
+.contact-link:hover {
+
+  background:
+    var(--cream);
+
+  color:
+    var(--burgundy);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+  width:
+    min(
+      calc(100% - 80px),
+      var(--max-width)
+    );
+
+  margin: 0 auto;
+
+  padding:
+    32px 0;
+
+  border-top:
+    1px solid
+    var(--border-soft);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color:
+    var(--cream-faint);
+
+  font-size: 10px;
+
+  letter-spacing: .10em;
+
+  text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+.reveal {
+
+  opacity: 0;
+
+  transform:
+    translateY(28px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+
+.reveal.visible {
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  body {
+
+    cursor: auto;
+
+  }
+
+
+  .custom-image-cursor {
+
+    display: none;
+
+  }
+
+
+  nav,
+  .hero-inner,
+  .section,
+  footer {
+
+    width:
+      min(
+        calc(100% - 40px),
+        var(--max-width)
+      );
+
+  }
+
+
+  nav {
+
+    padding:
+      22px 0;
+
+  }
+
+
+  .nav-links {
+
+    gap: 17px;
+
+    font-size: 9px;
+
+  }
+
+
+  .hero {
+
+    min-height: auto;
+
+    padding:
+      90px 0
+      110px;
+
+  }
+
+
+  .hero-inner {
+
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+
+  }
+
+
+  .hero-photo {
+
+    max-width: 100%;
+
+    justify-self: start;
+
+  }
+
+
+  .hero-photo img {
+
+    height: auto;
+
+    max-height: 650px;
+
+  }
+
+
+  .section {
+
+    padding:
+      100px 0;
+
+  }
+
+
+  .about-grid,
+  .education-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+  }
+
+
+  .experience-row {
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+  }
+
+
+  .experience-date {
+
+    text-align: left;
+
+  }
+
+
+  .work-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .cert-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .achievement-row {
+
+    grid-template-columns:
+      55px
+      1fr;
+
+  }
+
+
+  footer {
+
+    flex-direction: column;
+
+    gap: 15px;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .nav-links a:nth-child(2) {
+
+    display: none;
+
+  }
+
+
+  .hero-title {
+
+    font-size: 76px;
+
+  }
+
+
+  .section-heading {
+
+    font-size: 55px;
+
+  }
+
+
+  .contact-title {
+
+    font-size: 72px;
+
+  }
+
+
+  .capability-name {
+
+    font-size: 24px;
+
+  }
+
+
+  .experience-company {
+
+    font-size: 27px;
+
+  }
+
+
+  .work-card {
+
+    min-height: 290px;
+
+  }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
-  <!-- CUSTOM CURSOR -->
 
-  <div class="custom-cursor"></div>
+<!-- =====================================================
+     CUSTOM CURSOR IMAGE
+     
+     THIS IS YOUR UPLOADED CURSOR IMAGE
+===================================================== -->
+
+<img
+  class="custom-image-cursor"
+  src="https://raw.githubusercontent.com/anandaayush734-hue/ayush-anand/main/giant-panda-bear-red-panda-telus-customer-service-bear.jpg"
+  alt=""
+  aria-hidden="true"
+>
 
 
-  <!-- NAVIGATION -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-  <nav>
+<nav>
 
-    <a href="#top" class="nav-name">
-      AA
+  <a
+    href="#top"
+    class="logo"
+  >
+    AA
+  </a>
+
+
+  <div class="nav-links">
+
+    <a href="#about">
+      About
     </a>
 
-    <div class="nav-links">
-
-      <a href="#about">
-        ABOUT
-      </a>
-
-      <a href="#experience">
-        EXPERIENCE
-      </a>
-
-      <a href="#work">
-        WORK
-      </a>
-
-      <a href="#contact">
-        CONTACT
-      </a>
-
-    </div>
-
-  </nav>
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <header class="hero" id="top">
-
-    <div class="hero-content">
-
-      <div class="hero-text reveal">
-
-        <div class="eyebrow">
-          INVESTMENT BANKING · FINANCE · STRATEGY
-        </div>
-
-
-        <h1>
-          Ayush<br>
-          Anand
-        </h1>
-
-
-        <div class="hero-mark">
-
-          <svg
-            viewBox="0 0 24 85"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-
-            <path
-              d="
-                M12.4 0
-                C12.1 12 12.8 23 12.3 34
-                C11.9 45 12.5 57 12.1 67
-                C11.8 74 11.5 80 11.7 85
-              "
-              fill="none"
-              stroke="#F4EFEA"
-              stroke-width="1.15"
-              stroke-linecap="round"
-              opacity="0.78"
-            />
-
-          </svg>
-
-        </div>
-
-
-        <p class="hero-subtitle">
-          Investment Banking Trainee focused on valuation,
-          financial analysis, transaction research and strategy.
-        </p>
-
-
-        <a
-          href="Ayush_Anand_Resume_Analyst.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="resume-button"
-        >
-          DOWNLOAD RESUME
-        </a>
-
-      </div>
-
-
-      <!--
-        IMPORTANT:
-        This is your exact GitHub image.
-        The direct RAW URL is used intentionally.
-      -->
-
-      <div class="hero-photo reveal">
-
-        <img
-          src="https://raw.githubusercontent.com/anandaayush734-hue/ayush-anand/main/Ayush_Anand_Risk_Analyst_Role_Photo.jpg"
-          alt="Ayush Anand"
-        >
-
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <section id="about">
-
-    <div class="section-label">
-      01 / ABOUT
-    </div>
-
-
-    <div class="about-grid">
-
-      <div class="about-large reveal">
-
-        Finance with a focus on
-        transactions, valuation
-        and strategic decision-making.
-
-      </div>
-
-
-      <div class="about-text reveal">
-
-        <p>
-          Ayush Anand is an Investment Banking Trainee
-          with experience across investment banking,
-          M&A, strategy, risk and global treasury operations.
-        </p>
-
-        <br>
-
-        <p>
-          His work involves financial analysis,
-          valuation, financial modelling, company research
-          and transaction-oriented research.
-        </p>
-
-        <br>
-
-        <p>
-          His professional experience includes
-          JM Financial, Deloitte and Aditya Birla
-          Global Trading.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       EXPERIENCE
-  ========================= -->
-
-  <section id="experience">
-
-    <div class="section-label">
-      02 / EXPERIENCE
-    </div>
-
-
-    <h2 class="section-title reveal">
+    <a href="#experience">
       Experience
-    </h2>
+    </a>
 
-
-    <div class="experience-list">
-
-
-      <div class="experience-item reveal">
-
-        <div class="experience-number">
-          01
-        </div>
-
-
-        <div>
-
-          <div class="experience-company">
-            JM Financial
-          </div>
-
-          <div class="experience-role">
-            Investment Banking Trainee · Industrials Coverage
-          </div>
-
-        </div>
-
-
-        <div class="experience-date">
-          JULY 2026 —
-        </div>
-
-      </div>
-
-
-      <div class="experience-item reveal">
-
-        <div class="experience-number">
-          02
-        </div>
-
-
-        <div>
-
-          <div class="experience-company">
-            Deloitte
-          </div>
-
-          <div class="experience-role">
-            Strategy, Risk & Transactions · M&A Intern
-          </div>
-
-        </div>
-
-
-        <div class="experience-date">
-          APR — JUN 2025
-        </div>
-
-      </div>
-
-
-      <div class="experience-item reveal">
-
-        <div class="experience-number">
-          03
-        </div>
-
-
-        <div>
-
-          <div class="experience-company">
-            Aditya Birla Global Trading
-          </div>
-
-          <div class="experience-role">
-            Global Treasury Operations Intern
-          </div>
-
-        </div>
-
-
-        <div class="experience-date">
-          MAY — JUN 2024
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SELECTED WORK
-  ========================= -->
-
-  <section id="work">
-
-    <div class="section-label">
-      03 / SELECTED WORK
-    </div>
-
-
-    <h2 class="section-title reveal">
-      Selected<br>
+    <a href="#work">
       Work
-    </h2>
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </div>
+
+</nav>
 
 
-    <div class="work-grid">
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header
+  class="hero"
+  id="top"
+>
+
+  <div class="hero-inner">
 
 
-      <article class="work-card reveal">
+    <div class="hero-copy reveal">
 
-        <div class="work-number">
-          01 / EQUITY RESEARCH
-        </div>
-
-
-        <div>
-
-          <div class="work-title">
-            Sapphire Foods
-          </div>
+      <div class="eyebrow">
+        Investment Banking · Finance · Strategy
+      </div>
 
 
-          <p class="work-description">
-            Equity research project focused on company
-            analysis, financial performance and valuation.
-          </p>
+      <h1 class="hero-title">
 
-        </div>
+        Ayush<br>
+        Anand
 
-      </article>
+      </h1>
 
 
-      <article class="work-card reveal">
+      <div class="hero-mark">
 
-        <div class="work-number">
-          02 / VALUATION
-        </div>
+        <svg
+          viewBox="0 0 24 85"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
 
+          <path
+            d="
+              M12.4 0
+              C12.1 12 12.8 23 12.3 34
+              C11.9 45 12.5 57 12.1 67
+              C11.8 74 11.5 80 11.7 85
+            "
+            fill="none"
+            stroke="#F4EFEA"
+            stroke-width="1.15"
+            stroke-linecap="round"
+            opacity="0.78"
+          />
 
-        <div>
-
-          <div class="work-title">
-            Asian Paints
-          </div>
-
-
-          <p class="work-description">
-            Valuation modelling project involving
-            financial analysis and valuation methodology.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="work-card reveal">
-
-        <div class="work-number">
-          03 / INDUSTRY RESEARCH
-        </div>
-
-
-        <div>
-
-          <div class="work-title">
-            Aviation Industry
-          </div>
-
-
-          <p class="work-description">
-            Industry research covering the aviation
-            sector and its business environment.
-          </p>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CAPABILITIES
-  ========================= -->
-
-  <section>
-
-    <div class="section-label">
-      04 / CAPABILITIES
-    </div>
-
-
-    <h2 class="section-title reveal">
-      What I<br>
-      Work With
-    </h2>
-
-
-    <div class="capability-list">
-
-
-      <div class="capability reveal">
-
-        <div class="capability-name">
-          Financial Analysis
-        </div>
-
-        <div class="capability-number">
-          01
-        </div>
+        </svg>
 
       </div>
 
 
-      <div class="capability reveal">
+      <p class="hero-description">
 
-        <div class="capability-name">
-          Valuation
-        </div>
+        Investment Banking Trainee focused on
+        valuation, financial analysis,
+        transaction research and strategy.
 
-        <div class="capability-number">
-          02
-        </div>
-
-      </div>
-
-
-      <div class="capability reveal">
-
-        <div class="capability-name">
-          Financial Modelling
-        </div>
-
-        <div class="capability-number">
-          03
-        </div>
-
-      </div>
-
-
-      <div class="capability reveal">
-
-        <div class="capability-name">
-          M&A Research
-        </div>
-
-        <div class="capability-number">
-          04
-        </div>
-
-      </div>
-
-
-      <div class="capability reveal">
-
-        <div class="capability-name">
-          Company Research
-        </div>
-
-        <div class="capability-number">
-          05
-        </div>
-
-      </div>
-
-
-      <div class="capability reveal">
-
-        <div class="capability-name">
-          Strategy
-        </div>
-
-        <div class="capability-number">
-          06
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       EDUCATION
-  ========================= -->
-
-  <section>
-
-    <div class="section-label">
-      05 / EDUCATION
-    </div>
-
-
-    <div class="education-grid">
-
-
-      <div class="reveal">
-
-        <div class="education-school">
-          CHRIST<br>
-          (Deemed to be University)
-        </div>
-
-
-        <div class="education-details">
-
-          BBA — Finance & International Business<br>
-          Bengaluru<br>
-          2023 — 2026<br>
-          CGPA: 9.2 / 10
-
-        </div>
-
-      </div>
-
-
-      <div class="about-text reveal">
-
-        Academic focus across finance,
-        international business and
-        strategic decision-making.
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ACHIEVEMENTS
-  ========================= -->
-
-  <section>
-
-    <div class="section-label">
-      06 / ACHIEVEMENTS
-    </div>
-
-
-    <h2 class="section-title reveal">
-      Recognition
-    </h2>
-
-
-    <div class="achievement-list">
-
-
-      <div class="achievement reveal">
-
-        <div class="achievement-number">
-          01
-        </div>
-
-
-        <div class="achievement-title">
-          Best Research Paper Award —
-          International Conference on
-          Deep-Tech & Policy
-        </div>
-
-      </div>
-
-
-      <div class="achievement reveal">
-
-        <div class="achievement-number">
-          02
-        </div>
-
-
-        <div class="achievement-title">
-          Published Research Paper —
-          International Journal of Novel
-          Research and Development
-        </div>
-
-      </div>
-
-
-      <div class="achievement reveal">
-
-        <div class="achievement-number">
-          03
-        </div>
-
-
-        <div class="achievement-title">
-          Winner — Finance Fest
-          “Chakravyuh”, Christ University
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CERTIFICATIONS
-  ========================= -->
-
-  <section>
-
-    <div class="section-label">
-      07 / CERTIFICATIONS
-    </div>
-
-
-    <div class="cert-grid">
-
-
-      <div class="cert reveal">
-
-        <div class="cert-title">
-          Lean Six Sigma Yellow Belt
-        </div>
-
-        <div class="cert-org">
-          MSME
-        </div>
-
-      </div>
-
-
-      <div class="cert reveal">
-
-        <div class="cert-title">
-          Bloomberg Terminal Navigation
-        </div>
-
-        <div class="cert-org">
-          Bloomberg
-        </div>
-
-      </div>
-
-
-      <div class="cert reveal">
-
-        <div class="cert-title">
-          Public Speaking
-        </div>
-
-        <div class="cert-org">
-          IIT Hyderabad · SWAYAM
-        </div>
-
-      </div>
-
-
-      <div class="cert reveal">
-
-        <div class="cert-title">
-          Foundations of Project Management
-        </div>
-
-        <div class="cert-org">
-          Google
-        </div>
-
-      </div>
-
-
-      <div class="cert reveal">
-
-        <div class="cert-title">
-          Financial Modelling & Valuation
-        </div>
-
-        <div class="cert-org">
-          Corporate Finance Institute
-        </div>
-
-      </div>
-
-
-      <div class="cert reveal">
-
-        <div class="cert-title">
-          Excel Skills
-        </div>
-
-        <div class="cert-org">
-          J.P. Morgan Chase
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
-  <section class="contact" id="contact">
-
-    <div class="section-label">
-      08 / CONTACT
-    </div>
-
-
-    <h2 class="contact-title reveal">
-      Let's<br>
-      connect.
-    </h2>
-
-
-    <div class="contact-mark">
-
-      <svg
-        viewBox="0 0 24 85"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-
-        <path
-          d="
-            M12.4 0
-            C12.1 12 12.8 23 12.3 34
-            C11.9 45 12.5 57 12.1 67
-            C11.8 74 11.5 80 11.7 85
-          "
-          fill="none"
-          stroke="#F4EFEA"
-          stroke-width="1.15"
-          stroke-linecap="round"
-          opacity="0.78"
-        />
-
-      </svg>
-
-    </div>
-
-
-    <p class="contact-subtitle reveal">
-
-      Open to conversations around investment banking,
-      finance, valuation, strategy and opportunities
-      to build meaningful work.
-
-    </p>
-
-
-    <div class="contact-links reveal">
-
-      <a
-        href="mailto:anandaayush734@gmail.com"
-        class="contact-link"
-      >
-        EMAIL
-      </a>
+      </p>
 
 
       <a
-        href="https://www.linkedin.com/in/ayushfinance100/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-link"
-      >
-        LINKEDIN
-      </a>
-
-
-      <a
+        class="resume-button"
         href="Ayush_Anand_Resume_Analyst.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        class="contact-link"
       >
-        RESUME
+        Download Resume
       </a>
 
     </div>
 
-  </section>
 
+    <!-- YOUR ACTUAL PROFILE PHOTO -->
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+    <div class="hero-photo reveal">
 
-  <footer>
+      <img
+        src="https://raw.githubusercontent.com/anandaayush734-hue/ayush-anand/main/Ayush_Anand_Risk_Analyst_Role_Photo.jpg"
+        alt="Ayush Anand"
+      >
 
-    <div>
-      © 2026 Ayush Anand
     </div>
 
-    <div>
-      Finance · Investment Banking · Strategy
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+  class="section"
+  id="about"
+>
+
+  <div class="section-label">
+    01 / About
+  </div>
+
+
+  <h2 class="section-heading reveal">
+    About
+  </h2>
+
+
+  <div class="about-grid">
+
+
+    <div class="about-statement reveal">
+
+      Finance with a focus on
+      transactions, valuation
+      and strategic decision-making.
+
     </div>
 
-  </footer>
+
+    <div class="about-copy reveal">
+
+      <p>
+
+        Ayush Anand is an Investment Banking Trainee
+        with experience across investment banking,
+        M&A, strategy, risk and global treasury operations.
+
+      </p>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    /* -------------------------
-       CUSTOM CURSOR
-    ------------------------- */
-
-    const cursor =
-      document.querySelector(".custom-cursor");
-
-    let mouseX = 0;
-    let mouseY = 0;
-
-    let cursorX = 0;
-    let cursorY = 0;
+      <br>
 
 
-    document.addEventListener("mousemove", function(event) {
+      <p>
 
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+        His work involves financial analysis,
+        valuation, financial modelling,
+        company research and transaction-oriented research.
 
-    });
-
-
-    function animateCursor() {
-
-      cursorX += (mouseX - cursorX) * 0.18;
-      cursorY += (mouseY - cursorY) * 0.18;
+      </p>
 
 
-      cursor.style.transform =
-        `translate3d(${cursorX}px, ${cursorY}px, 0)
-         translate(-50%, -50%)`;
+      <br>
 
 
-      requestAnimationFrame(animateCursor);
+      <p>
 
-    }
+        His professional experience includes
+        JM Financial, Deloitte and
+        Aditya Birla Global Trading.
 
+      </p>
 
-    animateCursor();
-
-
-    /* -------------------------
-       CURSOR HOVER
-    ------------------------- */
-
-    document
-      .querySelectorAll("a, button")
-      .forEach(function(element) {
-
-        element.addEventListener("mouseenter", function() {
-
-          cursor.style.width = "44px";
-          cursor.style.height = "44px";
-
-        });
+    </div>
 
 
-        element.addEventListener("mouseleave", function() {
+  </div>
 
-          cursor.style.width = "30px";
-          cursor.style.height = "30px";
-
-        });
-
-      });
+</section>
 
 
-    /* -------------------------
-       SCROLL REVEAL
-    ------------------------- */
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
 
-    const revealElements =
-      document.querySelectorAll(".reveal");
+<section
+  class="section"
+  id="experience"
+>
+
+  <div class="section-label">
+    02 / Experience
+  </div>
 
 
-    const observer =
-      new IntersectionObserver(
+  <h2 class="section-heading reveal">
+    Experience
+  </h2>
 
-        function(entries) {
 
-          entries.forEach(function(entry) {
+  <div class="experience-list">
 
-            if (entry.isIntersecting) {
 
-              entry.target.classList.add("visible");
+    <div class="experience-row reveal">
 
-              observer.unobserve(entry.target);
+      <div class="experience-index">
+        01
+      </div>
 
-            }
 
-          });
+      <div>
 
-        },
+        <div class="experience-company">
+          JM Financial
+        </div>
 
-        {
-          threshold: 0.12
+        <div class="experience-role">
+          Investment Banking Trainee · Industrials Coverage
+        </div>
+
+      </div>
+
+
+      <div class="experience-date">
+        July 2026 —
+      </div>
+
+    </div>
+
+
+    <div class="experience-row reveal">
+
+      <div class="experience-index">
+        02
+      </div>
+
+
+      <div>
+
+        <div class="experience-company">
+          Deloitte
+        </div>
+
+        <div class="experience-role">
+          Strategy, Risk & Transactions · M&A Intern
+        </div>
+
+      </div>
+
+
+      <div class="experience-date">
+        Apr — Jun 2025
+      </div>
+
+    </div>
+
+
+    <div class="experience-row reveal">
+
+      <div class="experience-index">
+        03
+      </div>
+
+
+      <div>
+
+        <div class="experience-company">
+          Aditya Birla Global Trading
+        </div>
+
+        <div class="experience-role">
+          Global Treasury Operations Intern
+        </div>
+
+      </div>
+
+
+      <div class="experience-date">
+        May — Jun 2024
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SELECTED WORK
+===================================================== -->
+
+<section
+  class="section"
+  id="work"
+>
+
+  <div class="section-label">
+    03 / Selected Work
+  </div>
+
+
+  <h2 class="section-heading reveal">
+
+    Selected<br>
+    Work
+
+  </h2>
+
+
+  <div class="work-grid">
+
+
+    <article class="work-card reveal">
+
+      <div class="work-type">
+        01 / EQUITY RESEARCH
+      </div>
+
+
+      <div>
+
+        <div class="work-name">
+          Sapphire Foods
+        </div>
+
+
+        <p class="work-description">
+
+          Equity research project focused on
+          company analysis, financial performance
+          and valuation.
+
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="work-card reveal">
+
+      <div class="work-type">
+        02 / VALUATION
+      </div>
+
+
+      <div>
+
+        <div class="work-name">
+          Asian Paints
+        </div>
+
+
+        <p class="work-description">
+
+          Valuation modelling project involving
+          financial analysis and valuation methodology.
+
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="work-card reveal">
+
+      <div class="work-type">
+        03 / INDUSTRY RESEARCH
+      </div>
+
+
+      <div>
+
+        <div class="work-name">
+          Aviation Industry
+        </div>
+
+
+        <p class="work-description">
+
+          Industry research covering the aviation
+          sector and its business environment.
+
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CAPABILITIES
+===================================================== -->
+
+<section class="section">
+
+  <div class="section-label">
+    04 / Capabilities
+  </div>
+
+
+  <h2 class="section-heading reveal">
+
+    What I<br>
+    Work With
+
+  </h2>
+
+
+  <div class="capabilities">
+
+
+    <div class="capability-row reveal">
+
+      <div class="capability-name">
+        Financial Analysis
+      </div>
+
+      <div class="capability-number">
+        01
+      </div>
+
+    </div>
+
+
+    <div class="capability-row reveal">
+
+      <div class="capability-name">
+        Valuation
+      </div>
+
+      <div class="capability-number">
+        02
+      </div>
+
+    </div>
+
+
+    <div class="capability-row reveal">
+
+      <div class="capability-name">
+        Financial Modelling
+      </div>
+
+      <div class="capability-number">
+        03
+      </div>
+
+    </div>
+
+
+    <div class="capability-row reveal">
+
+      <div class="capability-name">
+        M&A Research
+      </div>
+
+      <div class="capability-number">
+        04
+      </div>
+
+    </div>
+
+
+    <div class="capability-row reveal">
+
+      <div class="capability-name">
+        Company Research
+      </div>
+
+      <div class="capability-number">
+        05
+      </div>
+
+    </div>
+
+
+    <div class="capability-row reveal">
+
+      <div class="capability-name">
+        Strategy
+      </div>
+
+      <div class="capability-number">
+        06
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section class="section">
+
+  <div class="section-label">
+    05 / Education
+  </div>
+
+
+  <h2 class="section-heading reveal">
+    Education
+  </h2>
+
+
+  <div class="education-grid">
+
+
+    <div class="reveal">
+
+      <div class="education-name">
+
+        CHRIST<br>
+        (Deemed to be University)
+
+      </div>
+
+
+      <div class="education-details">
+
+        BBA — Finance & International Business<br>
+        Bengaluru<br>
+        2023 — 2026<br>
+        CGPA: 9.2 / 10
+
+      </div>
+
+    </div>
+
+
+    <div class="about-copy reveal">
+
+      Academic focus across finance,
+      international business and
+      strategic decision-making.
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
+
+<section class="section">
+
+  <div class="section-label">
+    06 / Achievements
+  </div>
+
+
+  <h2 class="section-heading reveal">
+    Recognition
+  </h2>
+
+
+  <div class="achievement-list">
+
+
+    <div class="achievement-row reveal">
+
+      <div class="achievement-number">
+        01
+      </div>
+
+
+      <div class="achievement-title">
+
+        Best Research Paper Award —
+        International Conference on
+        Deep-Tech & Policy
+
+      </div>
+
+    </div>
+
+
+    <div class="achievement-row reveal">
+
+      <div class="achievement-number">
+        02
+      </div>
+
+
+      <div class="achievement-title">
+
+        Published Research Paper —
+        International Journal of Novel
+        Research and Development
+
+      </div>
+
+    </div>
+
+
+    <div class="achievement-row reveal">
+
+      <div class="achievement-number">
+        03
+      </div>
+
+
+      <div class="achievement-title">
+
+        Winner — Finance Fest
+        “Chakravyuh”, Christ University
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
+<section class="section">
+
+  <div class="section-label">
+    07 / Certifications
+  </div>
+
+
+  <h2 class="section-heading reveal">
+    Certifications
+  </h2>
+
+
+  <div class="cert-grid">
+
+
+    <div class="certification reveal">
+
+      <div class="certification-title">
+        Lean Six Sigma Yellow Belt
+      </div>
+
+      <div class="certification-provider">
+        MSME
+      </div>
+
+    </div>
+
+
+    <div class="certification reveal">
+
+      <div class="certification-title">
+        Bloomberg Terminal Navigation
+      </div>
+
+      <div class="certification-provider">
+        Bloomberg
+      </div>
+
+    </div>
+
+
+    <div class="certification reveal">
+
+      <div class="certification-title">
+        Public Speaking
+      </div>
+
+      <div class="certification-provider">
+        IIT Hyderabad · SWAYAM
+      </div>
+
+    </div>
+
+
+    <div class="certification reveal">
+
+      <div class="certification-title">
+        Foundations of Project Management
+      </div>
+
+      <div class="certification-provider">
+        Google
+      </div>
+
+    </div>
+
+
+    <div class="certification reveal">
+
+      <div class="certification-title">
+        Financial Modelling & Valuation
+      </div>
+
+      <div class="certification-provider">
+        Corporate Finance Institute
+      </div>
+
+    </div>
+
+
+    <div class="certification reveal">
+
+      <div class="certification-title">
+        Excel Skills
+      </div>
+
+      <div class="certification-provider">
+        J.P. Morgan Chase
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+  class="section contact"
+  id="contact"
+>
+
+  <div class="section-label">
+    08 / Contact
+  </div>
+
+
+  <h2 class="contact-title reveal">
+
+    Let's<br>
+    connect.
+
+  </h2>
+
+
+  <div class="contact-mark">
+
+    <svg
+      viewBox="0 0 24 85"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+
+      <path
+        d="
+          M12.4 0
+          C12.1 12 12.8 23 12.3 34
+          C11.9 45 12.5 57 12.1 67
+          C11.8 74 11.5 80 11.7 85
+        "
+        fill="none"
+        stroke="#F4EFEA"
+        stroke-width="1.15"
+        stroke-linecap="round"
+        opacity="0.78"
+      />
+
+    </svg>
+
+  </div>
+
+
+  <p class="contact-description reveal">
+
+    Open to conversations around investment banking,
+    finance, valuation, strategy and opportunities
+    to build meaningful work.
+
+  </p>
+
+
+  <div class="contact-links reveal">
+
+
+    <a
+      class="contact-link"
+      href="mailto:anandaayush734@gmail.com"
+    >
+      Email
+    </a>
+
+
+    <a
+      class="contact-link"
+      href="https://www.linkedin.com/in/ayushfinance100/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn
+    </a>
+
+
+    <a
+      class="contact-link"
+      href="Ayush_Anand_Resume_Analyst.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Resume
+    </a>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div>
+    © 2026 Ayush Anand
+  </div>
+
+
+  <div>
+    Investment Banking · Finance · Strategy
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =========================================================
+   CUSTOM IMAGE CURSOR
+========================================================= */
+
+const customCursor =
+  document.querySelector(
+    ".custom-image-cursor"
+  );
+
+
+let mouseX = 0;
+let mouseY = 0;
+
+let cursorX = 0;
+let cursorY = 0;
+
+
+/*
+   Track mouse position
+*/
+
+document.addEventListener(
+  "mousemove",
+  function(event) {
+
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+  }
+);
+
+
+/*
+   Smoothly move the image
+*/
+
+function animateCursor() {
+
+  cursorX +=
+    (mouseX - cursorX) * 0.18;
+
+  cursorY +=
+    (mouseY - cursorY) * 0.18;
+
+
+  customCursor.style.transform =
+    `translate3d(
+      ${cursorX}px,
+      ${cursorY}px,
+      0
+    ) translate(-50%, -50%)`;
+
+
+  requestAnimationFrame(
+    animateCursor
+  );
+
+}
+
+
+animateCursor();
+
+
+/* =========================================================
+   CURSOR SIZE ON LINKS
+========================================================= */
+
+document
+  .querySelectorAll("a")
+  .forEach(function(link) {
+
+    link.addEventListener(
+      "mouseenter",
+      function() {
+
+        customCursor.style.width =
+          "72px";
+
+        customCursor.style.height =
+          "72px";
+
+      }
+    );
+
+
+    link.addEventListener(
+      "mouseleave",
+      function() {
+
+        customCursor.style.width =
+          "55px";
+
+        customCursor.style.height =
+          "55px";
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+  document.querySelectorAll(
+    ".reveal"
+  );
+
+
+const observer =
+  new IntersectionObserver(
+
+    function(entries) {
+
+      entries.forEach(
+        function(entry) {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
         }
-
       );
 
+    },
 
-    revealElements.forEach(function(element) {
+    {
+      threshold: 0.12
+    }
 
-      observer.observe(element);
+  );
 
-    });
 
-  </script>
+revealElements.forEach(
+  function(element) {
+
+    observer.observe(element);
+
+  }
+);
+
+
+</script>
+
 
 </body>
 </html>
