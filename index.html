@@ -4,21 +4,18 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ayush Anand — Investment Banking & Finance</title>
 
     <meta name="description"
         content="Ayush Anand — Investment Banking, Finance, Valuation, Research and Strategy.">
 
-
-    <!-- =========================================================
-         OKOJO PRO
-    ========================================================== -->
-
     <style>
+
+        /* =====================================================
+           OKOJO PRO
+        ===================================================== */
 
         @font-face {
             font-family: "Okojo Pro";
@@ -30,26 +27,23 @@
 
 
         /* =====================================================
-           COLOUR SYSTEM
+           COLOURS
         ===================================================== */
 
         :root {
 
-            --bg-1: #5D2428;
-            --bg-2: #5F272A;
-            --bg-3: #5F2628;
-            --bg-4: #5D2627;
+            --bg-1: #5F2528;
+            --bg-2: #61272A;
 
             --text-1: #F3EEE9;
             --text-2: #F4EFEB;
             --text-3: #F4EFEA;
 
-            --line: rgba(244, 239, 234, 0.24);
+            --line: rgba(244, 239, 234, 0.25);
             --line-soft: rgba(244, 239, 234, 0.13);
 
             --muted: rgba(244, 239, 234, 0.72);
             --faint: rgba(244, 239, 234, 0.48);
-
         }
 
 
@@ -63,22 +57,20 @@
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
 
             background:
-                radial-gradient(
-                    circle at 50% 35%,
-                    #5F272A 0%,
-                    #5D2428 45%,
-                    #5F2628 75%,
-                    #5D2627 100%
+                linear-gradient(
+                    135deg,
+                    #5F2528 0%,
+                    #61272A 100%
                 );
+
+            background-attachment: fixed;
 
             color: var(--text-1);
 
@@ -94,34 +86,24 @@
             overflow-x: hidden;
 
             cursor: none;
-
         }
 
 
         ::selection {
-
             background: var(--text-1);
-
-            color: #5D2428;
-
+            color: #5F2528;
         }
 
 
         a {
-
             color: inherit;
-
             text-decoration: none;
-
             cursor: none;
-
         }
 
 
         button {
-
             cursor: none;
-
         }
 
 
@@ -154,16 +136,12 @@
             transform:
                 translate3d(-50%, -50%, 0);
 
-            will-change:
-                transform,
-                width,
-                height;
+            will-change: transform;
 
             transition:
                 width 0.25s ease,
                 height 0.25s ease,
                 border-color 0.25s ease;
-
         }
 
 
@@ -178,15 +156,13 @@
 
             border-radius: 50%;
 
-            background:
-                var(--text-1);
+            background: var(--text-1);
 
             top: 50%;
             left: 50%;
 
             transform:
                 translate(-50%, -50%);
-
         }
 
 
@@ -197,15 +173,6 @@
 
             border-color:
                 rgba(244, 239, 234, 0.95);
-
-        }
-
-
-        .custom-cursor.hover::after {
-
-            width: 5px;
-            height: 5px;
-
         }
 
 
@@ -238,30 +205,23 @@
                 var(--line-soft);
 
             background:
-                rgba(93, 36, 40, 0.68);
+                rgba(95, 37, 40, 0.72);
 
             backdrop-filter:
                 blur(14px);
 
             -webkit-backdrop-filter:
                 blur(14px);
-
         }
 
 
         .logo {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size: 13px;
 
             letter-spacing: 3px;
 
             text-transform: uppercase;
-
         }
 
 
@@ -270,16 +230,10 @@
             display: flex;
 
             gap: 32px;
-
         }
 
 
         .nav-links a {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size: 11px;
 
@@ -287,21 +241,17 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--text-2);
+            color: var(--text-2);
 
             opacity: 0.76;
 
             transition:
                 opacity 0.3s ease;
-
         }
 
 
         .nav-links a:hover {
-
             opacity: 1;
-
         }
 
 
@@ -327,7 +277,6 @@
             text-align: center;
 
             position: relative;
-
         }
 
 
@@ -342,16 +291,10 @@
             color: var(--muted);
 
             margin-bottom: 40px;
-
         }
 
 
         .hero h1 {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size:
                 clamp(75px, 11vw, 165px);
@@ -360,26 +303,9 @@
 
             line-height: 0.9;
 
-            letter-spacing:
-                -3px;
+            letter-spacing: -3px;
 
-            color:
-                var(--text-1);
-
-        }
-
-
-        .hero h1 span {
-
-            display: block;
-
-        }
-
-
-        .hero h1 .italic {
-
-            font-style: italic;
-
+            color: var(--text-1);
         }
 
 
@@ -394,7 +320,6 @@
 
             margin:
                 45px auto 40px;
-
         }
 
 
@@ -406,11 +331,9 @@
 
             line-height: 1.8;
 
-            color:
-                var(--text-2);
+            color: var(--text-2);
 
             opacity: 0.9;
-
         }
 
 
@@ -425,7 +348,6 @@
             gap: 12px;
 
             flex-wrap: wrap;
-
         }
 
 
@@ -446,28 +368,22 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--text-1);
+            color: var(--text-1);
 
             transition:
                 background 0.35s ease,
                 color 0.35s ease,
                 border 0.35s ease;
-
         }
 
 
         .hero-button:hover {
 
-            background:
-                var(--text-1);
+            background: var(--text-1);
 
-            color:
-                #5D2428;
+            color: #5F2528;
 
-            border-color:
-                var(--text-1);
-
+            border-color: var(--text-1);
         }
 
 
@@ -488,9 +404,7 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
@@ -501,7 +415,6 @@
             display: block;
 
             width: 5px;
-
             height: 5px;
 
             margin:
@@ -509,9 +422,7 @@
 
             border-radius: 50%;
 
-            background:
-                var(--text-1);
-
+            background: var(--text-1);
         }
 
 
@@ -527,7 +438,6 @@
             border-top:
                 1px solid
                 var(--line-soft);
-
         }
 
 
@@ -547,9 +457,7 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--muted);
-
+            color: var(--muted);
         }
 
 
@@ -563,16 +471,10 @@
 
             background:
                 var(--line-soft);
-
         }
 
 
         .large-text {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size:
                 clamp(45px, 6vw, 85px);
@@ -584,14 +486,11 @@
             max-width: 1050px;
 
             margin-bottom: 80px;
-
         }
 
 
         .large-text em {
-
             font-style: italic;
-
         }
 
 
@@ -607,22 +506,15 @@
                 0.8fr 1.2fr;
 
             gap: 100px;
-
         }
 
 
         .about-title {
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
             font-size:
                 clamp(60px, 8vw, 115px);
 
             line-height: 0.88;
-
         }
 
 
@@ -631,7 +523,6 @@
             display: block;
 
             font-style: italic;
-
         }
 
 
@@ -643,16 +534,12 @@
 
             line-height: 1.9;
 
-            color:
-                var(--muted);
-
+            color: var(--muted);
         }
 
 
         .about-content p {
-
             margin-bottom: 28px;
-
         }
 
 
@@ -666,18 +553,11 @@
                 1px solid
                 var(--line);
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
             font-size: 28px;
 
             line-height: 1.25;
 
-            color:
-                var(--text-1);
-
+            color: var(--text-1);
         }
 
 
@@ -690,7 +570,6 @@
             border-top:
                 1px solid
                 var(--line);
-
         }
 
 
@@ -712,38 +591,23 @@
 
             transition:
                 padding-left 0.35s ease;
-
         }
 
 
         .experience:hover {
-
             padding-left: 15px;
-
         }
 
 
         .experience-number {
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
             font-size: 30px;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
         .experience h3 {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size: 39px;
 
@@ -752,7 +616,6 @@
             font-weight: 400;
 
             margin-bottom: 8px;
-
         }
 
 
@@ -764,11 +627,9 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             margin-bottom: 25px;
-
         }
 
 
@@ -776,18 +637,11 @@
 
             max-width: 750px;
 
-            color:
-                var(--muted);
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
+            color: var(--muted);
 
             font-size: 15px;
 
             line-height: 1.75;
-
         }
 
 
@@ -795,7 +649,6 @@
 
             margin:
                 0 0 9px 18px;
-
         }
 
 
@@ -809,9 +662,7 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
@@ -833,7 +684,6 @@
             border-left:
                 1px solid
                 var(--line);
-
         }
 
 
@@ -859,7 +709,6 @@
 
             transition:
                 background 0.4s ease;
-
         }
 
 
@@ -867,31 +716,18 @@
 
             background:
                 rgba(244, 239, 234, 0.045);
-
         }
 
 
         .work-number {
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
             font-size: 28px;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
         .work-card h3 {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size: 43px;
 
@@ -900,7 +736,6 @@
             font-weight: 400;
 
             margin-bottom: 20px;
-
         }
 
 
@@ -908,13 +743,11 @@
 
             max-width: 530px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 15px;
 
             line-height: 1.75;
-
         }
 
 
@@ -928,9 +761,7 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
@@ -946,7 +777,6 @@
                 repeat(3, 1fr);
 
             gap: 15px;
-
         }
 
 
@@ -963,7 +793,6 @@
             transition:
                 transform 0.35s ease,
                 background 0.35s ease;
-
         }
 
 
@@ -974,7 +803,6 @@
 
             background:
                 rgba(244, 239, 234, 0.035);
-
         }
 
 
@@ -984,18 +812,11 @@
 
             letter-spacing: 3px;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
         .capability h3 {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size: 31px;
 
@@ -1004,19 +825,16 @@
             margin-top: 65px;
 
             margin-bottom: 12px;
-
         }
 
 
         .capability p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 13px;
 
             line-height: 1.7;
-
         }
 
 
@@ -1032,29 +850,20 @@
                 1fr 1fr;
 
             gap: 100px;
-
         }
 
 
         .education-title {
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
             font-size:
                 clamp(60px, 8vw, 110px);
 
             line-height: 0.88;
-
         }
 
 
         .education-title em {
-
             font-style: italic;
-
         }
 
 
@@ -1063,7 +872,6 @@
             border-top:
                 1px solid
                 var(--line);
-
         }
 
 
@@ -1082,15 +890,11 @@
                 var(--line);
 
             font-size: 14px;
-
         }
 
 
         .education-row span:first-child {
-
-            color:
-                var(--muted);
-
+            color: var(--muted);
         }
 
 
@@ -1098,9 +902,7 @@
 
             text-align: right;
 
-            color:
-                var(--text-1);
-
+            color: var(--text-1);
         }
 
 
@@ -1113,7 +915,6 @@
             border-top:
                 1px solid
                 var(--line);
-
         }
 
 
@@ -1132,48 +933,32 @@
             border-bottom:
                 1px solid
                 var(--line);
-
         }
 
 
         .achievement-number {
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
             font-size: 30px;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
         .achievement h3 {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size: 31px;
 
             font-weight: 400;
 
             margin-bottom: 7px;
-
         }
 
 
         .achievement p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 14px;
-
         }
 
 
@@ -1191,7 +976,6 @@
             border-top:
                 1px solid
                 var(--line);
-
         }
 
 
@@ -1205,7 +989,6 @@
             border-bottom:
                 1px solid
                 var(--line);
-
         }
 
 
@@ -1215,25 +998,17 @@
 
             letter-spacing: 3px;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
         .certification h3 {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size: 27px;
 
             font-weight: 400;
 
             margin-top: 7px;
-
         }
 
 
@@ -1246,7 +1021,6 @@
             border-top:
                 1px solid
                 var(--line);
-
         }
 
 
@@ -1265,21 +1039,14 @@
             border-bottom:
                 1px solid
                 var(--line);
-
         }
 
 
         .volunteer h3 {
 
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
-
             font-size: 31px;
 
             font-weight: 400;
-
         }
 
 
@@ -1287,11 +1054,9 @@
 
             max-width: 720px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 15px;
-
         }
 
 
@@ -1312,7 +1077,6 @@
             align-items: center;
 
             text-align: center;
-
         }
 
 
@@ -1321,16 +1085,10 @@
             width: 100%;
 
             text-align: left;
-
         }
 
 
         .contact h2 {
-
-            font-family:
-                "Okojo Pro",
-                Georgia,
-                serif;
 
             font-size:
                 clamp(80px, 13vw, 175px);
@@ -1338,7 +1096,6 @@
             line-height: 0.82;
 
             font-weight: 400;
-
         }
 
 
@@ -1347,7 +1104,6 @@
             display: block;
 
             font-style: italic;
-
         }
 
 
@@ -1358,11 +1114,9 @@
             margin:
                 50px auto 35px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 16px;
-
         }
 
 
@@ -1375,7 +1129,6 @@
             flex-wrap: wrap;
 
             justify-content: center;
-
         }
 
 
@@ -1402,14 +1155,12 @@
 
             text-transform: uppercase;
 
-            color:
-                var(--faint);
-
+            color: var(--faint);
         }
 
 
         /* =====================================================
-           REVEAL ANIMATION
+           SCROLL REVEAL
         ===================================================== */
 
         .reveal {
@@ -1422,7 +1173,6 @@
             transition:
                 opacity 0.9s ease,
                 transform 0.9s ease;
-
         }
 
 
@@ -1432,7 +1182,6 @@
 
             transform:
                 translateY(0);
-
         }
 
 
@@ -1443,24 +1192,18 @@
         @media (max-width: 800px) {
 
             body {
-
                 cursor: auto;
-
             }
 
 
             .custom-cursor {
-
                 display: none;
-
             }
 
 
             a,
             button {
-
                 cursor: pointer;
-
             }
 
 
@@ -1468,14 +1211,11 @@
 
                 padding:
                     20px 25px;
-
             }
 
 
             .nav-links {
-
                 display: none;
-
             }
 
 
@@ -1483,72 +1223,51 @@
 
                 padding:
                     130px 25px 90px;
-
             }
 
 
             .hero h1 {
 
-                font-size:
-                    70px;
+                font-size: 70px;
 
-                letter-spacing:
-                    -2px;
-
+                letter-spacing: -2px;
             }
 
 
             .hero-description {
-
-                font-size:
-                    15px;
-
+                font-size: 15px;
             }
 
 
             .hero-top {
 
-                font-size:
-                    9px;
+                font-size: 9px;
 
-                letter-spacing:
-                    4px;
-
+                letter-spacing: 4px;
             }
 
 
             section {
-
                 padding:
                     90px 25px;
-
             }
 
 
             .large-text {
-
-                font-size:
-                    46px;
-
+                font-size: 46px;
             }
 
 
             .about-grid {
 
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
 
-                gap:
-                    50px;
-
+                gap: 50px;
             }
 
 
             .about-title {
-
-                font-size:
-                    68px;
-
+                font-size: 68px;
             }
 
 
@@ -1557,79 +1276,53 @@
                 grid-template-columns:
                     45px 1fr;
 
-                gap:
-                    18px;
-
+                gap: 18px;
             }
 
 
             .experience-date {
-
-                display:
-                    none;
-
+                display: none;
             }
 
 
             .experience h3 {
-
-                font-size:
-                    31px;
-
+                font-size: 31px;
             }
 
 
             .work-grid {
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
             }
 
 
             .work-card {
 
-                min-height:
-                    350px;
+                min-height: 350px;
 
-                padding:
-                    35px;
-
+                padding: 35px;
             }
 
 
             .work-card h3 {
-
-                font-size:
-                    36px;
-
+                font-size: 36px;
             }
 
 
             .capabilities {
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
             }
 
 
             .education {
 
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
 
-                gap:
-                    55px;
-
+                gap: 55px;
             }
 
 
             .education-title {
-
-                font-size:
-                    68px;
-
+                font-size: 68px;
             }
 
 
@@ -1638,66 +1331,45 @@
                 grid-template-columns:
                     45px 1fr;
 
-                gap:
-                    18px;
-
+                gap: 18px;
             }
 
 
             .certification-grid {
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
             }
 
 
             .certification {
-
-                margin-right:
-                    0;
-
+                margin-right: 0;
             }
 
 
             .volunteer {
 
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
 
-                gap:
-                    15px;
-
+                gap: 15px;
             }
 
 
             .contact {
-
-                min-height:
-                    75vh;
-
+                min-height: 75vh;
             }
 
 
             .contact h2 {
-
-                font-size:
-                    82px;
-
+                font-size: 82px;
             }
 
 
             footer {
 
-                padding:
-                    25px;
+                padding: 25px;
 
-                flex-direction:
-                    column;
+                flex-direction: column;
 
-                gap:
-                    10px;
-
+                gap: 10px;
             }
 
         }
@@ -1757,10 +1429,9 @@
 
     <!-- =====================================================
          HERO
-    ====================================================== -->
+    ===================================================== -->
 
     <header class="hero">
-
 
         <div class="hero-top">
             WELCOME TO THE SITE OF
@@ -1768,11 +1439,7 @@
 
 
         <h1>
-
-            <span>
-                Ayush Anand
-            </span>
-
+            Ayush Anand
         </h1>
 
 
@@ -1791,43 +1458,32 @@
 
         <div class="hero-buttons">
 
-
             <a
                 href="#experience"
                 class="hero-button">
-
                 EXPERIENCE
-
             </a>
 
 
             <a
                 href="#work"
                 class="hero-button">
-
                 SELECTED WORK
-
             </a>
 
 
             <a
                 href="#contact"
                 class="hero-button">
-
                 CONTACT
-
             </a>
-
 
         </div>
 
 
         <div class="hero-scroll">
-
             SCROLL
-
         </div>
-
 
     </header>
 
@@ -1838,16 +1494,12 @@
 
     <section id="about">
 
-
         <div class="section-heading">
-
             01 / ABOUT
-
         </div>
 
 
         <div class="about-grid reveal">
-
 
             <div class="about-title">
 
@@ -1861,7 +1513,6 @@
 
 
             <div class="about-content">
-
 
                 <p>
 
@@ -1899,7 +1550,6 @@
 
                 </div>
 
-
             </div>
 
         </div>
@@ -1913,11 +1563,8 @@
 
     <section id="experience">
 
-
         <div class="section-heading">
-
             02 / EXPERIENCE
-
         </div>
 
 
@@ -1938,7 +1585,6 @@
 
             <div class="experience reveal">
 
-
                 <div class="experience-number">
                     01
                 </div>
@@ -1950,11 +1596,8 @@
                         Investment Banking Trainee
                     </h3>
 
-
                     <div class="company">
-
                         JM Financial · Industrials Coverage
-
                     </div>
 
 
@@ -1997,17 +1640,13 @@
 
 
                 <div class="experience-date">
-
                     JUL 2026
-
                 </div>
-
 
             </div>
 
 
             <div class="experience reveal">
-
 
                 <div class="experience-number">
                     02
@@ -2020,11 +1659,8 @@
                         M&A Intern
                     </h3>
 
-
                     <div class="company">
-
                         Deloitte · Strategy, Risk & Transactions
-
                     </div>
 
 
@@ -2064,23 +1700,17 @@
                 <div class="experience-date">
 
                     APR 2025
-
                     <br>
-
                     —
-
                     <br>
-
                     JUN 2025
 
                 </div>
-
 
             </div>
 
 
             <div class="experience reveal">
-
 
                 <div class="experience-number">
                     03
@@ -2093,11 +1723,8 @@
                         Global Treasury Operations Intern
                     </h3>
 
-
                     <div class="company">
-
                         Aditya Birla Global Trading
-
                     </div>
 
 
@@ -2133,17 +1760,12 @@
                 <div class="experience-date">
 
                     MAY 2024
-
                     <br>
-
                     —
-
                     <br>
-
                     JUN 2024
 
                 </div>
-
 
             </div>
 
@@ -2159,11 +1781,8 @@
 
     <section id="work">
 
-
         <div class="section-heading">
-
             03 / SELECTED WORK
-
         </div>
 
 
@@ -2182,7 +1801,6 @@
 
 
             <div class="work-card reveal">
-
 
                 <div class="work-number">
                     01
@@ -2209,19 +1827,15 @@
 
 
                     <div class="work-tag">
-
                         EQUITY RESEARCH · MODELLING
-
                     </div>
 
                 </div>
-
 
             </div>
 
 
             <div class="work-card reveal">
-
 
                 <div class="work-number">
                     02
@@ -2247,19 +1861,15 @@
 
 
                     <div class="work-tag">
-
                         DCF · VALUATION · COMPARABLES
-
                     </div>
 
                 </div>
-
 
             </div>
 
 
             <div class="work-card reveal">
-
 
                 <div class="work-number">
                     03
@@ -2285,19 +1895,15 @@
 
 
                     <div class="work-tag">
-
                         RESEARCH · FORECASTING
-
                     </div>
 
                 </div>
-
 
             </div>
 
 
             <div class="work-card reveal">
-
 
                 <div class="work-number">
                     04
@@ -2322,13 +1928,10 @@
 
 
                     <div class="work-tag">
-
                         M&A · RESEARCH · TRANSACTIONS
-
                     </div>
 
                 </div>
-
 
             </div>
 
@@ -2344,11 +1947,8 @@
 
     <section id="skills">
 
-
         <div class="section-heading">
-
             04 / CAPABILITIES
-
         </div>
 
 
@@ -2491,11 +2091,8 @@
 
     <section>
 
-
         <div class="section-heading">
-
             05 / EDUCATION
-
         </div>
 
 
@@ -2611,11 +2208,8 @@
 
     <section>
 
-
         <div class="section-heading">
-
             06 / ACHIEVEMENTS
-
         </div>
 
 
@@ -2702,11 +2296,8 @@
 
     <section>
 
-
         <div class="section-heading">
-
             07 / CERTIFICATIONS
-
         </div>
 
 
@@ -2715,9 +2306,7 @@
 
             <div class="certification reveal">
 
-                <span>
-                    01
-                </span>
+                <span>01</span>
 
                 <h3>
                     Lean Six Sigma Yellow Belt
@@ -2728,9 +2317,7 @@
 
             <div class="certification reveal">
 
-                <span>
-                    02
-                </span>
+                <span>02</span>
 
                 <h3>
                     Bloomberg Terminal Navigation
@@ -2741,9 +2328,7 @@
 
             <div class="certification reveal">
 
-                <span>
-                    03
-                </span>
+                <span>03</span>
 
                 <h3>
                     Public Speaking — IIT Hyderabad
@@ -2754,9 +2339,7 @@
 
             <div class="certification reveal">
 
-                <span>
-                    04
-                </span>
+                <span>04</span>
 
                 <h3>
                     Google Project Management
@@ -2767,9 +2350,7 @@
 
             <div class="certification reveal">
 
-                <span>
-                    05
-                </span>
+                <span>05</span>
 
                 <h3>
                     Corporate Finance Institute
@@ -2780,9 +2361,7 @@
 
             <div class="certification reveal">
 
-                <span>
-                    06
-                </span>
+                <span>06</span>
 
                 <h3>
                     J.P. Morgan Excel Skills
@@ -2802,11 +2381,8 @@
 
     <section>
 
-
         <div class="section-heading">
-
             08 / BEYOND FINANCE
-
         </div>
 
 
@@ -2884,9 +2460,7 @@
 
 
         <div class="section-heading">
-
             09 / CONTACT
-
         </div>
 
 
@@ -2961,14 +2535,12 @@
 
     <script>
 
-
         /* =====================================================
-           SMOOTH CUSTOM CURSOR
+           CUSTOM CURSOR
         ===================================================== */
 
         const cursor =
             document.querySelector(".custom-cursor");
-
 
         let mouseX = 0;
         let mouseY = 0;
@@ -2979,7 +2551,7 @@
 
         document.addEventListener(
             "mousemove",
-            function(event) {
+            function (event) {
 
                 mouseX = event.clientX;
                 mouseY = event.clientY;
@@ -3016,7 +2588,7 @@
 
 
         /* =====================================================
-           CURSOR HOVER
+           CURSOR HOVER EFFECT
         ===================================================== */
 
         const hoverElements =
@@ -3026,11 +2598,11 @@
 
 
         hoverElements.forEach(
-            function(element) {
+            function (element) {
 
                 element.addEventListener(
                     "mouseenter",
-                    function() {
+                    function () {
 
                         cursor.classList.add(
                             "hover"
@@ -3042,7 +2614,7 @@
 
                 element.addEventListener(
                     "mouseleave",
-                    function() {
+                    function () {
 
                         cursor.classList.remove(
                             "hover"
@@ -3068,10 +2640,10 @@
         const observer =
             new IntersectionObserver(
 
-                function(entries) {
+                function (entries) {
 
                     entries.forEach(
-                        function(entry) {
+                        function (entry) {
 
                             if (
                                 entry.isIntersecting
@@ -3100,7 +2672,7 @@
 
 
         revealElements.forEach(
-            function(element) {
+            function (element) {
 
                 observer.observe(
                     element
@@ -3108,7 +2680,6 @@
 
             }
         );
-
 
     </script>
 
