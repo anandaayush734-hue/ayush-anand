@@ -1,1 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Your Name — Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #211719;
+    color: #eee5df;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+body::selection {
+    background: #eee5df;
+    color: #211719;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(238,229,223,0.12);
+    background: rgba(33,23,25,0.82);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: #eee5df;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    opacity: .75;
+    transition: .3s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 130px 9% 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border: 1px solid rgba(238,229,223,.08);
+    border-radius: 50%;
+    right: -250px;
+    top: 100px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: .55;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: clamp(70px, 11vw, 155px);
+    line-height: .85;
+    max-width: 1000px;
+    letter-spacing: -5px;
+}
+
+.hero h1 em {
+    display: block;
+    font-weight: 400;
+}
+
+.hero-text {
+    max-width: 540px;
+    margin-top: 45px;
+    font-size: 17px;
+    opacity: .7;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 45px;
+    width: fit-content;
+    padding: 17px 30px;
+    border: 1px solid rgba(238,229,223,.35);
+    color: #eee5df;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+.hero-button:hover {
+    background: #eee5df;
+    color: #211719;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 140px 9%;
+    border-top: 1px solid rgba(238,229,223,.1);
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #b99891;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+}
+
+.section-label::after {
+    content: "";
+    height: 1px;
+    background: rgba(238,229,223,.15);
+    flex: 1;
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 100px;
+}
+
+.about h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(45px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.about-text {
+    font-size: 19px;
+    max-width: 650px;
+    opacity: .72;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+}
+
+/* PROJECTS */
+
+.project {
+    display: grid;
+    grid-template-columns: 100px 1fr 180px;
+    gap: 40px;
+    padding: 45px 0;
+    border-top: 1px solid rgba(238,229,223,.12);
+    transition: .4s;
+}
+
+.project:last-child {
+    border-bottom: 1px solid rgba(238,229,223,.12);
+}
+
+.project-number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    opacity: .35;
+}
+
+.project h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.project p {
+    opacity: .55;
+    max-width: 650px;
+}
+
+.project-year {
+    text-align: right;
+    font-size: 10px;
+    letter-spacing: 3px;
+    opacity: .4;
+}
+
+/* SKILLS */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill {
+    border: 1px solid rgba(238,229,223,.12);
+    padding: 40px;
+    min-height: 200px;
+    transition: .4s;
+}
+
+.skill:hover {
+    border-color: rgba(238,229,223,.4);
+    transform: translateY(-5px);
+}
+
+.skill-number {
+    font-size: 11px;
+    opacity: .3;
+    letter-spacing: 2px;
+}
+
+.skill h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 35px 0 10px;
+}
+
+.skill p {
+    opacity: .5;
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(60px, 10vw, 130px);
+    font-weight: 400;
+    line-height: .9;
+}
+
+.contact p {
+    margin: 35px auto;
+    max-width: 500px;
+    opacity: .6;
+}
+
+.contact-button {
+    align-self: center;
+    display: inline-block;
+    padding: 18px 45px;
+    border: 1px solid rgba(238,229,223,.3);
+    color: #eee5df;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+.contact-button:hover {
+    background: #eee5df;
+    color: #211719;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 9%;
+    border-top: 1px solid rgba(238,229,223,.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .45;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    nav div:last-child {
+        display: none;
+    }
+
+    .hero {
+        padding: 130px 25px 80px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+        letter-spacing: -3px;
+    }
+
+    section {
+        padding: 90px 25px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+    }
+
+    .project-year {
+        display: none;
+    }
+
+    .project h3 {
+        font-size: 30px;
+    }
+
+    footer {
+        padding: 25px;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Portfolio / 2026</div>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="eyebrow">
+        Finance · Strategy · Investment
+    </div>
+
+    <h1>
+        Building ideas
+        <em>that matter.</em>
+    </h1>
+
+    <p class="hero-text">
+        A personal space for research, projects, ideas and work.
+        Exploring finance, business, strategy and the systems behind
+        how companies grow.
+    </p>
+
+    <a href="#work" class="hero-button">
+        Explore the work →
+    </a>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-label">
+        01 / About
+    </div>
+
+    <div class="about">
+
+        <h2>
+            Curious by
+            <br>
+            nature.
+        </h2>
+
+        <div class="about-text">
+
+            <p>
+                This website is a collection of work, research,
+                experiments and ideas.
+            </p>
+
+            <p>
+                I am interested in understanding businesses —
+                how they create value, allocate capital, compete
+                and grow.
+            </p>
+
+            <p>
+                Beyond finance, I enjoy exploring technology,
+                strategy, international business and the
+                intersection between data and decision-making.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section id="work">
+
+    <div class="section-label">
+        02 / Selected Work
+    </div>
+
+    <div class="project">
+
+        <div class="project-number">01</div>
+
+        <div>
+            <h3>Investment Banking</h3>
+
+            <p>
+                Financial analysis, valuation, company research,
+                transaction analysis and investment banking work.
+            </p>
+        </div>
+
+        <div class="project-year">
+            2026
+        </div>
+
+    </div>
+
+
+    <div class="project">
+
+        <div class="project-number">02</div>
+
+        <div>
+            <h3>Research</h3>
+
+            <p>
+                Independent research exploring companies,
+                markets, technology and business strategy.
+            </p>
+        </div>
+
+        <div class="project-year">
+            Research
+        </div>
+
+    </div>
+
+
+    <div class="project">
+
+        <div class="project-number">03</div>
+
+        <div>
+            <h3>Projects & Experiments</h3>
+
+            <p>
+                Digital projects, financial tools, experiments
+                and ideas built to solve interesting problems.
+            </p>
+        </div>
+
+        <div class="project-year">
+            Ongoing
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-label">
+        03 / Capabilities
+    </div>
+
+    <div class="skills">
+
+        <div class="skill">
+
+            <div class="skill-number">01</div>
+
+            <h3>Financial Analysis</h3>
+
+            <p>
+                Understanding financial statements,
+                valuation and company performance.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-number">02</div>
+
+            <h3>Strategy</h3>
+
+            <p>
+                Breaking down businesses, markets,
+                competition and growth opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-number">03</div>
+
+            <h3>Research</h3>
+
+            <p>
+                Turning complex information into
+                clear and useful insights.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="section-label">
+        04 / Contact
+    </div>
+
+    <h2>
+        Let's talk.
+    </h2>
+
+    <p>
+        Have an interesting idea, project or opportunity?
+        Feel free to reach out.
+    </p>
+
+    <a href="mailto:your@email.com" class="contact-button">
+        Get in touch →
+    </a>
+
+</section>
+
+
+<footer>
+
+    <span>© 2026 Your Name</span>
+
+    <span>Built with curiosity.</span>
+
+</footer>
+
+
+</body>
+</html>
