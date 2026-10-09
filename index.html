@@ -1,2198 +1,455 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Ayush Anand | Investment Banking</title>
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background:
-        radial-gradient(
-          circle at 20% 10%,
-          rgba(255,255,255,0.035),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 80% 70%,
-          rgba(0,0,0,0.08),
-          transparent 30%
-        ),
-        #5F2528;
-
-      color: #F3EEE9;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      cursor: none;
-
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-
-    /* =====================================================
-       CUSTOM IMAGE CURSOR
-       ===================================================== */
-
-    .custom-image-cursor {
-      position: fixed;
-
-      left: 0;
-      top: 0;
-
-      width: 55px;
-      height: 55px;
-
-      object-fit: contain;
-
-      pointer-events: none;
-      user-select: none;
-
-      z-index: 999999;
-
-      transform:
-        translate3d(-50%, -50%, 0);
-
-      will-change: transform;
-
-      transition:
-        width 0.25s ease,
-        height 0.25s ease;
-    }
-
-
-    /* =====================================================
-       GLOBAL
-       ===================================================== */
-
-    .page {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .container {
-      width: min(
-        1240px,
-        calc(100% - 80px)
-      );
-
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 11px;
-
-      letter-spacing: 0.18em;
-
-      text-transform: uppercase;
-
-      opacity: 0.72;
-    }
-
-    .section {
-      padding: 150px 0;
-
-      border-top:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .section-title {
-      font-size:
-        clamp(42px, 6vw, 88px);
-
-      line-height: 0.95;
-
-      font-weight: 400;
-
-      letter-spacing: -0.045em;
-
-      margin-bottom: 70px;
-    }
-
-
-    /* =====================================================
-       NAVIGATION
-       ===================================================== */
-
-    nav {
-      position: fixed;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-
-      padding: 28px 0;
-
-      z-index: 1000;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(95,37,40,0.96),
-          rgba(95,37,40,0)
-        );
-    }
-
-    .nav-inner {
-      width: min(
-        1240px,
-        calc(100% - 80px)
-      );
-
-      margin: auto;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 13px;
-
-      letter-spacing: 0.08em;
-
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-
-      gap: 32px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 11px;
-
-      letter-spacing: 0.12em;
-
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      opacity: 0.72;
-
-      transition:
-        opacity 0.25s ease;
-    }
-
-    .nav-links a:hover {
-      opacity: 1;
-    }
-
-
-    /* =====================================================
-       HERO
-       ===================================================== */
-
-    .hero {
-      min-height: 100vh;
-
-      display: flex;
-
-      align-items: center;
-
-      padding:
-        150px 0 100px;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-
-    /* VIDEO BEHIND NAME */
-
-    .hero-video-wrap {
-      position: absolute;
-
-      z-index: 0;
-
-      width: 700px;
-      height: 430px;
-
-      left: 42%;
-      top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      pointer-events: none;
-
-      overflow: hidden;
-
-      opacity: 0.48;
-
-      border-radius: 2px;
-
-      filter:
-        brightness(0.85)
-        contrast(1.05)
-        saturate(0.8);
-
-      box-shadow:
-        0 0 100px
-        rgba(255,240,225,0.12),
-        0 0 180px
-        rgba(255,220,200,0.06);
-    }
-
-    .hero-video-wrap video {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      display: block;
-    }
-
-
-    /* soft light over video */
-
-    .hero-video-light {
-      position: absolute;
-
-      z-index: 1;
-
-      width: 850px;
-      height: 500px;
-
-      left: 42%;
-      top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      pointer-events: none;
-
-      background:
-        radial-gradient(
-          ellipse,
-          rgba(255,242,226,0.16)
-          0%,
-          rgba(255,230,215,0.07)
-          28%,
-          rgba(95,37,40,0)
-          70%
-        );
-
-      mix-blend-mode:
-        screen;
-    }
-
-
-    /* dark overlay */
-
-    .hero-video-overlay {
-      position: absolute;
-
-      z-index: 2;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(95,37,40,0.35),
-          rgba(95,37,40,0.05),
-          rgba(95,37,40,0.28)
-        );
-    }
-
-
-    .hero-grid {
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.4fr)
-        minmax(260px, 0.6fr);
-
-      gap: 80px;
-
-      align-items: end;
-
-      position: relative;
-
-      z-index: 5;
-    }
-
-    .hero-eyebrow {
-      margin-bottom: 28px;
-    }
-
-    .hero-title {
-      font-size:
-        clamp(78px, 13vw, 190px);
-
-      line-height: 0.78;
-
-      font-weight: 400;
-
-      letter-spacing: -0.065em;
-
-      max-width: 950px;
-
-      position: relative;
-
-      z-index: 6;
-    }
-
-    .hero-title span {
-      display: block;
-
-      position: relative;
-    }
-
-
-    /* specifically places video emphasis around Anand */
-
-    .hero-title .name-last {
-      position: relative;
-
-      z-index: 6;
-
-      text-shadow:
-        0 0 30px rgba(95,37,40,0.22);
-    }
-
-    .hero-description {
-      max-width: 460px;
-
-      margin-top: 55px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 15px;
-
-      line-height: 1.65;
-
-      opacity: 0.8;
-    }
-
-    .hero-side {
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: flex-start;
-
-      gap: 35px;
-
-      position: relative;
-
-      z-index: 7;
-    }
-
-    .hero-mark {
-      width: 24px;
-      height: 85px;
-    }
-
-    .hero-mark svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .resume-button {
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding:
-        15px 22px;
-
-      border:
-        1px solid
-        rgba(244,239,234,0.5);
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 11px;
-
-      letter-spacing: 0.13em;
-
-      text-transform: uppercase;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease;
-    }
-
-    .resume-button:hover {
-      background: #F3EEE9;
-
-      color: #5F2528;
-    }
-
-    .profile-photo {
-      width: 100%;
-
-      max-width: 330px;
-
-      margin-top: 30px;
-
-      filter:
-        grayscale(100%);
-
-      opacity: 0.92;
-    }
-
-    .profile-photo img {
-      width: 100%;
-      height: auto;
-    }
-
-
-    /* =====================================================
-       ABOUT
-       ===================================================== */
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns:
-        0.45fr
-        1fr;
-
-      gap: 100px;
-    }
-
-    .about-text {
-      max-width: 800px;
-
-      font-size:
-        clamp(28px, 4vw, 52px);
-
-      line-height: 1.08;
-
-      letter-spacing: -0.025em;
-    }
-
-    .about-small {
-      margin-top: 60px;
-
-      max-width: 580px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 14px;
-
-      line-height: 1.7;
-
-      opacity: 0.7;
-    }
-
-
-    /* =====================================================
-       EXPERIENCE
-       ===================================================== */
-
-    .experience-list {
-      border-top:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .experience-item {
-      display: grid;
-
-      grid-template-columns:
-        0.3fr
-        1fr
-        0.5fr;
-
-      gap: 40px;
-
-      padding: 35px 0;
-
-      border-bottom:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .experience-date,
-    .experience-location {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 11px;
-
-      letter-spacing: 0.12em;
-
-      text-transform: uppercase;
-
-      opacity: 0.65;
-    }
-
-    .experience-company {
-      font-size: 34px;
-
-      letter-spacing: -0.03em;
-
-      margin-bottom: 6px;
-    }
-
-    .experience-role {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 13px;
-
-      opacity: 0.7;
-    }
-
-
-    /* =====================================================
-       WORK
-       ===================================================== */
-
-    .work-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 2px;
-    }
-
-    .work-card {
-      min-height: 390px;
-
-      padding: 40px;
-
-      border:
-        1px solid
-        rgba(244,239,234,0.18);
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-      transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-    }
-
-    .work-card:hover {
-      background:
-        rgba(244,239,234,0.055);
-
-      transform:
-        translateY(-4px);
-    }
-
-    .work-number {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 11px;
-
-      letter-spacing: 0.14em;
-
-      opacity: 0.55;
-    }
-
-    .work-title {
-      font-size: 46px;
-
-      line-height: 0.95;
-
-      letter-spacing: -0.04em;
-
-      margin-bottom: 25px;
-    }
-
-    .work-description {
-      max-width: 520px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 13px;
-
-      line-height: 1.65;
-
-      opacity: 0.7;
-    }
-
-
-    /* =====================================================
-       CAPABILITIES
-       ===================================================== */
-
-    .capabilities-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 1px;
-
-      border-left:
-        1px solid
-        rgba(244,239,234,0.18);
-
-      border-top:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .capability {
-      padding: 40px;
-
-      min-height: 180px;
-
-      border-right:
-        1px solid
-        rgba(244,239,234,0.18);
-
-      border-bottom:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .capability-number {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 10px;
-
-      letter-spacing: 0.14em;
-
-      opacity: 0.5;
-
-      margin-bottom: 35px;
-    }
-
-    .capability-title {
-      font-size: 28px;
-
-      letter-spacing: -0.03em;
-    }
-
-
-    /* =====================================================
-       EDUCATION
-       ===================================================== */
-
-    .education-row {
-      display: grid;
-
-      grid-template-columns:
-        0.4fr
-        1fr
-        0.35fr;
-
-      gap: 40px;
-
-      padding: 35px 0;
-
-      border-top:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .education-school {
-      font-size: 34px;
-
-      letter-spacing: -0.035em;
-    }
-
-    .education-degree {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 13px;
-
-      opacity: 0.7;
-    }
-
-
-    /* =====================================================
-       ACHIEVEMENTS
-       ===================================================== */
-
-    .achievement-list {
-      max-width: 900px;
-    }
-
-    .achievement {
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 40px;
-
-      padding: 30px 0;
-
-      border-top:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .achievement-title {
-      font-size: 27px;
-
-      letter-spacing: -0.025em;
-    }
-
-    .achievement-year {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 11px;
-
-      opacity: 0.6;
-
-      white-space: nowrap;
-    }
-
-
-    /* =====================================================
-       CERTIFICATIONS
-       ===================================================== */
-
-    .certification-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 1px;
-
-      border-top:
-        1px solid
-        rgba(244,239,234,0.18);
-
-      border-left:
-        1px solid
-        rgba(244,239,234,0.18);
-    }
-
-    .certification {
-      padding: 28px;
-
-      border-right:
-        1px solid
-        rgba(244,239,234,0.18);
-
-      border-bottom:
-        1px solid
-        rgba(244,239,234,0.18);
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 13px;
-
-      opacity: 0.78;
-    }
-
-
-    /* =====================================================
-       CONTACT
-       ===================================================== */
-
-    .contact {
-      min-height: 85vh;
-
-      display: flex;
-
-      align-items: center;
-    }
-
-    .contact-grid {
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        0.45fr;
-
-      gap: 100px;
-
-      align-items: end;
-    }
-
-    .contact-title {
-      font-size:
-        clamp(70px, 12vw, 175px);
-
-      line-height: 0.8;
-
-      letter-spacing: -0.065em;
-
-      font-weight: 400;
-    }
-
-    .contact-links {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 15px;
-    }
-
-    .contact-link {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 13px;
-
-      letter-spacing: 0.05em;
-
-      border-bottom:
-        1px solid
-        rgba(244,239,234,0.35);
-
-      padding-bottom: 8px;
-
-      width: fit-content;
-
-      transition:
-        opacity 0.25s ease;
-    }
-
-    .contact-link:hover {
-      opacity: 0.6;
-    }
-
-    .contact-mark {
-      width: 24px;
-      height: 85px;
-
-      margin-bottom: 30px;
-    }
-
-    .contact-mark svg {
-      width: 100%;
-      height: 100%;
-    }
-
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
-
-    footer {
-      padding: 30px 0;
-
-      border-top:
-        1px solid
-        rgba(244,239,234,0.18);
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 10px;
-
-      letter-spacing: 0.1em;
-
-      text-transform: uppercase;
-
-      opacity: 0.55;
-    }
-
-    .footer-inner {
-      display: flex;
-
-      justify-content: space-between;
-    }
-
-
-    /* =====================================================
-       SCROLL REVEAL
-       ===================================================== */
-
-    .reveal {
-      opacity: 0;
-
-      transform:
-        translateY(30px);
-
-      transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-
-      transform:
-        translateY(0);
-    }
-
-
-    /* =====================================================
-       MOBILE
-       ===================================================== */
-
-    @media (max-width: 800px) {
-
-      body {
-        cursor: auto;
-      }
-
-      .custom-image-cursor {
-        display: none;
-      }
-
-      .container,
-      .nav-inner {
-        width:
-          calc(100% - 40px);
-      }
-
-      nav {
-        padding: 20px 0;
-      }
-
-      .nav-links {
-        gap: 15px;
-
-        font-size: 9px;
-      }
-
-      .hero {
-        padding-top: 130px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-      }
-
-      .hero-title {
-        font-size:
-          clamp(70px, 20vw, 130px);
-      }
-
-      .hero-description {
-        margin-top: 40px;
-      }
-
-      .hero-side {
-        align-items: flex-start;
-      }
-
-      .profile-photo {
-        max-width: 260px;
-      }
-
-      /*
-        Mobile video positioning
-      */
-
-      .hero-video-wrap {
-        width: 470px;
-        height: 330px;
-
-        left: 48%;
-        top: 43%;
-
-        opacity: 0.38;
-      }
-
-      .hero-video-light {
-        width: 550px;
-        height: 400px;
-
-        left: 48%;
-        top: 43%;
-      }
-
-      .section {
-        padding: 100px 0;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-      }
-
-      .experience-location {
-        display: none;
-      }
-
-      .work-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .work-card {
-        min-height: 320px;
-      }
-
-      .capabilities-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .education-row {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-      }
-
-      .education-row > div:first-child {
-        display: none;
-      }
-
-      .achievement {
-        flex-direction: column;
-
-        gap: 10px;
-      }
-
-      .certification-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-
-        gap: 70px;
-      }
-
-      .contact-title {
-        font-size:
-          clamp(75px, 22vw, 130px);
-      }
-
-      .footer-inner {
-        flex-direction: column;
-
-        gap: 10px;
-      }
-
-    }
-
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayush Anand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a quiet, text-first personal site in the style of an academic homepage — one narrow column, breadcrumb + text nav, separate "pages" switched by anchor. */
+:root{
+  /* Palette matched to vivainhonnalli.com: burgundy ground, warm cream text */
+  --bg:#5F2528; --bg-deep:#4E1D20; --bg-lift:#6E2D31;
+  --fg:#F3EEE9; --accent:#F4EFEA;
+  --muted:rgba(243,238,233,.72); --rule:rgba(244,239,234,.22); --accent-soft:rgba(244,239,234,.12);
+  --surface:#6A2A2E; --overlay:rgba(30,10,12,.62);
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+html{background:var(--bg)}
+/* Mode: reversed palette — cream ground, burgundy text */
+:root.inverted{
+  --bg:#F3EEE9; --bg-deep:#E8E0D8; --bg-lift:#F9F6F2;
+  --fg:#5F2528; --accent:#5F2528;
+  --muted:rgba(95,37,40,.74); --rule:rgba(95,37,40,.22); --accent-soft:rgba(95,37,40,.08);
+  --surface:#F9F6F2; --overlay:rgba(60,20,22,.45);
+  color-scheme:light;
+}
+body,.top,.card,.filters select,.btn,.tag{transition:background-color .35s ease,color .35s ease,border-color .35s ease}
+.mode{font:500 13px var(--body);color:var(--fg);background:transparent;border:1px solid var(--rule);border-radius:999px;padding:4px 12px 4px 8px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.mode:hover{border-color:var(--accent)}
+.mode .sw{width:14px;height:14px;border-radius:50%;background:linear-gradient(90deg,#5F2528 50%,#F3EEE9 50%);border:1px solid var(--fg)}
+.navwrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg) radial-gradient(ellipse 120% 80% at 50% 0%,var(--bg-lift) 0%,var(--bg) 55%,var(--bg-deep) 100%) fixed;min-height:100vh;color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px;padding-block:0 48px}
+.wrap{max-width:720px;margin-inline:auto}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0}
+
+/* top bar */
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;padding-block:22px 18px;border-bottom:1px solid var(--rule);font-size:14px}
+.crumb{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+nav.links{display:flex;flex-wrap:wrap;gap:6px 18px}
+nav.links a{text-decoration:none;color:var(--fg)}
+nav.links a[aria-current="page"]{color:var(--accent);text-decoration:underline;text-underline-offset:5px}
+nav.links a:hover{color:var(--accent)}
+
+section.page{padding-block:44px 0}
+section.page:not(.on){display:none}
+
+/* home */
+.welcome{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.home h1{font-size:clamp(44px,9vw,72px);letter-spacing:-.01em;margin-top:6px}
+.home .role{font-family:var(--display);font-style:italic;font-size:21px;color:var(--muted);margin-top:6px}
+.home .intro{display:grid;gap:14px;margin-top:28px;max-width:62ch;font-size:17px}
+.dirs{list-style:none;padding:0;margin:40px 0 0;border-top:1px solid var(--rule)}
+.dirs li{border-bottom:1px solid var(--rule)}
+.dirs a{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 2px;text-decoration:none;color:var(--fg)}
+.dirs a:hover .t{color:var(--accent)}
+.dirs .t{font-family:var(--display);font-size:22px}
+.dirs .d{grid-column:1;color:var(--muted);font-size:14px}
+.dirs .arr{grid-column:2;grid-row:1 / span 2;align-self:center;font-family:var(--mono);color:var(--muted)}
+.ticker{margin-top:36px;display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.ticker b{color:var(--fg);font-weight:500}
+
+/* cv */
+.head h1{font-size:clamp(34px,6vw,46px)}
+.head .sub{font-family:var(--display);font-style:italic;font-size:19px;color:var(--muted);margin-top:4px}
+.contactline{margin-top:14px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 10px}
+.contactline span+span::before{content:"·";margin-right:10px;color:var(--rule)}
+.cv h2{font-size:24px;margin:44px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.cv h3.sub2{font-family:var(--body);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:24px 0 10px}
+.entry{display:grid;gap:4px;margin-bottom:24px}
+.entry .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px;align-items:baseline}
+.entry .ttl{font-weight:600}
+.entry .org{color:var(--muted)}
+.entry .date{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.entry ul{margin:6px 0 0;padding-left:20px;display:grid;gap:4px}
+.entry .note{font-size:14px;color:var(--muted)}
+.plain{margin:0;padding-left:20px;display:grid;gap:6px}
+.skills{display:grid;gap:10px}
+.skills p b{font-weight:600}
+.dot{color:var(--muted);margin-inline:4px}
+.pointer{font-size:14px;color:var(--muted);border-left:2px solid var(--rule);padding-left:12px}
+.endline{margin-top:40px;font-style:italic;font-family:var(--display);color:var(--muted)}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{font:500 14px var(--body);padding:9px 16px;border-radius:4px;border:1px solid var(--accent);background:var(--accent);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+
+/* portfolio */
+.kicker{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.pf h1{font-size:clamp(34px,6vw,46px);margin-top:4px}
+.lead{margin-top:14px;color:var(--muted);max-width:62ch}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 8px}
+.filters label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.filters select{font:14px var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:7px 10px;min-width:150px}
+.items{list-style:none;padding:0;margin:0}
+.item{padding-block:22px;border-bottom:1px solid var(--rule);display:grid;gap:6px}
+.item .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline}
+.item h3{font-size:22px}
+.item .meta{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.item ul{margin:4px 0 0;padding-left:20px;display:grid;gap:3px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:3px;background:var(--accent-soft);color:var(--accent);border:1px solid var(--rule)}
+.empty{padding:28px 0;color:var(--muted)}
+.empty b{display:block;font-family:var(--display);font-weight:500;font-size:20px;color:var(--fg)}
+
+/* contact */
+.ct h1{font-size:clamp(34px,6vw,46px);margin-top:4px}
+.cards{display:grid;gap:0;margin-top:28px;border-top:1px solid var(--rule)}
+.crow{display:grid;grid-template-columns:120px 1fr auto;gap:8px 16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule)}
+.crow .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.crow .v{font-family:var(--mono);font-size:15px;min-width:0;overflow-wrap:anywhere;user-select:all}
+.copy{font:500 13px var(--body);background:transparent;border:1px solid var(--rule);color:var(--fg);border-radius:4px;padding:5px 12px;cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+@media (max-width:520px){.crow{grid-template-columns:1fr auto}.crow .k{grid-column:1 / -1}}
+
+footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+/* modal */
+.modal{position:fixed;inset:0;background:var(--overlay);display:grid;place-items:center;padding:20px;z-index:10}
+.card{position:relative;background:var(--surface);color:var(--fg);max-width:520px;width:100%;border-radius:6px;padding:32px 28px 24px;box-shadow:0 20px 60px rgba(20,5,7,.5);border:1px solid var(--rule);animation:rise .35s ease-out}
+.card .x{position:absolute;top:10px;right:12px;background:none;border:0;font-size:24px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 8px}
+.card h2{font-size:28px}
+.card .tagline{font-family:var(--display);font-style:italic;color:var(--muted);font-size:18px;margin-top:4px}
+.card .body{display:grid;gap:10px;margin-top:16px;font-size:15px}
+.card .skip{display:inline-block;margin-top:16px;font-size:14px;color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+/* cursor */
+.has-cursor,.has-cursor *{cursor:none!important}
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:100;opacity:0;border-radius:50%}
+.cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--accent)}
+.cur-ring{width:36px;height:36px;margin:-18px 0 0 -18px;border:1.5px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);transition:width .2s,height .2s,margin .2s,background .2s}
+.cur-ring.hover{width:56px;height:56px;margin:-28px 0 0 -28px;background:color-mix(in srgb,var(--accent) 18%,transparent)}
+.cur-ring.down{width:26px;height:26px;margin:-13px 0 0 -13px}
+@keyframes rise{from{transform:translateY(10px);opacity:.6}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.card{animation:none}}
+</style>
 </head>
-
-
 <body>
 
-
-  <!-- =====================================================
-       CUSTOM PANDA CURSOR
-       ===================================================== -->
-
-  <img
-    class="custom-image-cursor"
-    src="https://raw.githubusercontent.com/anandaayush734-hue/ayush-anand/main/giant-panda-bear-red-panda-telus-customer-service-bear.jpg"
-    alt=""
-    aria-hidden="true"
-  >
-
-
-  <div class="page">
-
-
-    <!-- =====================================================
-         NAVIGATION
-         ===================================================== -->
-
-    <nav>
-
-      <div class="nav-inner">
-
-        <a
-          href="#top"
-          class="logo"
-        >
-          AA
-        </a>
-
-
-        <div class="nav-links">
-
-          <a href="#about">
-            About
-          </a>
-
-          <a href="#experience">
-            Experience
-          </a>
-
-          <a href="#work">
-            Work
-          </a>
-
-          <a href="#contact">
-            Contact
-          </a>
-
-        </div>
-
-      </div>
-
+<div class="wrap">
+  <header class="top">
+    <div class="crumb" id="crumb"><a href="#home">ayushanand</a></div>
+    <div class="navwrap">
+    <nav class="links" aria-label="Site">
+      <a href="#cv" data-nav="cv">Curriculum Vitae</a>
+      <a href="#portfolio" data-nav="portfolio">Portfolio</a>
+      <a href="#research" data-nav="research">Research</a>
+      <a href="#contact" data-nav="contact">Contact</a>
     </nav>
-
-
-
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
-
-    <main id="top">
-
-      <section class="hero">
-
-
-        <!-- VIDEO BEHIND AYUSH ANAND -->
-
-        <div class="hero-video-wrap">
-
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-          >
-
-            <source
-              src="https://raw.githubusercontent.com/anandaayush734-hue/ayush-anand/main/WhatsApp%20Video%202026-07-26%20at%2010.53.55%20PM.mp4"
-              type="video/mp4"
-            >
-
-          </video>
-
-
-          <div class="hero-video-overlay"></div>
-
-        </div>
-
-
-        <!-- SOFT LIGHT EFFECT -->
-
-        <div class="hero-video-light"></div>
-
-
-
-        <div class="container">
-
-          <div class="hero-grid">
-
-
-            <div>
-
-              <div class="eyebrow hero-eyebrow">
-                Investment Banking · Finance · Strategy
-              </div>
-
-
-              <h1 class="hero-title">
-
-                <span>
-                  Ayush
-                </span>
-
-                <span class="name-last">
-                  Anand
-                </span>
-
-              </h1>
-
-
-              <p class="hero-description">
-
-                Investment Banking professional focused on
-                financial analysis, valuation, transaction
-                research and strategic thinking across
-                industrial and corporate sectors.
-
-              </p>
-
-            </div>
-
-
-
-            <div class="hero-side">
-
-
-              <div class="hero-mark">
-
-                <svg
-                  viewBox="0 0 24 85"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-
-                  <path
-                    d="
-                      M12.4 0
-                      C12.1 12 12.8 23 12.3 34
-                      C11.9 45 12.5 57 12.1 67
-                      C11.8 74 11.5 80 11.7 85
-                    "
-                    fill="none"
-                    stroke="#F4EFEA"
-                    stroke-width="1.15"
-                    stroke-linecap="round"
-                    opacity="0.78"
-                  />
-
-                </svg>
-
-              </div>
-
-
-
-              <a
-                class="resume-button"
-                href="Ayush_Anand_Resume_Analyst.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download Resume
-              </a>
-
-
-
-              <div class="profile-photo">
-
-                <img
-                  src="https://raw.githubusercontent.com/anandaayush734-hue/ayush-anand/main/Ayush_Anand_Risk_Analyst_Role_Photo.jpg"
-                  alt="Ayush Anand"
-                >
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           ABOUT
-           ===================================================== -->
-
-      <section
-        class="section reveal"
-        id="about"
-      >
-
-        <div class="container">
-
-          <div class="about-grid">
-
-            <div class="eyebrow">
-              01 · About
-            </div>
-
-
-            <div>
-
-              <div class="about-text">
-
-                Finance and strategy professional
-                interested in understanding businesses,
-                transactions and the decisions that create
-                long-term value.
-
-              </div>
-
-
-              <div class="about-small">
-
-                My interests sit at the intersection of
-                investment banking, financial markets,
-                valuation, corporate strategy and global
-                business.
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           EXPERIENCE
-           ===================================================== -->
-
-      <section
-        class="section reveal"
-        id="experience"
-      >
-
-        <div class="container">
-
-          <div class="eyebrow">
-            02 · Experience
-          </div>
-
-
-          <h2 class="section-title">
-            Experience
-          </h2>
-
-
-          <div class="experience-list">
-
-
-            <div class="experience-item">
-
-              <div class="experience-date">
-                Jul 2026 — Present
-              </div>
-
-
-              <div>
-
-                <div class="experience-company">
-                  JM Financial
-                </div>
-
-                <div class="experience-role">
-                  Investment Banking Trainee · Industrials Coverage
-                </div>
-
-              </div>
-
-
-              <div class="experience-location">
-                India
-              </div>
-
-            </div>
-
-
-
-            <div class="experience-item">
-
-              <div class="experience-date">
-                Apr — Jun 2025
-              </div>
-
-
-              <div>
-
-                <div class="experience-company">
-                  Deloitte
-                </div>
-
-                <div class="experience-role">
-                  Strategy, Risk & Transactions · M&A Intern
-                </div>
-
-              </div>
-
-
-              <div class="experience-location">
-                Gurugram
-              </div>
-
-            </div>
-
-
-
-            <div class="experience-item">
-
-              <div class="experience-date">
-                May — Jun 2024
-              </div>
-
-
-              <div>
-
-                <div class="experience-company">
-                  Aditya Birla Global Trading
-                </div>
-
-                <div class="experience-role">
-                  Global Treasury Operations Intern
-                </div>
-
-              </div>
-
-
-              <div class="experience-location">
-                Delhi
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           SELECTED WORK
-           ===================================================== -->
-
-      <section
-        class="section reveal"
-        id="work"
-      >
-
-        <div class="container">
-
-          <div class="eyebrow">
-            03 · Selected Work
-          </div>
-
-
-          <h2 class="section-title">
-            Selected Work
-          </h2>
-
-
-          <div class="work-grid">
-
-
-            <div class="work-card">
-
-              <div class="work-number">
-                01
-              </div>
-
-              <div>
-
-                <h3 class="work-title">
-                  Sapphire Foods
-                </h3>
-
-                <p class="work-description">
-                  Equity research project analysing business
-                  performance, industry dynamics, financial
-                  metrics and investment considerations.
-                </p>
-
-              </div>
-
-            </div>
-
-
-
-            <div class="work-card">
-
-              <div class="work-number">
-                02
-              </div>
-
-              <div>
-
-                <h3 class="work-title">
-                  Asian Paints
-                </h3>
-
-                <p class="work-description">
-                  Valuation model focused on financial
-                  forecasting, operating assumptions and
-                  valuation methodologies.
-                </p>
-
-              </div>
-
-            </div>
-
-
-
-            <div class="work-card">
-
-              <div class="work-number">
-                03
-              </div>
-
-              <div>
-
-                <h3 class="work-title">
-                  Aviation Industry
-                </h3>
-
-                <p class="work-description">
-                  Industry research covering market
-                  structure, competitive dynamics and
-                  emerging opportunities.
-                </p>
-
-              </div>
-
-            </div>
-
-
-
-            <div class="work-card">
-
-              <div class="work-number">
-                04
-              </div>
-
-              <div>
-
-                <h3 class="work-title">
-                  Research
-                </h3>
-
-                <p class="work-description">
-                  Research on the reliability of
-                  conversational large language models
-                  for technical analysis of stocks.
-                </p>
-
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           CAPABILITIES
-           ===================================================== -->
-
-      <section class="section reveal">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            04 · Capabilities
-          </div>
-
-
-          <h2 class="section-title">
-            Capabilities
-          </h2>
-
-
-          <div class="capabilities-grid">
-
-
-            <div class="capability">
-
-              <div class="capability-number">
-                01
-              </div>
-
-              <div class="capability-title">
-                Financial Analysis
-              </div>
-
-            </div>
-
-
-            <div class="capability">
-
-              <div class="capability-number">
-                02
-              </div>
-
-              <div class="capability-title">
-                Valuation
-              </div>
-
-            </div>
-
-
-            <div class="capability">
-
-              <div class="capability-number">
-                03
-              </div>
-
-              <div class="capability-title">
-                Financial Modelling
-              </div>
-
-            </div>
-
-
-            <div class="capability">
-
-              <div class="capability-number">
-                04
-              </div>
-
-              <div class="capability-title">
-                M&A Research
-              </div>
-
-            </div>
-
-
-            <div class="capability">
-
-              <div class="capability-number">
-                05
-              </div>
-
-              <div class="capability-title">
-                Company Research
-              </div>
-
-            </div>
-
-
-            <div class="capability">
-
-              <div class="capability-number">
-                06
-              </div>
-
-              <div class="capability-title">
-                Strategy
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           EDUCATION
-           ===================================================== -->
-
-      <section class="section reveal">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            05 · Education
-          </div>
-
-
-          <h2 class="section-title">
-            Education
-          </h2>
-
-
-          <div class="education-row">
-
-            <div class="experience-date">
-              2023 — 2026
-            </div>
-
-
-            <div>
-
-              <div class="education-school">
-                CHRIST (Deemed to be University)
-              </div>
-
-              <div class="education-degree">
-                BBA · Finance & International Business
-              </div>
-
-            </div>
-
-
-            <div class="experience-location">
-              9.2 / 10
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           ACHIEVEMENTS
-           ===================================================== -->
-
-      <section class="section reveal">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            06 · Achievements
-          </div>
-
-
-          <h2 class="section-title">
-            Achievements
-          </h2>
-
-
-          <div class="achievement-list">
-
-
-            <div class="achievement">
-
-              <div class="achievement-title">
-                Best Research Paper Award
-              </div>
-
-              <div class="achievement-year">
-                ICSSR
-              </div>
-
-            </div>
-
-
-            <div class="achievement">
-
-              <div class="achievement-title">
-                Published Research Paper
-              </div>
-
-              <div class="achievement-year">
-                IJNRD
-              </div>
-
-            </div>
-
-
-            <div class="achievement">
-
-              <div class="achievement-title">
-                Winner — Finance Fest "Chakravyuh"
-              </div>
-
-              <div class="achievement-year">
-                CHRIST University
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           CERTIFICATIONS
-           ===================================================== -->
-
-      <section class="section reveal">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            07 · Certifications
-          </div>
-
-
-          <h2 class="section-title">
-            Certifications
-          </h2>
-
-
-          <div class="certification-grid">
-
-            <div class="certification">
-              Lean Six Sigma Yellow Belt — MSME
-            </div>
-
-            <div class="certification">
-              Bloomberg Terminal Navigation
-            </div>
-
-            <div class="certification">
-              Public Speaking — IIT Hyderabad
-            </div>
-
-            <div class="certification">
-              Google Foundations of Project Management
-            </div>
-
-            <div class="certification">
-              Corporate Finance Institute
-            </div>
-
-            <div class="certification">
-              J.P. Morgan Chase Excel Skills
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           CONTACT
-           ===================================================== -->
-
-      <section
-        class="section contact reveal"
-        id="contact"
-      >
-
-        <div class="container">
-
-          <div class="contact-grid">
-
-
-            <div>
-
-              <div class="contact-mark">
-
-                <svg
-                  viewBox="0 0 24 85"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-
-                  <path
-                    d="
-                      M12.4 0
-                      C12.1 12 12.8 23 12.3 34
-                      C11.9 45 12.5 57 12.1 67
-                      C11.8 74 11.5 80 11.7 85
-                    "
-                    fill="none"
-                    stroke="#F4EFEA"
-                    stroke-width="1.15"
-                    stroke-linecap="round"
-                    opacity="0.78"
-                  />
-
-                </svg>
-
-              </div>
-
-
-              <h2 class="contact-title">
-                Let's<br>
-                Talk.
-              </h2>
-
-            </div>
-
-
-
-            <div class="contact-links">
-
-              <a
-                class="contact-link"
-                href="mailto:anandaayush734@gmail.com"
-              >
-                Email
-              </a>
-
-
-              <a
-                class="contact-link"
-                href="https://www.linkedin.com/in/ayushfinance100/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-
-
-              <a
-                class="contact-link"
-                href="Ayush_Anand_Resume_Analyst.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer>
-
-      <div class="container">
-
-        <div class="footer-inner">
-
-          <div>
-            Ayush Anand
-          </div>
-
-          <div>
-            Investment Banking · Finance · Strategy
-          </div>
-
-        </div>
-
-      </div>
-
-    </footer>
-
-
+    <button class="mode" id="mode" aria-pressed="false" title="Swap background and text colours"><span class="sw" aria-hidden="true"></span>Mode</button>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <section class="page home" id="p-home">
+    <p class="welcome">Welcome to the site of</p>
+    <h1>Ayush Anand</h1>
+    <p class="role">Investment Banking · Valuation · Research</p>
+    <div class="intro">
+      <p>Hello there! I am an Investment Banking Trainee in Industrials Coverage at JM Financial, based in Bengaluru.</p>
+      <p>I work on company and industry research, financial modelling and valuation (DCF, trading comparables and precedent transactions) to help find and assess M&amp;A, ECM and DCM opportunities. Before this I worked with Deloitte's M&amp;A team and Aditya Birla Global Trading's treasury desk.</p>
+      <p>I like numbers most when they explain a business. I also publish research, and my study of the aviation industry won a Best Research Paper Award.</p>
+    </div>
+    <ul class="dirs">
+      <li><a href="#cv"><span class="t">Curriculum Vitae</span><span class="d">Education, experience, certifications and skills</span><span class="arr">→</span></a></li>
+      <li><a href="#portfolio"><span class="t">Portfolio</span><span class="d">Equity research, valuation models and analysis work</span><span class="arr">→</span></a></li>
+      <li><a href="#research"><span class="t">Research</span><span class="d">Published study, awards and competitions</span><span class="arr">→</span></a></li>
+      <li><a href="#contact"><span class="t">Contact</span><span class="d">Email, phone and LinkedIn</span><span class="arr">→</span></a></li>
+    </ul>
+    <div class="ticker" aria-label="At a glance">
+      <span>CGPA <b>9.2/10</b></span>
+      <span>Coverage <b>Industrials</b></span>
+      <span>Methods <b>DCF · CCA · PTA</b></span>
+      <span>Base <b>Bengaluru, IN</b></span>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="page cv" id="p-cv">
+    <div class="head">
+      <h1>Ayush Anand</h1>
+      <p class="sub">Investment Banking Trainee · Analyst</p>
+      <p class="contactline"><span>Bengaluru, Karnataka 560073</span><span>anandaayush734@gmail.com</span><span>+91 93285 65260</span><span><a href="https://www.linkedin.com/in/ayushfinance100/" target="_blank" rel="noopener">LinkedIn</a></span></p>
+    </div>
+
+    <h2>Profile Overview</h2>
+    <p>Investment Banking Trainee with experience in financial analysis, valuation, financial modelling, due diligence and company research. Previously worked with JM Financial, Deloitte and the Aditya Birla Group, with strong proficiency in Excel and experience in industry research and evaluating potential transaction opportunities.</p>
+
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="row"><span class="ttl">Bachelor of Business Administration (Finance and International Business)</span><span class="date">2023 – 2026</span></div>
+      <span class="org">CHRIST (Deemed to be University), Bengaluru</span>
+      <span class="note">CGPA 9.2 / 10</span>
+    </div>
+
+    <h2>Work Experience</h2>
+    <div class="entry">
+      <div class="row"><span class="ttl">Investment Banking Trainee, Industrials Coverage</span><span class="date">Jul 2026 – Present</span></div>
+      <span class="org">JM Financial</span>
+      <ul>
+        <li>Conduct company, industry and market research to identify potential deal opportunities and support senior bankers.</li>
+        <li>Perform financial analysis and valuation using DCF, Comparable Company Analysis and Precedent Transaction Analysis.</li>
+        <li>Analyse industry trends, company developments and news to support potential M&amp;A, ECM and DCM transactions.</li>
+        <li>Develop knowledge of SEBI ICDR regulations, capital raising methods and investment banking products across the Industrials sector.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="ttl">M&amp;A Intern, Strategy, Risk and Transactions</span><span class="date">Apr 2025 – Jun 2025</span></div>
+      <span class="org">Deloitte, Gurugram</span>
+      <ul>
+        <li>Analysed company financial and industry data to support valuation and transaction analysis.</li>
+        <li>Prepared analytical notes, pitch books and financial summaries for consulting teams.</li>
+        <li>Used Private Circle for in-depth company research.</li>
+        <li>Turned large datasets into structured insights for decision-making.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="ttl">Global Treasury Operations Intern</span><span class="date">May 2024 – Jun 2024</span></div>
+      <span class="org">Aditya Birla Global Trading, Delhi</span>
+      <ul>
+        <li>Verified 30+ international trade documents in SAP and Excel, strengthening due diligence and compliance in cross-border transactions.</li>
+        <li>Matched 10+ letters of credit with supporting documents and managed vendor payments.</li>
+        <li>Worked on export-import processes across 2+ countries, including RCMC, IEC and 11 INCOTERMS compliance.</li>
+      </ul>
+    </div>
+    <p class="pointer">Models and research reports are on the <a href="#portfolio">Portfolio</a> page. Published work is on the <a href="#research">Research</a> page.</p>
+
+    <h2>Scholarly Outputs</h2>
+    <h3 class="sub2">Publications</h3>
+    <div class="entry">
+      <span class="ttl">Aviation Industry Analysis: Impact of Oil Price Fluctuations and Tourism Demand</span>
+      <span class="org">Ayush Anand · <i>International Journal of Novel Research and Development (IJNRD)</i></span>
+    </div>
+    <h3 class="sub2">Awards</h3>
+    <ul class="plain">
+      <li>Best Research Paper Award, International Conference on Deep-Tech &amp; Policy (ICSSR)</li>
+      <li>Winner, Finance Fest “Chakravyuh”, Christ University (150+ participants)</li>
+    </ul>
+
+    <h2>Leadership &amp; Service</h2>
+    <div class="entry">
+      <div class="row"><span class="ttl">Millennium Fellow</span></div>
+      <span class="org">Millennium Campus Network</span>
+      <ul><li>Selected from 5,000+ candidates to lead social-impact work as a Millennium Fellow.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="ttl">Volunteer, Biodiversity Documentation</span></div>
+      <span class="org">WWF India, Asita Park</span>
+      <ul><li>Recorded 70+ field observations and identified 40+ species through systematic ecological observation.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="ttl">Volunteer, Menstrual Health Awareness</span></div>
+      <span class="org">She as a Virago</span>
+      <ul><li>Ran interactive menstrual health and hygiene sessions for 50+ girls aged 10–12.</li></ul>
+    </div>
+
+    <h2>Certifications &amp; Training</h2>
+    <ul class="plain">
+      <li>Lean Six Sigma Yellow Belt — MSME</li>
+      <li>Bloomberg Terminal Navigation — Bloomberg</li>
+      <li>Public Speaking — IIT Hyderabad (SWAYAM)</li>
+      <li>Foundations of Project Management — Google</li>
+      <li>Corporate Finance — Corporate Finance Institute (CFI)</li>
+      <li>Excel Skills — J.P. Morgan Chase &amp; Co.</li>
+    </ul>
+
+    <h2>Skills &amp; Interests</h2>
+    <div class="skills">
+      <p><b>Financial Analysis:</b> Financial statement analysis<span class="dot">·</span>Due diligence<span class="dot">·</span>Data validation</p>
+      <p><b>Valuation &amp; Modelling:</b> DCF<span class="dot">·</span>Comparable company analysis<span class="dot">·</span>Precedent transactions<span class="dot">·</span>3-statement projections<span class="dot">·</span>Industry research<span class="dot">·</span>Transaction support</p>
+      <p><b>Quantitative:</b> Multiple regression<span class="dot">·</span>ARIMA forecasting</p>
+      <p><b>Tools:</b> MS Excel<span class="dot">·</span>PowerPoint<span class="dot">·</span>Bloomberg Terminal<span class="dot">·</span>Private Circle<span class="dot">·</span>SAP (exposure)</p>
+      <p><b>Soft Skills:</b> Analytical thinking<span class="dot">·</span>Problem solving<span class="dot">·</span>Communication</p>
+    </div>
+    <p class="endline">References available upon request.</p>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="page pf" id="p-portfolio">
+    <p class="kicker">Portfolio</p>
+    <h1>Models, Research &amp; Analysis</h1>
+    <p class="lead">A record of the valuation and research work I have built. Full Excel models and reports are in my <a href="https://drive.google.com/drive/folders/15WhdqnhlZ8TfdmODDv7FPB4LDC_4gkRH?usp=drive_link" target="_blank" rel="noopener">project folder</a>.</p>
+    <div class="filters">
+      <label for="f-type">Type
+        <select id="f-type"><option value="all">All types</option><option value="valuation">Valuation model</option><option value="equity">Equity research</option><option value="research">Industry research</option></select>
+      </label>
+      <label for="f-sector">Sector
+        <select id="f-sector"><option value="all">All sectors</option><option value="consumer">Consumer</option><option value="aviation">Aviation</option></select>
+      </label>
+      <label for="f-sort">Sort
+        <select id="f-sort"><option value="default">Featured</option><option value="az">Title A–Z</option></select>
+      </label>
+    </div>
+    <ul class="items" id="items"></ul>
+    <div class="empty" id="empty" hidden><b>No projects match these filters</b>Change a filter to see more work.</div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="page pf" id="p-research">
+    <p class="kicker">Research</p>
+    <h1>Published Work &amp; Recognition</h1>
+    <p class="lead">Research where I apply econometrics to questions about industries and markets.</p>
+    <ul class="items">
+      <li class="item">
+        <div class="row"><h3>Oil Prices, Tourism Demand and the Aviation Industry</h3><span class="meta">Published · IJNRD</span></div>
+        <p>A study of how oil price fluctuations and tourism demand drive aviation industry performance, using 10+ years of macroeconomic data.</p>
+        <div class="tags"><span class="tag">Multiple regression</span><span class="tag">ARIMA</span><span class="tag">Macro data</span></div>
+      </li>
+      <li class="item">
+        <div class="row"><h3>Best Research Paper Award</h3><span class="meta">ICSSR</span></div>
+        <p>International Conference on Deep-Tech &amp; Policy.</p>
+      </li>
+      <li class="item">
+        <div class="row"><h3>Winner, Finance Fest “Chakravyuh”</h3><span class="meta">Christ University</span></div>
+        <p>First place among 150+ participants.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page ct" id="p-contact">
+    <p class="kicker">Contact</p>
+    <h1>Get in touch</h1>
+    <p class="lead">I am open to conversations about investment banking, valuation and research roles, and to collaborating on research.</p>
+    <div class="cards">
+      <div class="crow"><span class="k">Email</span><span class="v" id="v-email">anandaayush734@gmail.com</span><button class="copy" data-copy="v-email">Copy</button></div>
+      <div class="crow"><span class="k">Phone</span><span class="v" id="v-phone">+91 93285 65260</span><button class="copy" data-copy="v-phone">Copy</button></div>
+      <div class="crow"><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/ayushfinance100/" target="_blank" rel="noopener">in/ayushfinance100</a></span><span></span></div>
+      <div class="crow"><span class="k">Location</span><span class="v">Bengaluru, Karnataka</span><span></span></div>
+    </div>
+  </section>
+
+  <footer><span>© Ayush Anand. All rights reserved.</span><a href="#home">ayushanand</a></footer>
+</div>
+
+<!-- Welcome modal (mirrors the reference site's call-out) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
+  <div class="card">
+    <button class="x" id="m-x" aria-label="Close">×</button>
+    <h2 id="m-title">Open to Opportunities</h2>
+    <p class="tagline">Analyst roles in investment banking and valuation</p>
+    <div class="body">
+      <p>I am looking to connect with teams in <b>M&amp;A advisory, ECM/DCM, equity research and transaction services</b>.</p>
+      <p>I bring hands-on work in DCF, trading comps and precedent transactions, plus research experience from JM Financial and Deloitte.</p>
+    </div>
+    <div class="btnrow">
+      <a class="btn" href="#contact" id="m-contact">Contact Me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/ayushfinance100/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+    <button class="skip" id="m-skip">Not now, continue to site</button>
   </div>
+</div>
 
+<script>
+(function(){
+  var pages=["home","cv","portfolio","research","contact"];
+  var names={cv:"CV",portfolio:"Portfolio",research:"Research",contact:"Contact"};
+  var current="home";
+  function go(h){ if(pages.indexOf(h)<0) h="home"; current=h; show(h);
+    try{history.replaceState(null,"",h==="home"?location.pathname+location.search:"#"+h)}catch(e){} }
+  function route(){ var h=""; try{h=(location.hash||"").slice(1)}catch(e){} if(h&&h!==current){current=h;show(h);} }
+  /* intercept every in-page link so navigation never depends on the host allowing hash changes */
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    e.preventDefault(); go(a.getAttribute("href").slice(1)||"home");
+  });
+  function show(h){
+    if(pages.indexOf(h)<0) h="home";
+    pages.forEach(function(p){document.getElementById("p-"+p).classList.toggle("on",p===h)});
+    document.querySelectorAll("[data-nav]").forEach(function(a){ if(a.dataset.nav===h) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+    document.getElementById("crumb").innerHTML='<a href="#home">ayushanand</a>'+(names[h]?' / <a href="#'+h+'">'+names[h]+'</a>':'');
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",route);
+  (function(){var h="";try{h=(location.hash||"").slice(1)}catch(e){} current=pages.indexOf(h)>=0?h:"home"; show(current);})();
 
+  var projects=[
+    {t:"Valuation Model: Asian Paints",type:"valuation",sector:"consumer",meta:"Valuation model · Excel",
+     pts:["Built a financial model from historical financial statements and operating performance.","Valued the company with DCF and terminal value, cross-checked against trading comparables (P/E, EV/EBITDA).","Tested sensitivity of the valuation to key assumptions such as growth rate."],
+     tags:["DCF","Terminal value","P/E","EV/EBITDA","Sensitivity"]},
+    {t:"Equity Research: Sapphire Foods",type:"equity",sector:"consumer",meta:"Equity research · FY25–FY27E",
+     pts:["Analysed financial performance across 400+ outlets to find revenue drivers and operating trends.","Built 3-year projections (FY25–FY27E) in Excel."],
+     tags:["QSR","Projections","Unit economics"]},
+    {t:"Aviation Industry Research",type:"research",sector:"aviation",meta:"Industry research · Published",
+     pts:["Measured how oil price fluctuations and tourism demand affect aviation industry performance.","Applied multiple regression and ARIMA forecasting to 10+ years of macroeconomic data."],
+     tags:["Regression","ARIMA","Macro"]}
+  ];
+  var ft=document.getElementById("f-type"),fs=document.getElementById("f-sector"),so=document.getElementById("f-sort");
+  var list=document.getElementById("items"),empty=document.getElementById("empty");
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+  function render(){
+    var rows=projects.filter(function(p){return (ft.value==="all"||p.type===ft.value)&&(fs.value==="all"||p.sector===fs.value)});
+    if(so.value==="az") rows=rows.slice().sort(function(a,b){return a.t.localeCompare(b.t)});
+    list.innerHTML=rows.map(function(p){
+      return '<li class="item"><div class="row"><h3>'+esc(p.t)+'</h3><span class="meta">'+esc(p.meta)+'</span></div><ul>'+
+        p.pts.map(function(x){return "<li>"+esc(x)+"</li>"}).join("")+'</ul><div class="tags">'+
+        p.tags.map(function(x){return '<span class="tag">'+esc(x)+'</span>'}).join("")+'</div></li>';
+    }).join("");
+    empty.hidden=rows.length>0;
+  }
+  [ft,fs,so].forEach(function(s){s.addEventListener("change",render)}); render();
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
+  document.querySelectorAll(".copy").forEach(function(b){
+    b.addEventListener("click",function(){
+      var el=document.getElementById(b.dataset.copy),txt=el.textContent;
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected";}
+      try{navigator.clipboard.writeText(txt).then(function(){b.textContent="Copied"},sel)}catch(e){sel()}
+      setTimeout(function(){b.textContent="Copy"},1800);
+    });
+  });
 
-  <script>
+  var root=document.documentElement,mb=document.getElementById("mode");
+  function setMode(on){root.classList.toggle("inverted",on);mb.setAttribute("aria-pressed",on?"true":"false");try{localStorage.setItem("aa-mode",on?"inv":"std")}catch(e){}}
+  try{if(localStorage.getItem("aa-mode")==="inv")setMode(true)}catch(e){}
+  mb.addEventListener("click",function(){setMode(!root.classList.contains("inverted"))});
 
+  var modal=document.getElementById("modal");
+  function closeM(){modal.hidden=true}
+  modal.hidden=false; /* show on every visit */
 
-    /* =====================================================
-       CUSTOM PANDA CURSOR
-       ===================================================== */
-
-    const customCursor =
-      document.querySelector(
-        ".custom-image-cursor"
-      );
-
-
-    let mouseX = 0;
-    let mouseY = 0;
-
-    let cursorX = 0;
-    let cursorY = 0;
-
-
-    document.addEventListener(
-      "mousemove",
-      function(event) {
-
-        mouseX = event.clientX;
-
-        mouseY = event.clientY;
-
-      }
-    );
-
-
-    function animateCursor() {
-
-      cursorX +=
-        (mouseX - cursorX) * 0.18;
-
-      cursorY +=
-        (mouseY - cursorY) * 0.18;
-
-
-      customCursor.style.transform =
-        `translate3d(
-          ${cursorX}px,
-          ${cursorY}px,
-          0
-        ) translate(-50%, -50%)`;
-
-
-      requestAnimationFrame(
-        animateCursor
-      );
-
-    }
-
-
-    animateCursor();
-
-
-
-    /* =====================================================
-       CURSOR HOVER EFFECT
-       ===================================================== */
-
-    document
-      .querySelectorAll("a")
-      .forEach(function(link) {
-
-        link.addEventListener(
-          "mouseenter",
-          function() {
-
-            customCursor.style.width =
-              "72px";
-
-            customCursor.style.height =
-              "72px";
-
-          }
-        );
-
-
-        link.addEventListener(
-          "mouseleave",
-          function() {
-
-            customCursor.style.width =
-              "55px";
-
-            customCursor.style.height =
-              "55px";
-
-          }
-        );
-
-      });
-
-
-
-    /* =====================================================
-       SCROLL REVEAL
-       ===================================================== */
-
-    const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
-
-
-    const revealObserver =
-      new IntersectionObserver(
-        function(entries) {
-
-          entries.forEach(
-            function(entry) {
-
-              if (
-                entry.isIntersecting
-              ) {
-
-                entry.target.classList.add(
-                  "visible"
-                );
-
-              }
-
-            }
-          );
-
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-
-    revealElements.forEach(
-      function(element) {
-
-        revealObserver.observe(
-          element
-        );
-
-      }
-    );
-
-
-  </script>
-
-
+  /* custom cursor: dot + transparent ring */
+  if(matchMedia("(pointer:fine)").matches){
+    var dot=document.createElement("div"),ring=document.createElement("div");
+    dot.className="cur-dot";ring.className="cur-ring";
+    document.body.appendChild(ring);document.body.appendChild(dot);
+    document.documentElement.classList.add("has-cursor");
+    var mx=-100,my=-100,rx=-100,ry=-100,still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;dot.style.transform="translate("+mx+"px,"+my+"px)";dot.style.opacity=ring.style.opacity=1;});
+    document.addEventListener("mouseleave",function(){dot.style.opacity=ring.style.opacity=0});
+    document.addEventListener("mousedown",function(){ring.classList.add("down")});
+    document.addEventListener("mouseup",function(){ring.classList.remove("down")});
+    document.addEventListener("mouseover",function(e){ring.classList.toggle("hover",!!e.target.closest("a,button,select,label,.dirs a"))});
+    (function loop(){var k=still?1:.18;rx+=(mx-rx)*k;ry+=(my-ry)*k;ring.style.transform="translate("+rx+"px,"+ry+"px)";requestAnimationFrame(loop)})();
+  }
+  document.getElementById("m-x").onclick=closeM;
+  document.getElementById("m-skip").onclick=closeM;
+  document.getElementById("m-contact").addEventListener("click",closeM);
+  modal.addEventListener("click",function(e){if(e.target===modal)closeM()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!modal.hidden)closeM()});
+})();
+</script>
 </body>
 </html>
